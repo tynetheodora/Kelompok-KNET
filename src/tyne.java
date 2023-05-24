@@ -1,3 +1,4 @@
+//tyne theodora - 03081220028
 public class tyne {
     public static void main(String[] args) {
         int count = 1;
