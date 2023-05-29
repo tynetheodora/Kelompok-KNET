@@ -1,9 +1,11 @@
-//tyne theodora - 03081220028
-public class tyne {
-    public static void main(String[] args) {
-        int count = 1;
+// Evelline CHristine
+// 03081220027
 
-        while (count <= 5) {
+public class Evelline {
+    public static void main(String[] args) {
+        System.out.println("Perulangan 1 sampai 10");
+        int count = 1;
+        while (count <= 10) {
             System.out.println("Perulangan ke-" + count);
             count++;
         }
