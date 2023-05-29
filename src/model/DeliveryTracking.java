@@ -6,8 +6,9 @@ public class DeliveryTracking {
      * Atribut
      * trackingNumber : untuk nomor pelacakan pengiriman
      * status : untuk status pengiriman
-     * 
+     * Driver : untuk informasi nama driver
      * Task
-     * User bisa memantau orderan yang dipesan sudah sampai mana
+     * User bisa memantau orderan yang dipesan sudah sampai mana 
+     * User bisa melihat informasi driver
      */
 }
