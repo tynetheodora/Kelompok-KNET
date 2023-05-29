@@ -5,3 +5,8 @@ public class novita{
         }
     }  
 }
+
+/*
+ * NAMA : NOVITA
+ * NIM : 03081220007
+ */
