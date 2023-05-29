@@ -1,5 +1,10 @@
 package model;
 
-public class Order {
-    
-}
+/*
+ * didalam icon order , memiliki atribut:
+ * - edit pesanan
+ * - lihat rating pesanan
+ * - search bar
+ * 
+ * 
+ */
