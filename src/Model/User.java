@@ -15,7 +15,6 @@ package model;
      * Task
      * User dapat mengedit informasi pribadi
      */   
-    
      public class User {
         private String id;
         private String username;
