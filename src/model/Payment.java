@@ -1,5 +1,4 @@
 package model;
-import java.util.Objects;
 
 /* Nama : Kayla Namira
  * NIM : 03081220026
@@ -85,4 +84,5 @@ public class Payment {
     public void setAdditionalDetails(String additionalDetails) {
         this.additionalDetails = additionalDetails;
     }
+
 }
