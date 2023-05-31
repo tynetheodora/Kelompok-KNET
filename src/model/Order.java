@@ -1,6 +1,6 @@
 package model;
-
-/*
+public class Order{
+    /*
  * didalam icon order , memiliki atribut:
  * common attribut
  * - edit pesanan
@@ -23,7 +23,8 @@ package model;
  String editpesanan;
  String ratingpesanan;
  String searchbar;
- String orderdetail;
- String ordernumber;
+ String detail;
+ String number;
  String Time;
  String queue;
+}
