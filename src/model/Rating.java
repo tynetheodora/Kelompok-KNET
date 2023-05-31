@@ -1,5 +1,7 @@
 package model;
-/*
+
+public class Rating{
+    /*
  *
  * di dalam icon rating terdapat attribut:
  * - bintang
@@ -12,3 +14,5 @@ package model;
  String review;
  String rekomendasi;
  
+
+}
