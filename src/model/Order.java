@@ -20,7 +20,10 @@ package model;
  * 
  */
 
- String nama;
- String studentId;
- String alamat;
- String programStudi;
+ String editpesanan;
+ String ratingpesanan;
+ String searchbar;
+ String orderdetail;
+ String ordernumber;
+ String Time;
+ String queue;
