@@ -4,9 +4,9 @@ public class Rating{
     /*
  *
  * di dalam icon rating terdapat attribut:
- * - bintang
- * - review
- * - rekomendasi resto rating tinggi
+ * - bintang : 1,2,3,4,5
+ * - review 
+ * - rekomendasi resto rating tinggi 
  * 
  */
 
