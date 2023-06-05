@@ -4,8 +4,7 @@ package model;
  * NIM : 03081220026
  */
 
-public class Payment {
-    /*
+        /*
      * Deskripsi
      * Atribut
      * amount: jumlah orderan
@@ -21,13 +20,40 @@ public class Payment {
      * 
      */
 
-     String currency;
-     String amount;
-     String paymentMethod;
-     String transactionDate;
-     String transactionId;
-     String status;
-     String additionalDetails;
+public class Payment {
+    String currency;
+    String amount;
+    String paymentMethod;
+    String transactionDate;
+    String transactionId;
+    String status;
+    String additionalDetails;
+
+    public Payment(){
+
+    }
+
+    public Payment(String currency, String amount, String paymentMethod, String transactionDate, String transactionId, String status, String additionalDetails) {
+        this.amount = amount;
+        this.paymentMethod = paymentMethod;
+        this.transactionDate = transactionDate;
+        this.transactionId = transactionId;
+        this.status = status;
+        this. additionalDetails = additionalDetails;
+    }
+
+    @Override
+    public String toString() {
+        return "|" +
+            " " + getCurrency() + "\t|" +
+            " " + getAmount() + "\t|" +
+            " " + getPaymentMethod() + "\t|" +
+            " " + getTransactionDate() + "\t|" +
+            " " + getTransactionId() + "\t|" +
+            " " + getStatus() + "\t|" +
+            " " + getAdditionalDetails() + "\t|" +
+            "";
+    }
 
     public String getCurrency() {
         return this.currency;
