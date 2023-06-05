@@ -43,10 +43,14 @@ public class App {
 
             public static void init(){
 
-                
                 User Evelline = new User("1", "eve", "eve@gmail.com", "123456");
                 User Tyne = new User("2", "tyne.theo", "tyne.theo@gmail.com", "abcdef");
                 User kayla = new User("3", "kayla", "kylnmr@gmail.com", "98765");
+
+                Payment Customer1 = new Payment("IDR", "200.000", "Cash", "5/6/2023", "xcsznjc0ldr", "Completed", " - ");
+                Payment Customer2 = new Payment("IDR", "250.000", "Bank Transfer", "5/6/2023", "sjnclasc5", "Failed", " - ");
+                Payment Customer3 = new Payment("IDR", "300.000", "E-Wallet", "5/6/2023", "jsbakjsn3s", "In Progress", " - ");
+
 
             }
         }
