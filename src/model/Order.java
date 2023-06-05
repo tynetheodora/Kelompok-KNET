@@ -37,11 +37,11 @@ public class MyClass {
     private String Time;
     private String queue;
 
-    // Empty constructor
+
     public MyClass() {
     }
 
-    // Constructor with all fields
+    
     public MyClass(String editpesanan, String ratingpesanan, String searchbar, String detail, String number, String Time, String queue) {
         this.editpesanan = editpesanan;
         this.ratingpesanan = ratingpesanan;
@@ -52,7 +52,7 @@ public class MyClass {
         this.queue = queue;
     }
 
-    // Getter and setter methods...
+    
 
     public String getEditpesanan() {
         return this.editpesanan;
@@ -110,8 +110,7 @@ public class MyClass {
         this.queue = queue;
     }
 
-    // toString() method
-    @Override
+    
     public String toString() {
         return "MyClass{" +
                 "editpesanan='" + editpesanan + '\'' +
