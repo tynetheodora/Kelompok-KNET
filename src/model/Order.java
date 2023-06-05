@@ -28,6 +28,32 @@ public class Order{
  String Time;
  String queue;
 
+public class MyClass {
+    private String editpesanan;
+    private String ratingpesanan;
+    private String searchbar;
+    private String detail;
+    private String number;
+    private String Time;
+    private String queue;
+
+    // Empty constructor
+    public MyClass() {
+    }
+
+    // Constructor with all fields
+    public MyClass(String editpesanan, String ratingpesanan, String searchbar, String detail, String number, String Time, String queue) {
+        this.editpesanan = editpesanan;
+        this.ratingpesanan = ratingpesanan;
+        this.searchbar = searchbar;
+        this.detail = detail;
+        this.number = number;
+        this.Time = Time;
+        this.queue = queue;
+    }
+
+    // Getter and setter methods...
+
     public String getEditpesanan() {
         return this.editpesanan;
     }
@@ -82,5 +108,20 @@ public class Order{
 
     public void setQueue(String queue) {
         this.queue = queue;
+    }
+
+    // toString() method
+    @Override
+    public String toString() {
+        return "MyClass{" +
+                "editpesanan='" + editpesanan + '\'' +
+                ", ratingpesanan='" + ratingpesanan + '\'' +
+                ", searchbar='" + searchbar + '\'' +
+                ", detail='" + detail + '\'' +
+                ", number='" + number + '\'' +
+                ", Time='" + Time + '\'' +
+                ", queue='" + queue + '\'' +
+                '}';
+        }
     }
 }
