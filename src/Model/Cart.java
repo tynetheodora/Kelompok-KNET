@@ -1,4 +1,5 @@
 package model;
+import java.util.Objects;
 
 public class Cart {
     /* dalam CART memiliki atribut berikut :
@@ -93,5 +94,50 @@ public class Cart {
         public String getNotes() {
             return notes;
         }
-    }    
+
+        @Override
+        public String toString() {
+            return "Cart{" +
+                    "productName='" + productName + '\'' +
+                    ", quantity='" + quantity + '\'' +
+                    ", price='" + price + '\'' +
+                    ", subTotal='" + subTotal + '\'' +
+                    '}';
+        }
+
+        /**
+         * @param args
+         */
+        public static void main(String[] args) {
+            Cart Cart1 = new Cart();
+            Cart1.productName("Martabak");
+            Cart1.quantity("1");
+            Cart1.price("38000");
+            Cart1.subTotal("38000");
+    
+            System.out.println(Cart1.toString());
+    
+            Cart Cart2 = new Cart("Martabak", "t1", "38000", "38000");
+    
+            System.out.println(Cart2.toString());
+        }
+    }
+
+    public Cart(String string, String string2, String string3, String string4) {
+    }
+
+    public Cart() {
+    }
+
+    public void productName(String string) {
+    }
+
+    public void subTotal(String string) {
+    }
+
+    public void price(String string) {
+    }
+
+    public void quantity(String string) {
+    }   
 }
