@@ -113,4 +113,21 @@ public class Payment {
         this.additionalDetails = additionalDetails;
     }
 
+    public static void main(String[] args) {
+        Payment Customer1 = new Payment();
+        Customer1.setCurrency("IDR");
+        Customer1.setAmount("200.000");
+        Customer1.setPaymentMethod("Cash");
+        Customer1.setTransactionDate("5/6/2023");        
+        Customer1.setTransactionId("xcsznjc0ldr");
+        Customer1.setStatus("Completed");
+        Customer1.setAdditionalDetails(" - ");
+
+        System.out.println(Customer1.toString());
+
+        Payment Customer2 = new Payment("IDR", "250.000", "Bank Transfer", "5/6/2023", "sjnclasc5", "Failed", " - ");
+
+        System.out.println(Customer2.toString());
+    }
+
 }
