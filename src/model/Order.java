@@ -20,15 +20,9 @@ public class Order{
  * 
  */
 
- String editpesanan;
- String ratingpesanan;
- String searchbar;
- String detail;
- String number;
- String Time;
- String queue;
 
-public class MyClass {
+
+ 
     private String editpesanan;
     private String ratingpesanan;
     private String searchbar;
@@ -38,11 +32,11 @@ public class MyClass {
     private String queue;
 
 
-    public MyClass() {
+    public Order() {
     }
 
     
-    public MyClass(String editpesanan, String ratingpesanan, String searchbar, String detail, String number, String Time, String queue) {
+    public Order(String editpesanan, String ratingpesanan, String searchbar, String detail, String number, String Time, String queue) {
         this.editpesanan = editpesanan;
         this.ratingpesanan = ratingpesanan;
         this.searchbar = searchbar;
@@ -112,7 +106,7 @@ public class MyClass {
 
     
     public String toString() {
-        return "MyClass{" +
+        return "Order{" +
                 "editpesanan='" + editpesanan + '\'' +
                 ", ratingpesanan='" + ratingpesanan + '\'' +
                 ", searchbar='" + searchbar + '\'' +
@@ -123,4 +117,3 @@ public class MyClass {
                 '}';
         }
     }
-}
