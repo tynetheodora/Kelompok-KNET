@@ -48,6 +48,14 @@ public class App {
                 User Tyne = new User("2", "tyne.theo", "tyne.theo@gmail.com", "abcdef");
                 User kayla = new User("3", "kayla", "kylnmr@gmail.com", "98765");
 
+                
+
+
+                Cart Cart2 = new Cart("Pizza", "1", "50.000", "50.000", "10.000", "40.000", "jangan pedas");
+                Cart Cart3 = new Cart("Martabak", "1", "50.000", "50.000", "10.000", "40.000", "jangan pedas");
+                Cart Cart4 = new Cart("Sushi", "1", "50.000", "50.000", "10.000", "40.000", "jangan pedas");
+
+
             }
         }
                         
