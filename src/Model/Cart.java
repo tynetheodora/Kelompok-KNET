@@ -22,6 +22,23 @@ public class Cart {
         private boolean checkout;
         private String notes;
     
+        // Empty constructor
+        public Product() {
+        }
+    
+        // Constructor dengan semua field
+        public Product(String productName, int quantity, double price, double subTotal, double discount,
+                       double totalPrice, boolean checkout, String notes) {
+            this.productName = productName;
+            this.quantity = quantity;
+            this.price = price;
+            this.subTotal = subTotal;
+            this.discount = discount;
+            this.totalPrice = totalPrice;
+            this.checkout = checkout;
+            this.notes = notes;
+        }
+    
         // Setter dan Getter untuk atribut productName
         public void setProductName(String productName) {
             this.productName = productName;
@@ -93,5 +110,19 @@ public class Cart {
         public String getNotes() {
             return notes;
         }
-    }    
-}
+    
+        @Override
+        public String toString() {
+            return "Product{" +
+                    "productName='" + productName + '\'' +
+                    ", quantity=" + quantity +
+                    ", price=" + price +
+                    ", subTotal=" + subTotal +
+                    ", discount=" + discount +
+                    ", totalPrice=" + totalPrice +
+                    ", checkout=" + checkout +
+                    ", notes='" + notes + '\'' +
+                    '}';
+        }
+    }
+}    
