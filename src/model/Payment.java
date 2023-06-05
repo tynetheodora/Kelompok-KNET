@@ -33,7 +33,9 @@ public class Payment {
 
     }
 
-    public Payment(String currency, String amount, String paymentMethod, String transactionDate, String transactionId, String status, String additionalDetails) {
+    public Payment(String currency, String amount, String paymentMethod, 
+    String transactionDate, String transactionId, 
+    String status, String additionalDetails) {
         this.amount = amount;
         this.paymentMethod = paymentMethod;
         this.transactionDate = transactionDate;
