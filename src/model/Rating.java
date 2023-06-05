@@ -15,7 +15,7 @@ public class Rating{
  String rekomendasi;
  
 
-}
+
 
     public String getBintang() {
         return this.bintang;
@@ -40,4 +40,6 @@ public class Rating{
     public void setRekomendasi(String rekomendasi) {
         this.rekomendasi = rekomendasi;
     }
+}
+    
  
