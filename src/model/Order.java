@@ -28,6 +28,23 @@ public class Order{
  String Time;
  String queue;
 
+
+
+    
+    public Order() {
+    }
+
+    public Order (String editpesanan, String ratingpesanan, String searchbar, String detail, String number, String Time, String queue) {
+        this.editpesanan = editpesanan;
+        this.ratingpesanan = ratingpesanan;
+        this.searchbar = searchbar;
+        this.detail = detail;
+        this.number = number;
+        this.Time = Time;
+        this.queue = queue;
+    }
+
+
     public String getEditpesanan() {
         return this.editpesanan;
     }
@@ -83,4 +100,19 @@ public class Order{
     public void setQueue(String queue) {
         this.queue = queue;
     }
-}
+
+   
+    public String toString() {
+        return "Order{" +
+                "editpesanan='" + editpesanan + '\'' +
+                ", ratingpesanan='" + ratingpesanan + '\'' +
+                ", searchbar='" + searchbar + '\'' +
+                ", detail='" + detail + '\'' +
+                ", number='" + number + '\'' +
+                ", Time='" + Time + '\'' +
+                ", queue='" + queue + '\'' +
+                '}';
+            }
+        }
+
+
