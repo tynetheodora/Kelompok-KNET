@@ -3,7 +3,7 @@ import model.Order;
 import model.Payment;
 import model.User;
 import model.Cart;
-import model.Item;
+import model.Menu;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -51,9 +51,9 @@ public class App {
                 Payment Customer2 = new Payment("IDR", "250.000", "Bank Transfer", "5/6/2023", "sjnclasc5", "Failed", " - ");
                 Payment Customer3 = new Payment("IDR", "300.000", "E-Wallet", "5/6/2023", "jsbakjsn3s", "In Progress", " - ");
             
-                Cart Cart2 = new Cart("Pizza", "1", "50.000", "50.000", "10.000", "40.000", "jangan pedas");
-                Cart Cart3 = new Cart("Martabak", "1", "50.000", "50.000", "10.000", "40.000", "jangan pedas");
-                Cart Cart4 = new Cart("Sushi", "1", "50.000", "50.000", "10.000", "40.000", "jangan pedas");
+                Cart Cart2 = new Cart("Martabak", "1", "38000", "50000");
+                Cart Cart3 = new Cart("Martabak", "1", "50.000", "50000");
+                Cart Cart4 = new Cart("Sushi", "1", "50.0000", "50000");
 
             }
         }
