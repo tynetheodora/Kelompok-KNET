@@ -113,11 +113,12 @@ public class Payment {
         this.additionalDetails = additionalDetails;
     }
 
+    // contructor
     public static void main(String[] args) {
         Payment Customer1 = new Payment();
         Customer1.setCurrency("IDR");
         Customer1.setAmount("200.000");
-        Customer1.setPaymentMethod("Cash");
+        Customer1.setPaymentMethod("Cash \t");
         Customer1.setTransactionDate("5/6/2023");        
         Customer1.setTransactionId("xcsznjc0ldr");
         Customer1.setStatus("Completed");
