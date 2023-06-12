@@ -5,7 +5,7 @@ public class Order{
  * common attribut
  * - edit pesanan
  * - lihat rating pesanan
- * - search bar
+ * 
  * 
  * 
  * 
@@ -61,13 +61,7 @@ public class Order{
         this.ratingpesanan = ratingpesanan;
     }
 
-    public String getSearchbar() {
-        return this.searchbar;
-    }
-
-    public void setSearchbar(String searchbar) {
-        this.searchbar = searchbar;
-    }
+    
 
     public String getDetail() {
         return this.detail;
