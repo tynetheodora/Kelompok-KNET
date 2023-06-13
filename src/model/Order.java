@@ -37,7 +37,6 @@ public class Order{
     public Order (String editpesanan, String ratingpesanan, String searchbar, String detail, String number, String Time, String queue) {
         this.editpesanan = editpesanan;
         this.ratingpesanan = ratingpesanan;
-        this.searchbar = searchbar;
         this.detail = detail;
         this.number = number;
         this.Time = Time;
@@ -61,13 +60,9 @@ public class Order{
         this.ratingpesanan = ratingpesanan;
     }
 
-    public String getSearchbar() {
-        return this.searchbar;
-    }
 
-    public void setSearchbar(String searchbar) {
-        this.searchbar = searchbar;
-    }
+
+    
 
     public String getDetail() {
         return this.detail;
@@ -106,7 +101,6 @@ public class Order{
         return "Order{" +
                 "editpesanan='" + editpesanan + '\'' +
                 ", ratingpesanan='" + ratingpesanan + '\'' +
-                ", searchbar='" + searchbar + '\'' +
                 ", detail='" + detail + '\'' +
                 ", number='" + number + '\'' +
                 ", Time='" + Time + '\'' +
