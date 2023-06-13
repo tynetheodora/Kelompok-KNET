@@ -44,7 +44,7 @@ public class Order{
     }
 
 
-    public Order(int editpesanan2, int ratingpesanan2, int detail2, int number2, int time2, int queue2) {
+    public Order(String editpesanan2, String ratingpesanan2, String detail2, String number2, String time2, String queue2) {
     }
 
     public String getEditpesanan() {
