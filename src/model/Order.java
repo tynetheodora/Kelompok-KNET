@@ -5,7 +5,7 @@ public class Order{
  * common attribut
  * - edit pesanan
  * - lihat rating pesanan
- * - search bar
+ * 
  * 
  * 
  * 
@@ -60,8 +60,11 @@ public class Order{
         this.ratingpesanan = ratingpesanan;
     }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> b5d9a3919b5009c442b1e81336e147564d4285a4
     
 
     public String getDetail() {
