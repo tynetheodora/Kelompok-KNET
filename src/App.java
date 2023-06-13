@@ -54,7 +54,7 @@ public class App {
                     }
                     
                     System.out.println(); // Print an empty line for readability
-                } while (choice != 4);
+                } while (!exit);
                 
                 scanner.close();
             }
@@ -136,17 +136,17 @@ public class App {
                     Scanner scanner = new Scanner(System.in);
                     System.out.println("=== Input Order Data ===");
                     System.out.print("Edit Pesanan: ");
-                    int editpesanan = scanner.nextInt();
+                    String editpesanan = scanner.nextLine();
                     System.out.print("Rating Pesanan: ");
-                    int ratingpesanan = scanner.nextInt();
+                    String ratingpesanan = scanner.nextLine();
                     System.out.print("Detail: ");
-                    int detail = scanner.nextInt();
+                    String detail = scanner.nextLine();
                     System.out.print("Number: ");
-                    int number = scanner.nextInt();
+                    String number = scanner.nextLine();
                     System.out.print("Time: ");
-                    int time = scanner.nextInt();
+                    String time = scanner.nextLine();
                     System.out.print("Queue: ");
-                    int queue = scanner.nextInt();
+                    String queue = scanner.nextLine();
                     scanner.nextLine(); // Discard the newline character
 
                     Order newOrder = new Order(editpesanan, ratingpesanan, detail, number, time, queue);
@@ -213,7 +213,7 @@ public class App {
                     String notes = scanner.nextLine();
                     scanner.nextLine(); // Discard the newline character
 
-                    Cart newCart = new Cart(null, null, null, null, null, null, null);
+                    Cart newCart = new Cart(productName, quantity, price, subTotal, discount, totalPrice, notes);
 
                     for (int i = 0; i < cart.length; i++) {
                         if (cart[i] == null) {
@@ -235,12 +235,11 @@ public class App {
                                 System.out.println("Username: " + user[j].getUsername());
                                 System.out.println("Email: " + user[j].getEmail());
                                 System.out.println("Password: " + user[j].getPassword());
-                                System.out.println();
                             }
                     }
 
                     for (int k = 0; k < menu.length; k++) {
-                            if (order[k] != null) {
+                            if (menu[k] != null) {
                                 System.out.println("Menu[" + k + "]:");
                                 System.out.println("Food Name: " + menu[k].getFood());
                                 System.out.println("Drink Name: " + menu[k].getDrink());
