@@ -44,6 +44,9 @@ public class Order{
     }
 
 
+    public Order(int editpesanan2, int ratingpesanan2, int detail2, int number2, int time2, int queue2) {
+    }
+
     public String getEditpesanan() {
         return this.editpesanan;
     }
