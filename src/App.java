@@ -60,6 +60,13 @@ public class App {
                 Cart Cart3 = new Cart("Martabak", "1", "50.000", "50.000", "10.000", "40.000", "jangan pedas");
                 Cart Cart4 = new Cart("Sushi", "1", "50.000", "50.000", "10.000", "40.000", "jangan pedas");
 
+                Order customer1Order = new Order("ya","4","2", "sushi","001","12:02","2");
+                Order customer2Order = new Order("ya","5","5","snack cookies ","021","12:05","3");
+                Order customer3Order = new Order("ya","5","5","pizza ","033","12:10","4");
+
+
+
+
             }
         }
                         
