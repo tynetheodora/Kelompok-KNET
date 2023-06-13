@@ -3,7 +3,7 @@ import model.Order;
 import model.Payment;
 import model.User;
 import model.Cart;
-import model.Item;
+import model.Menu;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -13,11 +13,16 @@ public class App {
                 int choice;
 
                 do {
-                    System.out.println("1. Add Item");
-                    System.out.println("2. Add User ");
-                    System.out.println("3. Place Order");
-                    System.out.println("4. Track Delivery");
-                    System.out.println("Please enter your choice");
+                    System.out.println("1. Input User Data");
+                    System.out.println("2. Input Menu Data ");
+                    System.out.println("3. Input Order Data");
+                    System.out.println("4. Input Payment Data");
+                    System.out.println("5. Input Rating Data");
+                    System.out.println("6. Input Cart Data");
+                    System.out.println("7. Input Delivery Tracking Data");
+                    System.out.println("8. Display Data");
+                    System.out.println("0. Exit");
+                    System.out.println("Please choose a menu : ");
 
                     choice = scanner.nextInt();
                     switch (choice) {
