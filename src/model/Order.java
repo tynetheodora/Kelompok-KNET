@@ -58,14 +58,7 @@ public class Order{
 
     public void setRatingpesanan(String ratingpesanan) {
         this.ratingpesanan = ratingpesanan;
-    }
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> b5d9a3919b5009c442b1e81336e147564d4285a4
-    
+    } 
 
     public String getDetail() {
         return this.detail;
