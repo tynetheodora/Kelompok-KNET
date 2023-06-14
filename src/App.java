@@ -238,51 +238,51 @@ public class App {
                             }
                     }
 
-                    for (int k = 0; k < menu.length; k++) {
-                            if (menu[k] != null) {
-                                System.out.println("Menu[" + k + "]:");
-                                System.out.println("Food Name: " + menu[k].getFood());
-                                System.out.println("Drink Name: " + menu[k].getDrink());
-                                System.out.println("Dessert Name: " + menu[k].getDessert());
-                                System.out.println("Price: " + menu[k].getPrice());
+                    for (int j = 0; j < menu.length; j++) {
+                            if (menu[j] != null) {
+                                System.out.println("Menu[" + j + "]:");
+                                System.out.println("Food Name: " + menu[j].getFood());
+                                System.out.println("Drink Name: " + menu[j].getDrink());
+                                System.out.println("Dessert Name: " + menu[j].getDessert());
+                                System.out.println("Price: " + menu[j].getPrice());
                             }
                     }
 
-                    for (int l = 0; l < order.length; l++) {
-                            if (order[l] != null) {
-                                System.out.println("Order[" + l + "]:");
-                                System.out.println("Edit Pesanan: " + order[l].getEditpesanan());
-                                System.out.println("Rating Pesanan: " + order[l].getRatingpesanan());
-                                System.out.println("Detail: " + order[l].getDetail());
-                                System.out.println("Number: " + order[l].getNumber());
-                                System.out.println("Time: " + order[l].getTime());
-                                System.out.println("Queue: " + order[l].getQueue());
+                    for (int j = 0; j < order.length; j++) {
+                            if (order[j] != null) {
+                                System.out.println("Order[" + j + "]:");
+                                System.out.println("Edit Pesanan: " + order[j].getEditpesanan());
+                                System.out.println("Rating Pesanan: " + order[j].getRatingpesanan());
+                                System.out.println("Detail: " + order[j].getDetail());
+                                System.out.println("Number: " + order[j].getNumber());
+                                System.out.println("Time: " + order[j].getTime());
+                                System.out.println("Queue: " + order[j].getQueue());
                             }
                     }
 
-                    for (int m = 0; m < payment.length; m++) {
-                            if (payment[m] != null) {
-                                System.out.println("Payment[" + m + "]:");
-                                System.out.println("Currency: " + payment[m].getCurrency());
-                                System.out.println("Amount: " + payment[m].getAmount());
-                                System.out.println("Payment Method: " + payment[m].getPaymentMethod());
-                                System.out.println("Transaction Date: " + payment[m].getTransactionDate());
-                                System.out.println("Transaction Id: " + payment[m].getTransactionId());
-                                System.out.println("Status: " + payment[m].getStatus());
-                                System.out.println("Additional: " + payment[m].getAdditionalDetails());
+                    for (int j = 0; j < payment.length; j++) {
+                            if (payment[j] != null) {
+                                System.out.println("Payment[" + j + "]:");
+                                System.out.println("Currency: " + payment[j].getCurrency());
+                                System.out.println("Amount: " + payment[j].getAmount());
+                                System.out.println("Payment Method: " + payment[j].getPaymentMethod());
+                                System.out.println("Transaction Date: " + payment[j].getTransactionDate());
+                                System.out.println("Transaction Id: " + payment[j].getTransactionId());
+                                System.out.println("Status: " + payment[j].getStatus());
+                                System.out.println("Additional: " + payment[j].getAdditionalDetails());
                             }
                     }
 
-                    for (int n = 0; n < cart.length; n++) {
-                            if (cart[n] != null) {
-                                System.out.println("Cart[" + n + "]:");
-                                System.out.println("Product Name: " + cart[n].getProductName());
-                                System.out.println("Quantity: " + cart[n].getQuantity());
-                                System.out.println("Price: " + cart[n].getPrice());
-                                System.out.println("Sub Total: " + cart[n].getSubTotal());
-                                System.out.println("Discount: " + cart[n].getDiscount());
-                                System.out.println("Total Price: " + cart[n].getTotalPrice());
-                                System.out.println("Notes: " + cart[n].getNotes());
+                    for (int j = 0; j < cart.length; j++) {
+                            if (cart[j] != null) {
+                                System.out.println("Cart[" + j + "]:");
+                                System.out.println("Product Name: " + cart[j].getProductName());
+                                System.out.println("Quantity: " + cart[j].getQuantity());
+                                System.out.println("Price: " + cart[j].getPrice());
+                                System.out.println("Sub Total: " + cart[j].getSubTotal());
+                                System.out.println("Discount: " + cart[j].getDiscount());
+                                System.out.println("Total Price: " + cart[j].getTotalPrice());
+                                System.out.println("Notes: " + cart[j].getNotes());
                             }
                     }
 
