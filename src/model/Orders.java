@@ -1,18 +1,16 @@
 package model;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class Orders {
-    /* Attributes :
-     * Nama Restoran
-     * Alamat Restoran
-     * Nama Pengguna
-     * ID Pemesanan
-     * Tanggal Pembelian
-     * Jam Pembelian
-     * 
-     * TASK : memberi informasi mengenai pemesanan
-     */
+        /* Attributes :
+        * Nama Restoran
+        * Alamat Restoran
+        * Nama Pengguna
+        * ID Pemesanan
+        * Tanggal Pembelian
+        * Jam Pembelian
+        * 
+        * TASK : memberi informasi mengenai pemesanan
+        */
 
     String namaRestoran;
     String alamatRestoran;
@@ -21,6 +19,19 @@ public class Orders {
     String tanggalPembelian;
     String jamPembelian;
     
+    public Orders (){
+
+    }
+        
+    public Orders ( String namaRestoran, String alamatRestoran, String namaPengguna, String idPemesanan, String tanggalPembelian, String jamPembelian){
+    this.namaRestoran = namaRestoran;
+    this.alamatRestoran = alamatRestoran;
+    this.namaPengguna = namaPengguna;
+    this.idPemesanan = idPemesanan;
+    this.jamPembelian = jamPembelian;
+    
+    }
+
 
     public String getNamaRestoran() {
         return this.namaRestoran;
@@ -72,9 +83,6 @@ public class Orders {
 
             @Override
         public String toString() {
-            LocalDateTime waktuSekarang = LocalDateTime.now();
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss dd-MM-yyyy");
-
 
             return "Orders{" +
                     "Nama Restoran='" + namaRestoran + '\'' +
@@ -96,8 +104,8 @@ public class Orders {
             Orders1.setJamPembelian("11:11");
     
             System.out.println(Orders1.toString());
-            Orders Orders2 = new Orders();
-
+            
+            Orders Orders2 = new Orders("Online Orders", "Polonia Medan", "Tyne Theodora", "1220028", "11 November 2023", "11:11");
             System.out.println(Orders2.toString());
         }
     }
