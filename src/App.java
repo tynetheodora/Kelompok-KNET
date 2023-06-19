@@ -74,9 +74,9 @@ public class App {
                 Cart Cart3 = new Cart("Martabak", "1", "50.000", "50.000", "10.000", "40.000", "jangan pedas");
                 Cart Cart4 = new Cart("Sushi", "1", "50.000", "50.000", "10.000", "40.000", "jangan pedas");
 
-                OrderDetail customer1Order = new OrderDetail("pizza","F01", "50.000","1","50.000");
-                OrderDetail customer2Order = new OrderDetail("bakso","F04","30.000","2","60.000");
-                OrderDetail customer3Order = new OrderDetail("mie goreng","F06","25.000","3","75.000");
+                OrderDetail customer1Order = new OrderDetail("pizza","F01", "50.000","1","7.000","57.000");
+                OrderDetail customer2Order = new OrderDetail("bakso","F04","30.000","2","5.000","65.000");
+                OrderDetail customer3Order = new OrderDetail("mie goreng","F06","25.000","3","8.000","83.000");
 
             }
 
@@ -144,11 +144,13 @@ public class App {
                     String harga = scanner.nextLine();
                     System.out.print("Kuantitas: ");
                     String kuantitas = scanner.nextLine();
+                    System.out.print("Tax: ");
+                    String tax = scanner.nextLine();
                     System.out.print("Total Harga: ");
                     String totalHarga = scanner.nextLine();
                     scanner.nextLine(); // Discard the newline character
 
-                    OrderDetail newOrder = new OrderDetail(namamenu , IDmenu , harga ,  kuantitas , totalHarga );
+                    OrderDetail newOrder = new OrderDetail(namamenu , IDmenu , harga ,  kuantitas , tax ,totalHarga );
 
                     for (int i = 0; i < orderdetail.length; i++) {
                         if (orderdetail[i] == null) {
