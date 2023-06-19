@@ -16,8 +16,6 @@ public class Order{
  String kuantitas;
  String harga;
 
-
-
     public String getNamapengguna() {
         return this.namapengguna;
     }
@@ -49,4 +47,6 @@ public class Order{
     public void setHarga(String harga) {
         this.harga = harga;
     }
+
+
 }

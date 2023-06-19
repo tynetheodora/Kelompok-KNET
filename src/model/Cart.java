@@ -1,7 +1,5 @@
 package model;
-import java.util.Objects;
 
-public class Cart {
     /* dalam CART memiliki atribut berikut :
     * product name
     * quantity
@@ -9,135 +7,119 @@ public class Cart {
     * sub-total
     * discount
     * total price
-    * checkout
     * notes
     */
 
-    public class Product {
-        private String productName;
-        private int quantity;
-        private double price;
-        private double subTotal;
-        private double discount;
-        private double totalPrice;
-        private boolean checkout;
-        private String notes;
-    
-        // Setter dan Getter untuk atribut productName
-        public void setProductName(String productName) {
-            this.productName = productName;
-        }
-    
-        public String getProductName() {
-            return productName;
-        }
-    
-        // Setter dan Getter untuk atribut quantity
-        public void setQuantity(int quantity) {
-            this.quantity = quantity;
-        }
-    
-        public int getQuantity() {
-            return quantity;
-        }
-    
-        // Setter dan Getter untuk atribut price
-        public void setPrice(double price) {
-            this.price = price;
-        }
-    
-        public double getPrice() {
-            return price;
-        }
-    
-        // Setter dan Getter untuk atribut subTotal
-        public void setSubTotal(double subTotal) {
-            this.subTotal = subTotal;
-        }
-    
-        public double getSubTotal() {
-            return subTotal;
-        }
-    
-        // Setter dan Getter untuk atribut discount
-        public void setDiscount(double discount) {
-            this.discount = discount;
-        }
-    
-        public double getDiscount() {
-            return discount;
-        }
-    
-        // Setter dan Getter untuk atribut totalPrice
-        public void setTotalPrice(double totalPrice) {
-            this.totalPrice = totalPrice;
-        }
-    
-        public double getTotalPrice() {
-            return totalPrice;
-        }
-    
-        // Setter dan Getter untuk atribut checkout
-        public void setCheckout(boolean checkout) {
-            this.checkout = checkout;
-        }
-    
-        public boolean isCheckout() {
-            return checkout;
-        }
-    
-        // Setter dan Getter untuk atribut notes
-        public void setNotes(String notes) {
-            this.notes = notes;
-        }
-    
-        public String getNotes() {
-            return notes;
-        }
+public class Cart {
+   String productName;
+   String quantity;
+   String price;
+   String subTotal;
+   String discount;
+   String totalPrice;
+   String notes;
 
-        @Override
+   public Cart(){
+
+   }
+
+   public Cart(String productName,
+   String quantity,
+   String price,
+   String subTotal,
+   String discount,
+   String totalPrice,
+   String notes){
+    this.productName = productName;
+    this.quantity = quantity;
+    this.price = price;
+    this.subTotal = subTotal;
+    this.discount = discount;
+    this.totalPrice = totalPrice;
+    this.notes = notes;
+   }
+
+   @Override
         public String toString() {
             return "Cart{" +
                     "productName='" + productName + '\'' +
                     ", quantity='" + quantity + '\'' +
                     ", price='" + price + '\'' +
                     ", subTotal='" + subTotal + '\'' +
+                    ", discount='" + discount + '\'' +
+                    ", totalPrice='" + totalPrice + '\'' +
+                    ", notes='" + notes + '\'' +
                     '}';
         }
 
-        /**
-         * @param args
-         */
         public static void main(String[] args) {
             Cart Cart1 = new Cart();
-            Cart1.productName("Martabak");
-            Cart1.quantity("1");
-            Cart1.price("38000");
-            Cart1.subTotal("38000");
-    
+            Cart1.setProductName("Martabak");
+            Cart1.setQuantity("1");
+            Cart1.setPrice("38.000");
+            Cart1.setSubTotal("38.000");
+            Cart1.setDiscount("3.000");
+            Cart1.setTotalPrice("35.000");
+            Cart1.setNotes("extra cheese");
             System.out.println(Cart1.toString());
     
-            Cart Cart2 = new Cart("Martabak", "t1", "38000", "38000");
     
-            System.out.println(Cart2.toString());
+            System.out.println(Cart1.toString());
         }
+
+    public String getProductName() {
+        return this.productName;
     }
 
-    public Cart(String string, String string2, String string3, String string4) {
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public Cart() {
+    public String getQuantity() {
+        return this.quantity;
     }
 
-    public void productName(String string) {
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
     }
 
-    public void subTotal(String string) {
+    public String getPrice() {
+        return this.price;
     }
 
-    public void price(String string) {
+    public void setPrice(String price) {
+        this.price = price;
     }
 
-    public void quantity(String string) {
-    }   
+    public String getSubTotal() {
+        return this.subTotal;
+    }
+
+    public void setSubTotal(String subTotal) {
+        this.subTotal = subTotal;
+    }
+
+    public String getDiscount() {
+        return this.discount;
+    }
+
+    public void setDiscount(String discount) {
+        this.discount = discount;
+    }
+
+    public String getTotalPrice() {
+        return this.totalPrice;
+    }
+
+    public void setTotalPrice(String totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public String getNotes() {
+        return this.notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
 }

@@ -1,18 +1,20 @@
 package model;
 
-public class Item {
+public class Menu {
     String food;
     String drink;
     String dessert;
+    Double price;
 
-    public Item (){
+    public Menu (){
 
     }
 
-    public Item (String food, String drink, String dessert){
+    public Menu (String food, String drink, String dessert, Double price){
         this.food = food;
         this.drink = drink;
         this.dessert = dessert;
+        this.price = price;
     }
 
     @Override
@@ -21,6 +23,7 @@ public class Item {
             " " + getFood() + "\t|" +
             " " + getDrink() + "\t|" +
             " " + getDessert() + "\t|" +
+            " " + getPrice() + "\t|" +
             "";
     }
 
@@ -46,5 +49,13 @@ public class Item {
 
     public void setDessert(String dessert) {
         this.dessert = dessert;
+    }
+
+    public Double getPrice() {
+        return this.price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 }
