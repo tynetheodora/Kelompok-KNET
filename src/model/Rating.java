@@ -6,13 +6,37 @@ public class Rating{
  * di dalam icon rating terdapat attribut:
  * - bintang
  * - review
- * - rekomendasi resto rating tinggi
+ * - menu
  * 
  */
 
  String bintang;
  String review;
- String rekomendasi;
+ String menu;
  
+
+    public String getBintang() {
+        return this.bintang;
+    }
+
+    public void setBintang(String bintang) {
+        this.bintang = bintang;
+    }
+
+    public String getReview() {
+        return this.review;
+    }
+
+    public void setReview(String review) {
+        this.review = review;
+    }
+
+    public String getMenu() {
+        return this.menu;
+    }
+
+    public void setMenu(String menu) {
+        this.menu = menu;
+    }
 
 }
