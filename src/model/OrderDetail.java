@@ -1,5 +1,5 @@
 package model;
-public class Order{
+public class OrderDetail{
 
     /*
  * didalam icon order , memiliki atribut:
@@ -22,11 +22,11 @@ public class Order{
     String totalHarga;
     String payment;
 
-    public Order (){
+    public OrderDetail (){
 
     }
 
-    public Order ( String namamenu, String IDmenu, String harga, String kuantitas, String totalHarga, String payment){
+    public OrderDetail ( String namamenu, String IDmenu, String harga, String kuantitas, String totalHarga, String payment){
         this.namamenu = namamenu;
         this.IDmenu = IDmenu;
         this.harga = harga;
