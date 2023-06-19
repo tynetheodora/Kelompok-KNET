@@ -4,7 +4,7 @@ public class Order{
     /*
  * didalam icon order , memiliki atribut:
  * common attribut
- * - nama pengguna
+ * 
  * - nama menu
  * - ID menu
  * - harga
@@ -14,7 +14,7 @@ public class Order{
  * 
  */
 
-    String namapengguna;
+    
     String namamenu;
     String IDmenu;
     String harga;
@@ -26,8 +26,7 @@ public class Order{
 
     }
 
-    public Order (String namapengguna, String namamenu, String IDmenu, String harga, String kuantitas, String totalHarga, String payment){
-        this.namapengguna = namapengguna;
+    public Order ( String namamenu, String IDmenu, String harga, String kuantitas, String totalHarga, String payment){
         this.namamenu = namamenu;
         this.IDmenu = IDmenu;
         this.harga = harga;
@@ -37,14 +36,7 @@ public class Order{
     }
 
 
-    public String getNamapengguna() {
-        return this.namapengguna;
-    }
-
-    public void setNamapengguna(String namapengguna) {
-        this.namapengguna = namapengguna;
-    }
-
+    
     public String getNamamenu() {
         return this.namamenu;
     }
