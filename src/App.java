@@ -74,9 +74,9 @@ public class App {
                 Cart Cart3 = new Cart("Martabak", "1", "50.000", "50.000", "10.000", "40.000", "jangan pedas");
                 Cart Cart4 = new Cart("Sushi", "1", "50.000", "50.000", "10.000", "40.000", "jangan pedas");
 
-                OrderDetail customer1Order = new OrderDetail("pizza","001", "50.000","1","50.000");
-                OrderDetail customer2Order = new OrderDetail("bakso","021","30.000","2","60.000");
-                OrderDetail customer3Order = new OrderDetail("mie goreng","022","25.000","3","75.000");
+                OrderDetail customer1Order = new OrderDetail("pizza","F01", "50.000","1","50.000");
+                OrderDetail customer2Order = new OrderDetail("bakso","F04","30.000","2","60.000");
+                OrderDetail customer3Order = new OrderDetail("mie goreng","F06","25.000","3","75.000");
 
             }
 
