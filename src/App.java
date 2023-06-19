@@ -73,9 +73,9 @@ public class App {
                 Cart Cart3 = new Cart("Martabak", "1", "50.000", "50.000", "10.000", "40.000", "jangan pedas");
                 Cart Cart4 = new Cart("Sushi", "1", "50.000", "50.000", "10.000", "40.000", "jangan pedas");
 
-                Order customer1Order = new Order("ya","4","2", "sushi","001","12:02","2");
-                Order customer2Order = new Order("ya","5","5","snack cookies ","021","12:05","3");
-                Order customer3Order = new Order("ya","5","5","pizza ","033","12:10","4");
+                Order customer1Order = new Order("novita","pizza","001", "50.000","1","50.000","cash");
+                Order customer2Order = new Order("tyne","bakso","021","30.000","2","60.000","BCA");
+                Order customer3Order = new Order("kayla","mie goreng","022","25.000","3","75.000","cash");
 
             }
 
@@ -135,21 +135,23 @@ public class App {
                 private static Order inputOrderData() {
                     Scanner scanner = new Scanner(System.in);
                     System.out.println("=== Input Order Data ===");
-                    System.out.print("Edit Pesanan: ");
-                    String editpesanan = scanner.nextLine();
-                    System.out.print("Rating Pesanan: ");
-                    String ratingpesanan = scanner.nextLine();
-                    System.out.print("Detail: ");
-                    String detail = scanner.nextLine();
-                    System.out.print("Number: ");
-                    String number = scanner.nextLine();
-                    System.out.print("Time: ");
-                    String time = scanner.nextLine();
-                    System.out.print("Queue: ");
-                    String queue = scanner.nextLine();
+                    System.out.print("Nama Pengguna: ");
+                    String namapengguna = scanner.nextLine();
+                    System.out.print("Nama Menu: ");
+                    String namamenu = scanner.nextLine();
+                    System.out.print("ID Menu: ");
+                    String IDmenu = scanner.nextLine();
+                    System.out.print("Harga: ");
+                    String harga = scanner.nextLine();
+                    System.out.print("Kuantitas: ");
+                    String kuantitas = scanner.nextLine();
+                    System.out.print("Total Harga: ");
+                    String totalHarga = scanner.nextLine();
+                    System.out.print("Payment: ");
+                    String payment = scanner.nextLine();
                     scanner.nextLine(); // Discard the newline character
 
-                    Order newOrder = new Order(editpesanan, ratingpesanan, detail, number, time, queue);
+                    Order newOrder = new Order(namapengguna, namamenu , IDmenu , harga ,  kuantitas , totalHarga , payment );
 
                     for (int i = 0; i < order.length; i++) {
                         if (order[i] == null) {

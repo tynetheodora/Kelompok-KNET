@@ -1,22 +1,41 @@
 package model;
 public class Order{
+
     /*
  * didalam icon order , memiliki atribut:
  * common attribut
  * - nama pengguna
  * - nama menu
  * - ID menu
- * - kuantitas
  * - harga
+ * - kuantitas
+ * - total harga
  * 
  * 
  */
 
- String namapengguna;
- String namamenu;
- String IDmenu;
- String kuantitas;
- String harga;
+    String namapengguna;
+    String namamenu;
+    String IDmenu;
+    String harga;
+    String kuantitas;
+    String totalHarga;
+    String payment;
+
+    public Order (){
+
+    }
+
+    public Order (String namapengguna, String namamenu, String IDmenu, String harga, String kuantitas, String totalHarga, String payment){
+        this.namapengguna = namapengguna;
+        this.namamenu = namamenu;
+        this.IDmenu = IDmenu;
+        this.harga = harga;
+        this.kuantitas = kuantitas;
+        this.totalHarga = totalHarga;
+        this.payment = payment;
+    }
+
 
     public String getNamapengguna() {
         return this.namapengguna;
@@ -42,6 +61,14 @@ public class Order{
         this.IDmenu = IDmenu;
     }
 
+    public String getHarga() {
+        return this.harga;
+    }
+
+    public void setHarga(String harga) {
+        this.harga = harga;
+    }
+
     public String getKuantitas() {
         return this.kuantitas;
     }
@@ -50,11 +77,19 @@ public class Order{
         this.kuantitas = kuantitas;
     }
 
-    public String getHarga() {
-        return this.harga;
+    public String getTotalHarga() {
+        return this.totalHarga;
     }
 
-    public void setHarga(String harga) {
-        this.harga = harga;
+    public void setTotalHarga(String totalHarga) {
+        this.totalHarga = totalHarga;
+    }
+
+    public String getPayment() {
+        return this.payment;
+    }
+
+    public void setPayment(String payment) {
+        this.payment = payment;
     }
 }
