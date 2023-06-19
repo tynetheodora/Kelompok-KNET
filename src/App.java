@@ -1,9 +1,8 @@
 import java.util.Scanner;
-import model.Order;
+import model.Orders;
 import model.OrderDetail;
 import model.Payment;
 import model.User;
-import model.Cart;
 import model.Menu;
 
 public class App {
@@ -44,9 +43,6 @@ public class App {
                             inputPaymentData();
                             break;
                         case 5:
-                            inputCartData();
-                            break;
-                        case 6:
                             displayData();
                             break;
                         default:
@@ -69,10 +65,6 @@ public class App {
                 Payment Customer1 = new Payment("IDR", "200.000", "Cash", "5/6/2023", "xcsznjc0ldr", "Completed", " - ");
                 Payment Customer2 = new Payment("IDR", "250.000", "Bank Transfer", "5/6/2023", "sjnclasc5", "Failed", " - ");
                 Payment Customer3 = new Payment("IDR", "300.000", "E-Wallet", "5/6/2023", "jsbakjsn3s", "In Progress", " - ");
-            
-                Cart Cart2 = new Cart("Pizza", "1", "50.000", "50.000", "10.000", "40.000", "jangan pedas");
-                Cart Cart3 = new Cart("Martabak", "1", "50.000", "50.000", "10.000", "40.000", "jangan pedas");
-                Cart Cart4 = new Cart("Sushi", "1", "50.000", "50.000", "10.000", "40.000", "jangan pedas");
 
                 OrderDetail customer1Order = new OrderDetail("pizza","F01", "50.000","1","7.000","57.000");
                 OrderDetail customer2Order = new OrderDetail("bakso","F04","30.000","2","5.000","65.000");
@@ -194,38 +186,7 @@ public class App {
                     return newPayment;
                 }
 
-                static Cart cart[] = new Cart[20];
-                private static Cart inputCartData() {
-                    Scanner scanner = new Scanner(System.in);
-                    System.out.println("=== Input Cart Data ===");
-                    System.out.print("Product Name: ");
-                    String productName = scanner.nextLine();
-                    System.out.print("Quantity: ");
-                    String quantity = scanner.nextLine();
-                    System.out.print("Price: ");
-                    String price = scanner.nextLine();
-                    System.out.print("Sub Total: ");
-                    String subTotal = scanner.nextLine();
-                    System.out.print("Discount: ");
-                    String discount = scanner.nextLine();
-                    System.out.print("Total Price: ");
-                    String totalPrice = scanner.nextLine();
-                    System.out.print("Notes: ");
-                    String notes = scanner.nextLine();
-                    scanner.nextLine(); // Discard the newline character
-
-                    Cart newCart = new Cart(productName, quantity, price, subTotal, discount, totalPrice, notes);
-
-                    for (int i = 0; i < cart.length; i++) {
-                        if (cart[i] == null) {
-                            cart[i] = newCart;
-                            break;
-                        }
-                    }
-
-                    System.out.println("Cart data has been input.");
-                    return newCart;
-                }
+                
 
                 private static void displayData() {
                     for (int j = 0; j < user.length; j++) {
@@ -249,15 +210,15 @@ public class App {
                             }
                     }
 
-                    for (int j = 0; j < order.length; j++) {
-                            if (order[j] != null) {
+                    for (int j = 0; j < orderdetail.length; j++) {
+                            if (orderdetail[j] != null) {
                                 System.out.println("Order[" + j + "]:");
-                                System.out.println("Edit Pesanan: " + order[j].getEditpesanan());
-                                System.out.println("Rating Pesanan: " + order[j].getRatingpesanan());
-                                System.out.println("Detail: " + order[j].getDetail());
-                                System.out.println("Number: " + order[j].getNumber());
-                                System.out.println("Time: " + order[j].getTime());
-                                System.out.println("Queue: " + order[j].getQueue());
+                                System.out.println("Nama Menu: " + orderdetail[j].getNamamenu());
+                                System.out.println("ID menu: " + orderdetail[j].getIDmenu());
+                                System.out.println("harga: " + orderdetail[j].getHarga());
+                                System.out.println("Kuantitas: " + orderdetail[j].getKuantitas());
+                                System.out.println("Tax: " + orderdetail[j].getTax());
+                                System.out.println("Total Harga: " + orderdetail[j].getTotalHarga());
                             }
                     }
 
