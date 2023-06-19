@@ -37,11 +37,11 @@ public class OrderDetail{
     
     }
      
-    public String gettax() {
+    public String getTax() {
         return this.tax;
     }
 
-    public void settax(String tax) {
+    public void setTax(String tax) {
         this.tax = tax;
     }
 
