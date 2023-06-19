@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import model.Order;
+import model.OrderDetail;
 import model.Payment;
 import model.User;
 import model.Cart;
@@ -73,9 +74,9 @@ public class App {
                 Cart Cart3 = new Cart("Martabak", "1", "50.000", "50.000", "10.000", "40.000", "jangan pedas");
                 Cart Cart4 = new Cart("Sushi", "1", "50.000", "50.000", "10.000", "40.000", "jangan pedas");
 
-                Order customer1Order = new Order("pizza","001", "50.000","1","50.000","cash");
-                Order customer2Order = new Order("bakso","021","30.000","2","60.000","BCA");
-                Order customer3Order = new Order("mie goreng","022","25.000","3","75.000","cash");
+                OrderDetail customer1Order = new OrderDetail("pizza","001", "50.000","1","50.000");
+                OrderDetail customer2Order = new OrderDetail("bakso","021","30.000","2","60.000");
+                OrderDetail customer3Order = new OrderDetail("mie goreng","022","25.000","3","75.000");
 
             }
 
@@ -131,8 +132,8 @@ public class App {
                     return newMenu;
                 }
 
-                static Order order[] = new Order[20];
-                private static Order inputOrderData() {
+                static OrderDetail orderdetail[] = new OrderDetail[20];
+                private static OrderDetail inputOrderData() {
                     Scanner scanner = new Scanner(System.in);
                     System.out.println("=== Input Order Data ===");
                     System.out.print("Nama Menu: ");
@@ -145,15 +146,13 @@ public class App {
                     String kuantitas = scanner.nextLine();
                     System.out.print("Total Harga: ");
                     String totalHarga = scanner.nextLine();
-                    System.out.print("Payment: ");
-                    String payment = scanner.nextLine();
                     scanner.nextLine(); // Discard the newline character
 
-                    Order newOrder = new Order(namamenu , IDmenu , harga ,  kuantitas , totalHarga , payment );
+                    OrderDetail newOrder = new OrderDetail(namamenu , IDmenu , harga ,  kuantitas , totalHarga );
 
-                    for (int i = 0; i < order.length; i++) {
-                        if (order[i] == null) {
-                            order[i] = newOrder;
+                    for (int i = 0; i < orderdetail.length; i++) {
+                        if (orderdetail[i] == null) {
+                            orderdetail[i] = newOrder;
                             break;
                         }
                     }

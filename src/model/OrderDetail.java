@@ -20,19 +20,18 @@ public class OrderDetail{
     String harga;
     String kuantitas;
     String totalHarga;
-    String payment;
 
     public OrderDetail (){
 
     }
 
-    public OrderDetail ( String namamenu, String IDmenu, String harga, String kuantitas, String totalHarga, String payment){
+    public OrderDetail ( String namamenu, String IDmenu, String harga, String kuantitas, String totalHarga){
         this.namamenu = namamenu;
         this.IDmenu = IDmenu;
         this.harga = harga;
         this.kuantitas = kuantitas;
         this.totalHarga = totalHarga;
-        this.payment = payment;
+    
     }
 
 
@@ -77,11 +76,4 @@ public class OrderDetail{
         this.totalHarga = totalHarga;
     }
 
-    public String getPayment() {
-        return this.payment;
-    }
-
-    public void setPayment(String payment) {
-        this.payment = payment;
-    }
 }
