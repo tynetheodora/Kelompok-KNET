@@ -5,6 +5,7 @@ public class Order{
  * common attribut
  * - nama pengguna
  * - nama menu
+ * - ID menu
  * - kuantitas
  * - harga
  * 
@@ -13,6 +14,7 @@ public class Order{
 
  String namapengguna;
  String namamenu;
+ String IDmenu;
  String kuantitas;
  String harga;
 
@@ -32,6 +34,14 @@ public class Order{
         this.namamenu = namamenu;
     }
 
+    public String getIDmenu() {
+        return this.IDmenu;
+    }
+
+    public void setIDmenu(String IDmenu) {
+        this.IDmenu = IDmenu;
+    }
+
     public String getKuantitas() {
         return this.kuantitas;
     }
@@ -47,6 +57,4 @@ public class Order{
     public void setHarga(String harga) {
         this.harga = harga;
     }
-
-
 }
