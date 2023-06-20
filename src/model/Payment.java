@@ -129,6 +129,7 @@ public class Payment {
         Payment Customer2 = new Payment("IDR", "250.000", "Bank Transfer", "5/6/2023", "sjnclasc5", "Failed", " - ");
 
         System.out.println(Customer2.toString());
+
     }
 
 }
