@@ -9,6 +9,7 @@ public class OrderDetail{
  * - ID menu
  * - harga
  * - kuantitas
+ * - tax
  * - total harga
  * 
  * 
@@ -19,21 +20,30 @@ public class OrderDetail{
     String IDmenu;
     String harga;
     String kuantitas;
+    String tax;
     String totalHarga;
 
     public OrderDetail (){
 
     }
 
-    public OrderDetail ( String namamenu, String IDmenu, String harga, String kuantitas, String totalHarga){
+    public OrderDetail ( String namamenu, String IDmenu, String harga, String kuantitas, String tax,String totalHarga){
         this.namamenu = namamenu;
         this.IDmenu = IDmenu;
         this.harga = harga;
         this.kuantitas = kuantitas;
+        this.tax = tax;
         this.totalHarga = totalHarga;
     
     }
+     
+    public String getTax() {
+        return this.tax;
+    }
 
+    public void setTax(String tax) {
+        this.tax = tax;
+    }
 
     
     public String getNamamenu() {
