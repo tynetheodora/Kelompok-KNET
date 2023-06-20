@@ -68,8 +68,17 @@ public class App {
                 Payment Customer2 = new Payment("IDR", "250.000", "Bank Transfer", "5/6/2023", "sjnclasc5", "Failed", " - ");
                 Payment Customer3 = new Payment("IDR", "300.000", "E-Wallet", "5/6/2023", "jsbakjsn3s", "In Progress", " - ");
 
+<<<<<<< Updated upstream
                 Orders Customer = new Orders("Online Orders", "Polonia Medan", "TyneTheodora", null, null);
 
+=======
+<<<<<<< HEAD
+=======
+                Order customer1Order = new Order("novita","pizza","001", "50.000","1","50.000","cash");
+                Order customer2Order = new Order("tyne","bakso","021","30.000","2","60.000","BCA");
+                Order customer3Order = new Order("kayla","mie goreng","022","25.000","3","75.000","cash");
+>>>>>>> 6efa9aeac0da71e5c06cb32824b7b768a407122e
+>>>>>>> Stashed changes
 
             }
 
@@ -128,6 +137,7 @@ public class App {
                 static Orders Orders[] = new Orders[20];
                 private static Orders inputOrderData() {
                     Scanner scanner = new Scanner(System.in);
+<<<<<<< Updated upstream
                     System.out.println("Online Orders");
                     String namaRestoran = scanner.nextLine();
                     System.out.print("Rating Pesanan: ");
@@ -143,6 +153,26 @@ public class App {
                     scanner.nextLine(); // Discard the newline character
 
                     Orders newOrders = new Orders(namaRestoran, alamatRestoran, namaPelanggan, idPemesanan, tanggalPembelian, jamPembelian);
+=======
+                    System.out.println("=== Input Order Data ===");
+                    System.out.print("Nama Pengguna: ");
+                    String namapengguna = scanner.nextLine();
+                    System.out.print("Nama Menu: ");
+                    String namamenu = scanner.nextLine();
+                    System.out.print("ID Menu: ");
+                    String IDmenu = scanner.nextLine();
+                    System.out.print("Harga: ");
+                    String harga = scanner.nextLine();
+                    System.out.print("Kuantitas: ");
+                    String kuantitas = scanner.nextLine();
+                    System.out.print("Total Harga: ");
+                    String totalHarga = scanner.nextLine();
+                    System.out.print("Payment: ");
+                    String payment = scanner.nextLine();
+                    scanner.nextLine(); // Discard the newline character
+
+                    Order newOrder = new Order(namapengguna, namamenu , IDmenu , harga ,  kuantitas , totalHarga , payment );
+>>>>>>> Stashed changes
 
                     for (int i = 0; i < Orders.length; i++) {
                         if (Orders[i] == null) {
@@ -208,6 +238,7 @@ public class App {
                             }
                     }
 
+<<<<<<< Updated upstream
                     for (int j = 0; j < Orders.length; j++) {
                             if (Orders[j] != null) {
                                 System.out.println("Orders[" + j + "]:");
@@ -220,6 +251,8 @@ public class App {
                             }
                     }
 
+=======
+>>>>>>> Stashed changes
                     for (int j = 0; j < payment.length; j++) {
                             if (payment[j] != null) {
                                 System.out.println("Payment[" + j + "]:");
@@ -231,6 +264,11 @@ public class App {
                                 System.out.println("Status: " + payment[j].getStatus());
                                 System.out.println("Additional: " + payment[j].getAdditionalDetails());
                             }
+<<<<<<< Updated upstream
                     }                    
+=======
+                    }
+                    
+>>>>>>> Stashed changes
                 }
         }
