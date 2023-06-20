@@ -3,6 +3,8 @@ import model.Orders;
 import model.Payment;
 import model.User;
 import model.Menu;
+import model.Order;
+import model.OrderDetail;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -63,6 +65,10 @@ public class App {
                 User User1 = new User("1", "eve", "eve@gmail.com", "123456");
                 User User2 = new User("2", "tyne.theo", "tyne.theo@gmail.com", "abcdef");
                 User User3 = new User("3", "kayla", "kylnmr@gmail.com", "98765");
+
+                Menu Cust1 = new Menu("Waffle", "01", "Dessert", 200000, "Original waffle with vanilla ice cream & honey ");
+                Menu Cust2 = new Menu("Pizza", "02", "Main course", 350000, "Signature regular pizza");
+                Menu Cust3 = new Menu("Porridge", "03", "Appetizer", 100000, "Savory porridge with garlic and fresh ginger");
 
                 Payment Customer1 = new Payment("IDR", "200.000", "Cash", "5/6/2023", "xcsznjc0ldr", "Completed", " - ");
                 Payment Customer2 = new Payment("IDR", "250.000", "Bank Transfer", "5/6/2023", "sjnclasc5", "Failed", " - ");
