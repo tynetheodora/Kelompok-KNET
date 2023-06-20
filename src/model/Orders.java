@@ -33,6 +33,10 @@ public class Orders {
     }
 
 
+    public Orders(String namaRestoran2, String alamatRestoran2, String namaPelanggan, String idPemesanan2,
+            String tanggalPembelian2) {
+    }
+
     public String getNamaRestoran() {
         return this.namaRestoran;
     }
@@ -104,7 +108,7 @@ public class Orders {
             Orders1.setJamPembelian("11:11");
     
             System.out.println(Orders1.toString());
-            
+
             Orders Orders2 = new Orders("Online Orders", "Polonia Medan", "Tyne Theodora", "1220028", "11 November 2023", "11:11");
             System.out.println(Orders2.toString());
         }
