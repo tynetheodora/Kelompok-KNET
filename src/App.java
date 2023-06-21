@@ -66,10 +66,14 @@ public class App {
                 Payment Customer2 = new Payment("IDR", "250.000", "Bank Transfer", "5/6/2023", "sjnclasc5", "Failed", " - ");
                 Payment Customer3 = new Payment("IDR", "300.000", "E-Wallet", "5/6/2023", "jsbakjsn3s", "In Progress", " - ");
 
-                OrderDetail customer1Order = new OrderDetail("pizza","F01", "50.000","1","7.000","57.000");
-                OrderDetail customer2Order = new OrderDetail("bakso","F04","30.000","2","5.000","65.000");
-                OrderDetail customer3Order = new OrderDetail("mie goreng","F06","25.000","3","8.000","83.000");
-
+                OrderDetail customer1Orderdetail = new OrderDetail("pizza","F01", "50.000","1","7.000","57.000");
+                OrderDetail customer2Orderdetail = new OrderDetail("bakso","F04","30.000","2","5.000","65.000");
+                OrderDetail customer3Orderdetail = new OrderDetail("mie goreng","F06","25.000","3","8.000","83.000");
+                
+                Orders customer1 = new Orders("online food delivery", "jl.gatot subroto","Tyne","0001","12/04","11:03");
+                Orders customer2 = new Orders("online food delivery", "jl.gatot subroto","Novita","0002","22/04","12:20");
+                Orders customer3 = new Orders("online food delivery", "jl.gatot subroto","Kayla","0003","30/04","17:04");
+                
             }
 
                 private static User[] user = new User[10];

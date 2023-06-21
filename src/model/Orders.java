@@ -28,10 +28,18 @@ public class Orders {
     this.alamatRestoran = alamatRestoran;
     this.namaPengguna = namaPengguna;
     this.idPemesanan = idPemesanan;
+    this.tanggalPembelian = tanggalPembelian;
     this.jamPembelian = jamPembelian;
     
     }
 
+     public String gettanggalPembelian() {
+        return this.tanggalPembelian;
+    }
+
+    public void settanggalPembelian(String tanggalPembelian) {
+        this.tanggalPembelian = tanggalPembelian;
+    }
 
     public String getNamaRestoran() {
         return this.namaRestoran;
