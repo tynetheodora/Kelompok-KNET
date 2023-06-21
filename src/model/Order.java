@@ -1,95 +1,115 @@
 package model;
-public class Order{
 
-    /*
- * didalam icon order , memiliki atribut:
- * common attribut
- * - nama pengguna
- * - nama menu
- * - ID menu
- * - harga
- * - kuantitas
- * - total harga
- * 
- * 
- */
+public class Order {
+        /* Attributes :
+        * Nama Restoran
+        * Alamat Restoran
+        * Nama Pengguna
+        * ID Pemesanan
+        * Tanggal Pembelian
+        * Jam Pembelian
+        * 
+        * TASK : memberi informasi mengenai pemesanan
+        */
 
-    String namapengguna;
-    String namamenu;
-    String IDmenu;
-    String harga;
-    String kuantitas;
-    String totalHarga;
-    String payment;
-
+    String namaRestoran;
+    String alamatRestoran;
+    String namaPengguna;
+    String idPemesanan;
+    String tanggalPembelian;
+    String jamPembelian;
+    
     public Order (){
 
     }
-
-    public Order (String namapengguna, String namamenu, String IDmenu, String harga, String kuantitas, String totalHarga, String payment){
-        this.namapengguna = namapengguna;
-        this.namamenu = namamenu;
-        this.IDmenu = IDmenu;
-        this.harga = harga;
-        this.kuantitas = kuantitas;
-        this.totalHarga = totalHarga;
-        this.payment = payment;
+        
+    public Order ( String namaRestoran, String alamatRestoran, String namaPengguna, String idPemesanan, String tanggalPembelian, String jamPembelian){
+    this.namaRestoran = namaRestoran;
+    this.alamatRestoran = alamatRestoran;
+    this.namaPengguna = namaPengguna;
+    this.idPemesanan = idPemesanan;
+    this.jamPembelian = jamPembelian;
+    
     }
 
 
-    public String getNamapengguna() {
-        return this.namapengguna;
+    public Order(String namaRestoran2, String alamatRestoran2, String namaPelanggan, String idPemesanan2,
+            String tanggalPembelian2) {
     }
 
-    public void setNamapengguna(String namapengguna) {
-        this.namapengguna = namapengguna;
+    public String getNamaRestoran() {
+        return this.namaRestoran;
     }
 
-    public String getNamamenu() {
-        return this.namamenu;
+    public void setNamaRestoran(String namaRestoran) {
+        this.namaRestoran = namaRestoran;
     }
 
-    public void setNamamenu(String namamenu) {
-        this.namamenu = namamenu;
+    public String getAlamatRestoran() {
+        return this.alamatRestoran;
     }
 
-    public String getIDmenu() {
-        return this.IDmenu;
+    public void setAlamatRestoran(String alamatRestoran) {
+        this.alamatRestoran = alamatRestoran;
     }
 
-    public void setIDmenu(String IDmenu) {
-        this.IDmenu = IDmenu;
+    public String getNamaPengguna() {
+        return this.namaPengguna;
     }
 
-    public String getHarga() {
-        return this.harga;
+    public void setNamaPengguna(String namaPengguna) {
+        this.namaPengguna = namaPengguna;
     }
 
-    public void setHarga(String harga) {
-        this.harga = harga;
+    public String getIdPemesanan() {
+        return this.idPemesanan;
     }
 
-    public String getKuantitas() {
-        return this.kuantitas;
+    public void setIdPemesanan(String idPemesanan) {
+        this.idPemesanan = idPemesanan;
     }
 
-    public void setKuantitas(String kuantitas) {
-        this.kuantitas = kuantitas;
+    public String getTanggalPembelian() {
+        return this.tanggalPembelian;
     }
 
-    public String getTotalHarga() {
-        return this.totalHarga;
+    public void setTanggalPembelian(String tanggalPembelian) {
+        this.tanggalPembelian = tanggalPembelian;
     }
 
-    public void setTotalHarga(String totalHarga) {
-        this.totalHarga = totalHarga;
+    public String getJamPembelian() {
+        return this.jamPembelian;
     }
 
-    public String getPayment() {
-        return this.payment;
+    public void setJamPembelian(String jamPembelian) {
+        this.jamPembelian = jamPembelian;
     }
 
-    public void setPayment(String payment) {
-        this.payment = payment;
+            @Override
+        public String toString() {
+
+            return "Order{" +
+                    "Nama Restoran='" + namaRestoran + '\'' +
+                    ", Alamat Restoran ='" + alamatRestoran + '\'' +
+                    ", Nama Pengguna='" + namaPengguna + '\'' +
+                    ", ID Pemesanan='" + idPemesanan + '\'' +
+                    ", Tanggal ='" + tanggalPembelian + '\'' +
+                    ", Jam ='" + jamPembelian + '\'' +
+                    '}';
+        }
+
+        public static void main(String[] args) {
+            Order Order1 = new Order();
+            Order1.setNamaRestoran("Online Order");
+            Order1.setAlamatRestoran("Polonia Medan");
+            Order1.setNamaPengguna("Tyne Theodora");
+            Order1.setIdPemesanan("1220028");
+            Order1.setTanggalPembelian("11 November 2023");
+            Order1.setJamPembelian("11:11");
+    
+            System.out.println(Order1.toString());
+
+            Order Order2 = new Order("Online Order", "Polonia Medan", "Tyne Theodora", "1220028", "11 November 2023", "11:11");
+            System.out.println(Order2.toString());
+        }
     }
-}
