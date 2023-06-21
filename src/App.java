@@ -87,8 +87,7 @@ public class App {
 >>>>>>> Stashed changes
 
             }
-
-                private static User[] user = new User[10];
+            private static User[] user = new User[10];
                 private static User inputUserData() {
                     Scanner scanner = new Scanner(System.in);
                     System.out.println("=== Input User Data ===");
@@ -100,8 +99,15 @@ public class App {
                     String email = scanner.nextLine();
                     System.out.print("Password: ");
                     String password = scanner.nextLine();
+                    System.out.print("Phone Number: ");
+                    String phoneNumber= scanner.nextLine();
+                    System.out.print("Date of Birth: ");
+                    String dateOfBirth = scanner.nextLine();
+                    System.out.print("Address: ");
+                    String address = scanner.nextLine();
 
-                    User newUser = new User(id, username, email, password);
+
+                    User newUser = new User(id, username, email, password, phoneNumber, dateOfBirth, address);
 
                     for (int i = 0; i < user.length; i++) {
                         if (user[i] == null) {
