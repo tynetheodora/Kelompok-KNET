@@ -75,6 +75,11 @@ public class App {
 
 
                 Order Customer = new Order("Online Order", "Polonia Medan", "TyneTheodora", null, null);
+
+                OrderDetail customer1Orderdetail = new OrderDetail("pizza","F01", "50.000","1","7.000","57.000");
+                OrderDetail customer2Orderdetail = new OrderDetail("bakso","F04","30.000","2","5.000","65.000");
+                OrderDetail customer3Orderdetail = new OrderDetail("mie goreng","F06","25.000","3","8.000","83.000");
+                
             }
 
                 private static User[] user = new User[10];
@@ -152,8 +157,6 @@ public class App {
                     Order newOrder = new Order(namaRestoran, alamatRestoran, namaPelanggan, idPemesanan, tanggalPembelian, jamPembelian);
 
                     System.out.println("=== Input Order Data ===");
-                    System.out.print("Nama Pengguna: ");
-                    String namapengguna = scanner.nextLine();
                     System.out.print("Nama Menu: ");
                     String namamenu = scanner.nextLine();
                     System.out.print("ID Menu: ");
@@ -162,10 +165,10 @@ public class App {
                     String harga = scanner.nextLine();
                     System.out.print("Kuantitas: ");
                     String kuantitas = scanner.nextLine();
+                    System.out.println("Tax");
+                    String tax = scanner.nextLine();
                     System.out.print("Total Harga: ");
                     String totalHarga = scanner.nextLine();
-                    System.out.print("Payment: ");
-                    String payment = scanner.nextLine();
                     scanner.nextLine(); // Discard the newline character
 
 
