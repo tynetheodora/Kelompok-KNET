@@ -1,9 +1,10 @@
 import java.util.Scanner;
 import model.Order;
 import model.Payment;
+import model.OrderDetail;
 import model.User;
 import model.Menu;
-import model.OrderDetail;
+
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -19,7 +20,7 @@ public class App {
                     System.out.println("2. Input Menu Data ");
                     System.out.println("3. Input Order Data");
                     System.out.println("4. Input Payment Data");
-                    System.out.println("5. Input Cart Data");
+                    System.out.println("5. Input Order Detail Data");
                     System.out.println("6. Display Data");
                     System.out.println("0. Exit");
                     System.out.println("Please choose a menu : ");
@@ -43,7 +44,7 @@ public class App {
                             inputPaymentData();
                             break;
                         case 5:
-                            inputCartData();
+                            inputOrderDetailData();
                             break;
                         case 6:
                             displayData();
@@ -79,7 +80,6 @@ public class App {
                 OrderDetail customer3Orderdetail = new OrderDetail("mie goreng","F06","25.000","3","8.000","83.000");
 
                 Order Customer = new Order("Online Orders", "Polonia Medan", "TyneTheodora", "1220028", "11 November 2023", "11:11");
-
 
             }
 
@@ -143,21 +143,21 @@ public class App {
                     System.out.println("Online Orders");
 
                     String namaRestoran = scanner.nextLine();
-                    System.out.print("Rating Pesanan: ");
+                    System.out.print("Nama Restoran : ");
                     String alamatRestoran = scanner.nextLine();
-                    System.out.print("Detail: ");
+                    System.out.print("Alamat Restoran : ");
                     String namaPelanggan = scanner.nextLine();
-                    System.out.print("Number: ");
+                    System.out.print("Nama Pelanggan : ");
                     String idPemesanan = scanner.nextLine();
-                    System.out.print("Time: ");
+                    System.out.print("ID Pemesanan: ");
                     String tanggalPembelian = scanner.nextLine();
-                    System.out.print("Queue: ");
+                    System.out.print("Tanggal Pembelian : ");
                     String jamPembelian = scanner.nextLine();
                     scanner.nextLine(); // Discard the newline character
 
                     Order newOrder = new Order(namaRestoran, alamatRestoran, namaPelanggan, idPemesanan, tanggalPembelian, jamPembelian);
 
-                    System.out.println("=== Input Order Data ===");
+                    System.out.println("=== Input Order Detail Data ===");
                     System.out.print("Nama Menu: ");
                     String namamenu = scanner.nextLine();
                     System.out.print("ID Menu: ");
@@ -172,16 +172,18 @@ public class App {
                     String totalHarga = scanner.nextLine();
                     scanner.nextLine(); // Discard the newline character
 
+                    OrderDetail newOrderDetail = new OrderDetail(namamenu, IDmenu, harga, kuantitas, tax, totalHarga);
 
-                    for (int i = 0; i < Order.length; i++) {
-                        if (Order[i] == null) {
-                            Order[i] = newOrder;
+
+                    for (int i = 0; i < OrderDetail.length; i++) {
+                        if (OrderDetail[i] == null) {
+                            OrderDetail[i] = newOrderDetail;
                             break;
                         }
                     }
 
                     System.out.println("Order data has been input.");
-                    return newOrder;
+                    return newOrderDetail;
                 }
 
                 static Payment payment[] = new Payment[20];
@@ -240,12 +242,23 @@ public class App {
                     for (int j = 0; j < Order.length; j++) {
                             if (Order[j] != null) {
                                 System.out.println("Order[" + j + "]:");
-                                System.out.println("Edit Pesanan: " + Order[j].getNamaRestoran());
-                                System.out.println("Rating Pesanan: " + Order[j].getAlamatRestoran());
-                                System.out.println("Detail: " + Order[j].getNamaPengguna());
-                                System.out.println("Number: " + Order[j].getIdPemesanan());
-                                System.out.println("Time: " + Order[j].getTanggalPembelian());
-                                System.out.println("Queue: " + Order[j].getJamPembelian());
+                                System.out.println("Nama Restoran : " + Order[j].getNamaRestoran());
+                                System.out.println("Alamat Restoran: " + Order[j].getAlamatRestoran());
+                                System.out.println("Nama Pengguna: " + Order[j].getNamaPengguna());
+                                System.out.println("ID Pemesanan : " + Order[j].getIdPemesanan());
+                                System.out.println("Tanggal: " + Order[j].getTanggalPembelian());
+                                System.out.println("Jam: " + Order[j].getJamPembelian());
+
+
+                    for (int i = 0; j < OrderDetail.length; i++) {
+                            if (OrderDetail[i] != null) {
+                                System.out.println("Order Detail[" + j + "]:");
+                                System.out.println("Nama Menu : " + OrderDetail[j].getNamamenu());
+                                System.out.println("ID menu: " + OrderDetail[j].getIDmenu());
+                                System.out.println("Harga: " + OrderDetail[j].getHarga());
+                                System.out.println("kuantitas : " + OrderDetail[j].getKuantitas());
+                                System.out.println("Tax: " + OrderDetail[j].getTax());
+                                System.out.println("Total harga: " + OrderDetail[j].getTotalHarga());
 
                     for (int j = 0; j < payment.length; j++) {
                             if (payment[j] != null) {
@@ -265,3 +278,5 @@ public class App {
                 }
             }
         }
+    }
+}
