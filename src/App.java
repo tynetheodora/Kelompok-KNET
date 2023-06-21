@@ -80,11 +80,7 @@ public class App {
 
                 Order Customer = new Order("Online Orders", "Polonia Medan", "TyneTheodora", "1220028", "11 November 2023", "11:11");
 
-                OrderDetail customer1Orderdetail = new OrderDetail("pizza","F01", "50.000","1","7.000","57.000");
-                OrderDetail customer2Orderdetail = new OrderDetail("bakso","F04","30.000","2","5.000","65.000");
-                OrderDetail customer3Orderdetail = new OrderDetail("mie goreng","F06","25.000","3","8.000","83.000");
 
-                
             }
 
                 private static User[] user = new User[10];
