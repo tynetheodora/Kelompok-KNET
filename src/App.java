@@ -1,9 +1,8 @@
 import java.util.Scanner;
-import model.Orders;
+import model.Order;
 import model.Payment;
 import model.User;
 import model.Menu;
-import model.Order;
 import model.OrderDetail;
 
 public class App {
@@ -74,17 +73,13 @@ public class App {
                 Payment Customer2 = new Payment("IDR", "250.000", "Bank Transfer", "5/6/2023", "sjnclasc5", "Failed", " - ");
                 Payment Customer3 = new Payment("IDR", "300.000", "E-Wallet", "5/6/2023", "jsbakjsn3s", "In Progress", " - ");
 
-<<<<<<< Updated upstream
-                Orders Customer = new Orders("Online Orders", "Polonia Medan", "TyneTheodora", null, null);
 
-=======
-<<<<<<< HEAD
-=======
-                Order customer1Order = new Order("novita","pizza","001", "50.000","1","50.000","cash");
-                Order customer2Order = new Order("tyne","bakso","021","30.000","2","60.000","BCA");
-                Order customer3Order = new Order("kayla","mie goreng","022","25.000","3","75.000","cash");
->>>>>>> 6efa9aeac0da71e5c06cb32824b7b768a407122e
->>>>>>> Stashed changes
+                OrderDetail customer1Orderdetail = new OrderDetail("pizza","F01", "50.000","1","7.000","57.000");
+                OrderDetail customer2Orderdetail = new OrderDetail("bakso","F04","30.000","2","5.000","65.000");
+                OrderDetail customer3Orderdetail = new OrderDetail("mie goreng","F06","25.000","3","8.000","83.000");
+
+                Order Customer = new Order("Online Orders", "Polonia Medan", "TyneTheodora", "1220028", "11 November 2023", "11:11");
+
 
             }
             private static User[] user = new User[10];
@@ -146,11 +141,13 @@ public class App {
                     return newMenu;
                 }
 
-                static Orders Orders[] = new Orders[20];
-                private static Orders inputOrderData() {
+                static Order Order[] = new Order[20];
+                private static Order inputOrderData() {
                     Scanner scanner = new Scanner(System.in);
-<<<<<<< Updated upstream
+
+                    System.out.println("Online Order");
                     System.out.println("Online Orders");
+
                     String namaRestoran = scanner.nextLine();
                     System.out.print("Rating Pesanan: ");
                     String alamatRestoran = scanner.nextLine();
@@ -164,11 +161,9 @@ public class App {
                     String jamPembelian = scanner.nextLine();
                     scanner.nextLine(); // Discard the newline character
 
-                    Orders newOrders = new Orders(namaRestoran, alamatRestoran, namaPelanggan, idPemesanan, tanggalPembelian, jamPembelian);
-=======
+                    Order newOrder = new Order(namaRestoran, alamatRestoran, namaPelanggan, idPemesanan, tanggalPembelian, jamPembelian);
+
                     System.out.println("=== Input Order Data ===");
-                    System.out.print("Nama Pengguna: ");
-                    String namapengguna = scanner.nextLine();
                     System.out.print("Nama Menu: ");
                     String namamenu = scanner.nextLine();
                     System.out.print("ID Menu: ");
@@ -177,24 +172,22 @@ public class App {
                     String harga = scanner.nextLine();
                     System.out.print("Kuantitas: ");
                     String kuantitas = scanner.nextLine();
+                    System.out.println("Tax");
+                    String tax = scanner.nextLine();
                     System.out.print("Total Harga: ");
                     String totalHarga = scanner.nextLine();
-                    System.out.print("Payment: ");
-                    String payment = scanner.nextLine();
                     scanner.nextLine(); // Discard the newline character
 
-                    Order newOrder = new Order(namapengguna, namamenu , IDmenu , harga ,  kuantitas , totalHarga , payment );
->>>>>>> Stashed changes
 
-                    for (int i = 0; i < Orders.length; i++) {
-                        if (Orders[i] == null) {
-                            Orders[i] = newOrders;
+                    for (int i = 0; i < Order.length; i++) {
+                        if (Order[i] == null) {
+                            Order[i] = newOrder;
                             break;
                         }
                     }
 
                     System.out.println("Order data has been input.");
-                    return newOrders;
+                    return newOrder;
                 }
 
                 static Payment payment[] = new Payment[20];
@@ -250,21 +243,16 @@ public class App {
                             }
                     }
 
-<<<<<<< Updated upstream
-                    for (int j = 0; j < Orders.length; j++) {
-                            if (Orders[j] != null) {
-                                System.out.println("Orders[" + j + "]:");
-                                System.out.println("Edit Pesanan: " + Orders[j].getNamaRestoran());
-                                System.out.println("Rating Pesanan: " + Orders[j].getAlamatRestoran());
-                                System.out.println("Detail: " + Orders[j].getNamaPengguna());
-                                System.out.println("Number: " + Orders[j].getIdPemesanan());
-                                System.out.println("Time: " + Orders[j].getTanggalPembelian());
-                                System.out.println("Queue: " + Orders[j].getJamPembelian());
-                            }
-                    }
+                    for (int j = 0; j < Order.length; j++) {
+                            if (Order[j] != null) {
+                                System.out.println("Order[" + j + "]:");
+                                System.out.println("Edit Pesanan: " + Order[j].getNamaRestoran());
+                                System.out.println("Rating Pesanan: " + Order[j].getAlamatRestoran());
+                                System.out.println("Detail: " + Order[j].getNamaPengguna());
+                                System.out.println("Number: " + Order[j].getIdPemesanan());
+                                System.out.println("Time: " + Order[j].getTanggalPembelian());
+                                System.out.println("Queue: " + Order[j].getJamPembelian());
 
-=======
->>>>>>> Stashed changes
                     for (int j = 0; j < payment.length; j++) {
                             if (payment[j] != null) {
                                 System.out.println("Payment[" + j + "]:");
@@ -276,11 +264,10 @@ public class App {
                                 System.out.println("Status: " + payment[j].getStatus());
                                 System.out.println("Additional: " + payment[j].getAdditionalDetails());
                             }
-<<<<<<< Updated upstream
-                    }                    
-=======
+
+                        }
                     }
-                    
->>>>>>> Stashed changes
+
                 }
+            }
         }
