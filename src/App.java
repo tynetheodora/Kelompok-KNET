@@ -62,9 +62,9 @@ public class App {
 
             public static void init(){
 
-                User User1 = new User("1", "eve", "eve@gmail.com", "123456");
-                User User2 = new User("2", "tyne.theo", "tyne.theo@gmail.com", "abcdef");
-                User User3 = new User("3", "kayla", "kylnmr@gmail.com", "98765");
+                User User1 = new User("1", "eve", "eve@gmail.com", "123456","081234567891","01-02-02","jl.medan");
+                User User2 = new User("2", "tyne.theo", "tyne.theo@gmail.com", "abcdef","081234567891","01-02-02","jl.medan");
+                User User3 = new User("3", "kayla", "kylnmr@gmail.com", "98765","081234567891","01-02-02","jl.medan");
 
                 Menu Cust1 = new Menu("Waffle", "01", "Dessert", 200000, "Original waffle with vanilla ice cream & honey ");
                 Menu Cust2 = new Menu("Pizza", "02", "Main course", 350000, "Signature regular pizza");
