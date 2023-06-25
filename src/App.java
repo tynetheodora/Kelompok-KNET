@@ -174,7 +174,7 @@ public class App {
                     return newOrder;
                 }
 
-            static OrderDetail orderDetails[] = new OrderDetail[20];
+            static OrderDetail orderDetail[] = new OrderDetail[20];
                 private static OrderDetail inputOrderDetailData() {
                     Scanner scanner = new Scanner(System.in);
                     System.out.println("=== Input Order Detail Data ===");
@@ -194,9 +194,9 @@ public class App {
 
                     OrderDetail newOrderDetail = new OrderDetail(namamenu, IDmenu, harga, kuantitas, tax, totalHarga);
 
-                    for (int i = 0; i < orderDetails.length; i++) {
-                        if (orderDetails[i] == null) {
-                            orderDetails[i] = newOrderDetail;
+                    for (int i = 0; i < orderDetail.length; i++) {
+                        if (orderDetail[i] == null) {
+                            orderDetail[i] = newOrderDetail;
                             break;
                         }
                     }
@@ -271,15 +271,15 @@ public class App {
                             }
                     }
 
-                    for (int i = 0; i < orderDetails.length; i++) {
-                            if (orderDetails[i] != null) {
+                    for (int i = 0; i < orderDetail.length; i++) {
+                            if (orderDetail[i] != null) {
                                 System.out.println("Order Detail[" + i + "]:");
-                                System.out.println("Nama Menu : " + orderDetails[i].getNamamenu());
-                                System.out.println("ID menu: " + orderDetails[i].getIDmenu());
-                                System.out.println("Harga: " + orderDetails[i].getHarga());
-                                System.out.println("kuantitas : " + orderDetails[i].getKuantitas());
-                                System.out.println("Tax: " + orderDetails[i].getTax());
-                                System.out.println("Total harga: " + orderDetails[i].getTotalHarga());
+                                System.out.println("Nama Menu : " + orderDetail[i].getNamamenu());
+                                System.out.println("ID menu: " + orderDetail[i].getIDmenu());
+                                System.out.println("Harga: " + orderDetail[i].getHarga());
+                                System.out.println("kuantitas : " + orderDetail[i].getKuantitas());
+                                System.out.println("Tax: " + orderDetail[i].getTax());
+                                System.out.println("Total harga: " + orderDetail[i].getTotalHarga());
                             }
                     }
 
