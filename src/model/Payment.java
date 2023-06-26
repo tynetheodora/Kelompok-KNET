@@ -44,6 +44,9 @@ public class Payment {
         this. additionalDetails = additionalDetails;
     }
 
+    public Payment(double amount2) {
+    }
+
     @Override
     public String toString() {
         return "|" +

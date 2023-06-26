@@ -5,7 +5,6 @@ import model.OrderDetail;
 import model.User;
 import model.Menu;
 
-
 public class App {
     public static void main(String[] args) throws Exception {
          boolean exit = false;
@@ -79,9 +78,11 @@ public class App {
                 OrderDetail customer2Orderdetail = new OrderDetail("bakso","F04","30.000","2","5.000","65.000");
                 OrderDetail customer3Orderdetail = new OrderDetail("mie goreng","F06","25.000","3","8.000","83.000");
 
-                Order Customer = new Order("Online Orders", "Polonia Medan", "TyneTheodora", "1220028", "11 November 2023", "11:11");
-
+                Order customer1Order = new Order("Online Order", "Polonia Medan", "TyneTheodora", "1220028", "11 November 2023", "11:11");
+                Order customer2Order = new Order("Online Order", "Polonia Medan", "Kayla Nmr", "1220026", "24 Juni 2023", "20:45");
+                Order customer3Order = new Order("Online Order", "Polonia Medan", "Evelline", "1220027", "13 Agustus 2023", "12:05");
             }
+
             private static User[] user = new User[10];
                 private static User inputUserData() {
                     Scanner scanner = new Scanner(System.in);
@@ -115,21 +116,23 @@ public class App {
                     return newUser;
                 }
 
-                 static Menu menu[] = new Menu[20];
-                 private static Menu inputMenuData() {
+            static Menu menu[] = new Menu[20];
+                private static Menu inputMenuData() {
                     Scanner scanner = new Scanner(System.in);
                     System.out.println("=== Input Menu Data ===");
                     System.out.print("Food Name: ");
-                    String food = scanner.nextLine();
-                    System.out.print("Drink Name: ");
-                    String drink = scanner.nextLine();
-                    System.out.print("Dessert Name: ");
-                    String dessert = scanner.nextLine();
+                    String namaItem = scanner.nextLine();
+                    System.out.print("Food Id: ");
+                    String idItem = scanner.nextLine();
+                    System.out.print("Category: ");
+                    String category = scanner.nextLine();
                     System.out.print("Price: ");
-                    double price = scanner.nextDouble();
+                    Integer price = scanner.nextInt();
+                    System.out.print("Description: ");
+                    String description = scanner.nextLine();
                     scanner.nextLine(); // Discard the newline character
 
-                    Menu newMenu = new Menu(food, drink, dessert, null);
+                    Menu newMenu = new Menu(namaItem, idItem, category, price, description);
 
                     for (int i = 0; i < menu.length; i++) {
                         if (menu[i] == null) {
@@ -141,13 +144,10 @@ public class App {
                     return newMenu;
                 }
 
-                static Order Order[] = new Order[20];
+            static Order order[] = new Order[20];
                 private static Order inputOrderData() {
                     Scanner scanner = new Scanner(System.in);
-
-                    System.out.println("Online Order");
-                    System.out.println("Online Orders");
-
+                    System.out.println("=== Input Order Data ===");
                     String namaRestoran = scanner.nextLine();
                     System.out.print("Nama Restoran : ");
                     String alamatRestoran = scanner.nextLine();
@@ -159,10 +159,24 @@ public class App {
                     String tanggalPembelian = scanner.nextLine();
                     System.out.print("Tanggal Pembelian : ");
                     String jamPembelian = scanner.nextLine();
+                    System.out.print("Jam Pembelian : ");
                     scanner.nextLine(); // Discard the newline character
 
                     Order newOrder = new Order(namaRestoran, alamatRestoran, namaPelanggan, idPemesanan, tanggalPembelian, jamPembelian);
 
+                    for (int i = 0; i < order.length; i++) {
+                        if (order[i] == null) {
+                            order[i] = newOrder;
+                            break;
+                        }
+                    }
+                    System.out.println("Menu data has been input.");
+                    return newOrder;
+                }
+
+            static OrderDetail orderDetail[] = new OrderDetail[20];
+                private static OrderDetail inputOrderDetailData() {
+                    Scanner scanner = new Scanner(System.in);
                     System.out.println("=== Input Order Detail Data ===");
                     System.out.print("Nama Menu: ");
                     String namamenu = scanner.nextLine();
@@ -180,10 +194,9 @@ public class App {
 
                     OrderDetail newOrderDetail = new OrderDetail(namamenu, IDmenu, harga, kuantitas, tax, totalHarga);
 
-
-                    for (int i = 0; i < OrderDetail.length; i++) {
-                        if (OrderDetail[i] == null) {
-                            OrderDetail[i] = newOrderDetail;
+                    for (int i = 0; i < orderDetail.length; i++) {
+                        if (orderDetail[i] == null) {
+                            orderDetail[i] = newOrderDetail;
                             break;
                         }
                     }
@@ -192,7 +205,7 @@ public class App {
                     return newOrderDetail;
                 }
 
-                static Payment payment[] = new Payment[20];
+            static Payment payment[] = new Payment[20];
                 private static Payment inputPaymentData() {
                     Scanner scanner = new Scanner(System.in);
                     System.out.println("=== Input Payment Data ===");
@@ -238,33 +251,37 @@ public class App {
                     for (int j = 0; j < menu.length; j++) {
                             if (menu[j] != null) {
                                 System.out.println("Menu[" + j + "]:");
-                                System.out.println("Food Name: " + menu[j].getFood());
-                                System.out.println("Drink Name: " + menu[j].getDrink());
-                                System.out.println("Dessert Name: " + menu[j].getDessert());
+                                System.out.println("Food Name: " + menu[j].getNamaItem());
+                                System.out.println("Drink Name: " + menu[j].getIdItem());
+                                System.out.println("Dessert Name: " + menu[j].getCategory());
                                 System.out.println("Price: " + menu[j].getPrice());
+                                System.out.println("Description: " + menu[j].getDescription());
                             }
                     }
 
-                    for (int j = 0; j < Order.length; j++) {
-                            if (Order[j] != null) {
+                    for (int j = 0; j < order.length; j++) {
+                            if (order[j] != null) {
                                 System.out.println("Order[" + j + "]:");
-                                System.out.println("Nama Restoran : " + Order[j].getNamaRestoran());
-                                System.out.println("Alamat Restoran: " + Order[j].getAlamatRestoran());
-                                System.out.println("Nama Pengguna: " + Order[j].getNamaPengguna());
-                                System.out.println("ID Pemesanan : " + Order[j].getIdPemesanan());
-                                System.out.println("Tanggal: " + Order[j].getTanggalPembelian());
-                                System.out.println("Jam: " + Order[j].getJamPembelian());
+                                System.out.println("Nama Restoran : " + order[j].getNamaRestoran());
+                                System.out.println("Alamat Restoran: " + order[j].getAlamatRestoran());
+                                System.out.println("Nama Pengguna: " + order[j].getNamaPengguna());
+                                System.out.println("ID Pemesanan : " + order[j].getIdPemesanan());
+                                System.out.println("Tanggal: " + order[j].getTanggalPembelian());
+                                System.out.println("Jam: " + order[j].getJamPembelian());
+                            }
+                    }
 
-
-                    for (int i = 0; j < OrderDetail.length; i++) {
-                            if (OrderDetail[i] != null) {
-                                System.out.println("Order Detail[" + j + "]:");
-                                System.out.println("Nama Menu : " + OrderDetail[j].getNamamenu());
-                                System.out.println("ID menu: " + OrderDetail[j].getIDmenu());
-                                System.out.println("Harga: " + OrderDetail[j].getHarga());
-                                System.out.println("kuantitas : " + OrderDetail[j].getKuantitas());
-                                System.out.println("Tax: " + OrderDetail[j].getTax());
-                                System.out.println("Total harga: " + OrderDetail[j].getTotalHarga());
+                    for (int i = 0; i < orderDetail.length; i++) {
+                            if (orderDetail[i] != null) {
+                                System.out.println("Order Detail[" + i + "]:");
+                                System.out.println("Nama Menu : " + orderDetail[i].getNamamenu());
+                                System.out.println("ID menu: " + orderDetail[i].getIDmenu());
+                                System.out.println("Harga: " + orderDetail[i].getHarga());
+                                System.out.println("kuantitas : " + orderDetail[i].getKuantitas());
+                                System.out.println("Tax: " + orderDetail[i].getTax());
+                                System.out.println("Total harga: " + orderDetail[i].getTotalHarga());
+                            }
+                    }
 
                     for (int j = 0; j < payment.length; j++) {
                             if (payment[j] != null) {
@@ -277,12 +294,6 @@ public class App {
                                 System.out.println("Status: " + payment[j].getStatus());
                                 System.out.println("Additional: " + payment[j].getAdditionalDetails());
                             }
-
-                        }
                     }
-
-                }
-            }
-        }
     }
 }
