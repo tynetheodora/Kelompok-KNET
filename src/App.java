@@ -4,8 +4,10 @@ import model.Payment;
 import model.OrderDetail;
 import model.User;
 import model.Menu;
+import java.util.ArrayList;
 
 public class App {
+    static Scanner input = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
          boolean exit = false;
 
@@ -82,42 +84,35 @@ public class App {
                 Order customer2Order = new Order("Online Order", "Polonia Medan", "Kayla Nmr", "1220026", "24 Juni 2023", "20:45");
                 Order customer3Order = new Order("Online Order", "Polonia Medan", "Evelline", "1220027", "13 Agustus 2023", "12:05");
             }
-
-            private static User[] user = new User[10];
-                private static User inputUserData() {
-                    Scanner scanner = new Scanner(System.in);
-                    System.out.println("=== Input User Data ===");
-                    System.out.print("Id: ");
-                    String id = scanner.nextLine();
-                    System.out.print("Username: ");
-                    String username = scanner.nextLine();
-                    System.out.print("Email: ");
-                    String email = scanner.nextLine();
-                    System.out.print("Password: ");
-                    String password = scanner.nextLine();
-                    System.out.print("Phone Number: ");
-                    String phoneNumber= scanner.nextLine();
-                    System.out.print("Date of Birth: ");
-                    String dateOfBirth = scanner.nextLine();
-                    System.out.print("Address: ");
-                    String address = scanner.nextLine();
+        
 
 
-                    User newUser = new User(id, username, email, password, phoneNumber, dateOfBirth, address);
+            static ArrayList<User> user = new ArrayList<User>();
+            public static void inputUserData() {
+                String id, username, email, password, phoneNumber, dateOfBirth, address;
+                System.out.print("Id \t\t: ");
+                id = input.nextLine();
+                System.out.print("Username \t: ");
+                username = input.nextLine();
+                System.out.print("Email \t\t: ");
+                email = input.nextLine();
+                System.out.print("Password \t: ");
+                password = input.nextLine();
+                System.out.print("Phone number \t: ");
+                phoneNumber = input.nextLine();
+                System.out.print("Date of birth \t2: ");
+                dateOfBirth = input.nextLine();
+                System.out.print("Address \t: ");
+                address = input.nextLine();
+                user.add(new User(id, username, email, password, phoneNumber, dateOfBirth, address));
+                user.remove(4);
+            }  
 
-                    for (int i = 0; i < user.length; i++) {
-                        if (user[i] == null) {
-                            user[i] = newUser;
-                            break;
-                        }
-                    }
-                    
-                    System.out.println("User data has been input.");
-                    return newUser;
-                }
+
+
 
             static Menu menu[] = new Menu[20];
-                private static Menu inputMenuData() {
+                public static Menu inputMenuData() {
                     Scanner scanner = new Scanner(System.in);
                     System.out.println("=== Input Menu Data ===");
                     System.out.print("Food Name: ");
@@ -145,7 +140,7 @@ public class App {
                 }
 
             static Order order[] = new Order[20];
-                private static Order inputOrderData() {
+                public static Order inputOrderData() {
                     Scanner scanner = new Scanner(System.in);
                     System.out.println("=== Input Order Data ===");
                     String namaRestoran = scanner.nextLine();
@@ -175,7 +170,7 @@ public class App {
                 }
 
             static OrderDetail orderDetail[] = new OrderDetail[20];
-                private static OrderDetail inputOrderDetailData() {
+                public static OrderDetail inputOrderDetailData() {
                     Scanner scanner = new Scanner(System.in);
                     System.out.println("=== Input Order Detail Data ===");
                     System.out.print("Nama Menu: ");
@@ -206,7 +201,7 @@ public class App {
                 }
 
             static Payment payment[] = new Payment[20];
-                private static Payment inputPaymentData() {
+                public static Payment inputPaymentData() {
                     Scanner scanner = new Scanner(System.in);
                     System.out.println("=== Input Payment Data ===");
                     System.out.print("Currency: ");
@@ -236,17 +231,12 @@ public class App {
                     return newPayment;
                 }
 
-                private static void displayData() {
-                    for (int j = 0; j < user.length; j++) {
-                            if (user[j] != null) {
-                                System.out.println("=== Display Data ===");
-                                System.out.println("User[" + j + "]:");
-                                System.out.println("Id: " + user[j].getId());
-                                System.out.println("Username: " + user[j].getUsername());
-                                System.out.println("Email: " + user[j].getEmail());
-                                System.out.println("Password: " + user[j].getPassword());
-                            }
-                    }
+                public static void displayData() {
+                        for (User user2 : user) {
+                            if(user2!=null)
+                                System.out.println(user2);            
+                        }
+
 
                     for (int j = 0; j < menu.length; j++) {
                             if (menu[j] != null) {
@@ -295,5 +285,7 @@ public class App {
                                 System.out.println("Additional: " + payment[j].getAdditionalDetails());
                             }
                     }
+
     }
+    
 }
