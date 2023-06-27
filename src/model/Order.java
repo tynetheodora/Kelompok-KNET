@@ -1,48 +1,28 @@
 package model;
 
-public class Order {
-        /* Attributes :
-        * Nama Restoran
-        * Alamat Restoran
-        * Nama Pengguna
-        * ID Pemesanan
-        * Tanggal Pembelian
-        * Jam Pembelian
-        * 
-        * TASK : memberi informasi mengenai pemesanan
-        */
+import java.util.ArrayList;
+import java.util.List;
 
+public class Order {
+    /* Attributes */
     String namaRestoran;
     String alamatRestoran;
     String namaPengguna;
     String idPemesanan;
     String tanggalPembelian;
     String jamPembelian;
-    
-    public Order (){
+
+    public Order() {
 
     }
-        
-    public Order ( String namaRestoran, String alamatRestoran, String namaPengguna, String idPemesanan, String tanggalPembelian, String jamPembelian){
-    this.namaRestoran = namaRestoran;
-    this.alamatRestoran = alamatRestoran;
-    this.namaPengguna = namaPengguna;
-    this.idPemesanan = idPemesanan;
-    this.tanggalPembelian = tanggalPembelian;
-    this.jamPembelian = jamPembelian;
-    
-    }
 
-     public String gettanggalPembelian() {
-        return this.tanggalPembelian;
-    }
-
-    public void settanggalPembelian(String tanggalPembelian) {
+    public Order(String namaRestoran, String alamatRestoran, String namaPengguna, String idPemesanan, String tanggalPembelian, String jamPembelian) {
+        this.namaRestoran = namaRestoran;
+        this.alamatRestoran = alamatRestoran;
+        this.namaPengguna = namaPengguna;
+        this.idPemesanan = idPemesanan;
         this.tanggalPembelian = tanggalPembelian;
-    }
-
-    public Order(String namaRestoran2, String alamatRestoran2, String namaPelanggan, String idPemesanan2,
-            String tanggalPembelian2) {
+        this.jamPembelian = jamPembelian;
     }
 
     public String getNamaRestoran() {
@@ -93,34 +73,33 @@ public class Order {
         this.jamPembelian = jamPembelian;
     }
 
-            @Override
-        public String toString() {
+    @Override
+    public String toString() {
+        return "Order{" +
+                "Nama Restoran='" + namaRestoran + '\'' +
+                ", Alamat Restoran='" + alamatRestoran + '\'' +
+                ", Nama Pengguna='" + namaPengguna + '\'' +
+                ", ID Pemesanan='" + idPemesanan + '\'' +
+                ", Tanggal='" + tanggalPembelian + '\'' +
+                ", Jam='" + jamPembelian + '\'' +
+                '}';
+    }
 
-            return "Order{" +
-                    "Nama Restoran='" + namaRestoran + '\'' +
-                    ", Alamat Restoran ='" + alamatRestoran + '\'' +
-                    ", Nama Pengguna='" + namaPengguna + '\'' +
-                    ", ID Pemesanan='" + idPemesanan + '\'' +
-                    ", Tanggal ='" + tanggalPembelian + '\'' +
-                    ", Jam ='" + jamPembelian + '\'' +
-                    '}';
-        }
+    public static void main(String[] args) {
+        List<Order> orderList = new ArrayList<>();
 
-        public static void main(String[] args) {
-            Order Order1 = new Order();
-            Order1.setNamaRestoran("Online Order");
-            Order1.setAlamatRestoran("Polonia Medan");
-            Order1.setNamaPengguna("Tyne Theodora");
-            Order1.setIdPemesanan("1220028");
-            Order1.setTanggalPembelian("11 November 2023");
-            Order1.setJamPembelian("11:11");
-    
-            System.out.println(Order1.toString());
+        Order order1 = new Order("Online Order", "Polonia Medan", "Tyne Theodora", "1220028", "11 November 2023", "11:11");
+        orderList.add(order1);
 
-            Order Order2 = new Order("Online Order", "Polonia Medan", "Tyne Theodora", "1220028", "11 November 2023", "11:11");
-            System.out.println(Order2.toString());
+        Order order2 = new Order("Online Order", "Polonia Medan", "Tyne Theodora", "1220029", "12 November 2023", "12:12");
+        orderList.add(order2);
+
+
+        for (Order order : orderList) {
+            System.out.println(order.toString());
         }
 
         public static void add(Order order) {
         }
     }
+}
