@@ -93,14 +93,6 @@ public class Order {
 
         Order order2 = new Order("Online Order", "Polonia Medan", "Tyne Theodora", "1220029", "12 November 2023", "12:12");
         orderList.add(order2);
-
-
-        for (Order order : orderList) {
-            System.out.println(order.toString());
-        }
-
-        public static void add(Order order) {
-        }
     }
 
     public static void add(Order order) {
