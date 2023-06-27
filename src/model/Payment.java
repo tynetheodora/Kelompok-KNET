@@ -135,4 +135,7 @@ public class Payment {
 
     }
 
+    public static void add(Payment payment) {
+    }
+
 }
