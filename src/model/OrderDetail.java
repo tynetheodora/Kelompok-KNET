@@ -86,4 +86,7 @@ public class OrderDetail{
         this.totalHarga = totalHarga;
     }
 
+    public static void add(OrderDetail orderDetail) {
+    }
+
 }
