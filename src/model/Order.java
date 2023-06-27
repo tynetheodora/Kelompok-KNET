@@ -120,4 +120,7 @@ public class Order {
             Order Order2 = new Order("Online Order", "Polonia Medan", "Tyne Theodora", "1220028", "11 November 2023", "11:11");
             System.out.println(Order2.toString());
         }
+
+        public static void add(Order order) {
+        }
     }
