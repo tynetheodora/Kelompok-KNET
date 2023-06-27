@@ -102,4 +102,7 @@ public class Order {
         public static void add(Order order) {
         }
     }
+
+    public static void add(Order order) {
+    }
 }
