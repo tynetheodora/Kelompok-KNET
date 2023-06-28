@@ -1,7 +1,10 @@
 import java.util.Scanner;
+
+import javax.print.DocFlavor.STRING;
+
 import model.Order;
 import model.Payment;
-import model.OrderDetail;
+import model.OrderDetails;
 import model.User;
 import model.Menu;
 
@@ -44,7 +47,7 @@ public class App {
                             inputPaymentData();
                             break;
                         case 5:
-                            inputOrderDetailData();
+                            inputOrderData()
                             break;
                         case 6:
                             displayData();
@@ -75,9 +78,9 @@ public class App {
                 Payment Customer3 = new Payment("IDR", "300.000", "E-Wallet", "5/6/2023", "jsbakjsn3s", "In Progress", " - ");
 
 
-                OrderDetail customer1Orderdetail = new OrderDetail("pizza","F01", "50.000","1","7.000","57.000");
-                OrderDetail customer2Orderdetail = new OrderDetail("bakso","F04","30.000","2","5.000","65.000");
-                OrderDetail customer3Orderdetail = new OrderDetail("mie goreng","F06","25.000","3","8.000","83.000");
+                OrderDetails customer1Orderdetail = new OrderDetails("pizza","F01", 50000, 1 , 7000 ,57000);
+                OrderDetails customer2Orderdetail = new OrderDetails("bakso","F04",30000, 2 , 5000  , 65000);
+                OrderDetails customer3Orderdetail = new OrderDetails("mie goreng","F06", 25000 , 3 , 8000 ,83000);
 
                 Order Customer = new Order("Online Orders", "Polonia Medan", "TyneTheodora", "1220028", "11 November 2023", "11:11");
 
@@ -119,17 +122,19 @@ public class App {
                  private static Menu inputMenuData() {
                     Scanner scanner = new Scanner(System.in);
                     System.out.println("=== Input Menu Data ===");
-                    System.out.print("Food Name: ");
-                    String food = scanner.nextLine();
-                    System.out.print("Drink Name: ");
-                    String drink = scanner.nextLine();
-                    System.out.print("Dessert Name: ");
-                    String dessert = scanner.nextLine();
+                    System.out.print("Nama item: ");
+                    String namaItem = scanner.nextLine();
+                    System.out.print("ID item: ");
+                    String IDitem = scanner.nextLine();
+                    System.out.print("kategori: ");
+                    String category = scanner.nextLine();
                     System.out.print("Price: ");
-                    double price = scanner.nextDouble();
+                    Integer price = scanner.nextInt();
+                    System.out.print("deskripsi: ");
+                    String description = scanner.nextLine();
                     scanner.nextLine(); // Discard the newline character
 
-                    Menu newMenu = new Menu(food, drink, dessert, null);
+                    Menu newMenu = new Menu ( namaItem,IDitem , category, price , description);
 
                     for (int i = 0; i < menu.length; i++) {
                         if (menu[i] == null) {
@@ -163,33 +168,33 @@ public class App {
 
                     Order newOrder = new Order(namaRestoran, alamatRestoran, namaPelanggan, idPemesanan, tanggalPembelian, jamPembelian);
 
-                    System.out.println("=== Input Order Detail Data ===");
+                    System.out.println("=== Input Order Details Data ===");
                     System.out.print("Nama Menu: ");
                     String namamenu = scanner.nextLine();
                     System.out.print("ID Menu: ");
                     String IDmenu = scanner.nextLine();
                     System.out.print("Harga: ");
-                    String harga = scanner.nextLine();
+                    Integer harga = scanner.nextInt();
                     System.out.print("Kuantitas: ");
-                    String kuantitas = scanner.nextLine();
+                    Integer kuantitas = scanner.nextInt();
                     System.out.println("Tax");
-                    String tax = scanner.nextLine();
+                    Integer tax = scanner.nextInt();
                     System.out.print("Total Harga: ");
-                    String totalHarga = scanner.nextLine();
+                    Integer totalHarga = scanner.nextInt();
                     scanner.nextLine(); // Discard the newline character
 
-                    OrderDetail newOrderDetail = new OrderDetail(namamenu, IDmenu, harga, kuantitas, tax, totalHarga);
+                    OrderDetails newOrderDetails = new OrderDetails (namamenu, IDmenu, harga, kuantitas, tax, totalHarga);
 
 
-                    for (int i = 0; i < OrderDetail.length; i++) {
-                        if (OrderDetail[i] == null) {
-                            OrderDetail[i] = newOrderDetail;
+                    for (int i = 0; i < OrderDetails.length; i++) {
+                        if (OrderDetails[i] == null) {
+                            OrderDetails[i] = newOrderDetails;
                             break;
                         }
                     }
 
                     System.out.println("Order data has been input.");
-                    return newOrderDetail;
+                    return newOrderDetails;
                 }
 
                 static Payment payment[] = new Payment[20];
@@ -238,10 +243,12 @@ public class App {
                     for (int j = 0; j < menu.length; j++) {
                             if (menu[j] != null) {
                                 System.out.println("Menu[" + j + "]:");
-                                System.out.println("Food Name: " + menu[j].getFood());
-                                System.out.println("Drink Name: " + menu[j].getDrink());
-                                System.out.println("Dessert Name: " + menu[j].getDessert());
+                                System.out.println("Nama item: " + menu[j].getNamaItem());
+                                System.out.println("ID Item: " + menu[j].getIdItem());
+                                System.out.println("kategori: " + menu[j].getCategory());
                                 System.out.println("Price: " + menu[j].getPrice());
+                                System.out.println("Deskripsi: " + menu[j].getDescription());
+                                
                             }
                     }
 
@@ -256,15 +263,15 @@ public class App {
                                 System.out.println("Jam: " + Order[j].getJamPembelian());
 
 
-                    for (int i = 0; j < OrderDetail.length; i++) {
-                            if (OrderDetail[i] != null) {
+                    for (Integer i = 0; j < OrderDetails.length; j++) {
+                            if (OrderDetails[j] != null) {
                                 System.out.println("Order Detail[" + j + "]:");
-                                System.out.println("Nama Menu : " + OrderDetail[j].getNamamenu());
-                                System.out.println("ID menu: " + OrderDetail[j].getIDmenu());
-                                System.out.println("Harga: " + OrderDetail[j].getHarga());
-                                System.out.println("kuantitas : " + OrderDetail[j].getKuantitas());
-                                System.out.println("Tax: " + OrderDetail[j].getTax());
-                                System.out.println("Total harga: " + OrderDetail[j].getTotalHarga());
+                                System.out.println("Nama Menu : " + OrderDetails[j].getNamamenu());
+                                System.out.println("ID menu: " + OrderDetails[j].getIDmenu());
+                                System.out.println("Harga: " + OrderDetails[j].getHarga());
+                                System.out.println("kuantitas : " + OrderDetails[j].getKuantitas());
+                                System.out.println("Tax: " + OrderDetails[j].getTax());
+                                System.out.println("Total harga: " + OrderDetails[j].getTotalHarga());
 
                     for (int j = 0; j < payment.length; j++) {
                             if (payment[j] != null) {
