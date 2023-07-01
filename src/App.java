@@ -7,9 +7,10 @@ import model.Payment;
 import model.OrderDetails;
 import model.User;
 import model.Menu;
-
+import java.util.ArrayList;
 
 public class App {
+    static Scanner input = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
          boolean exit = false;
 
@@ -65,59 +66,64 @@ public class App {
 
             public static void init(){
 
-                User User1 = new User("1", "eve", "eve@gmail.com", "123456");
-                User User2 = new User("2", "tyne.theo", "tyne.theo@gmail.com", "abcdef");
-                User User3 = new User("3", "kayla", "kylnmr@gmail.com", "98765");
+                User[] usr = new User[350];
+                User.add(new User("1", "eve", "eve@gmail.com", "123456","081234567891","01-02-02","jl.medan"));
+                User.add(new User("2", "tyne.theo", "tyne.theo@gmail.com", "abcdef","081234567891","01-02-02","jl.medan"));
+                User.add(new User("3", "kayla", "kylnmr@gmail.com", "98765","081234567891","01-02-02","jl.medan"));
 
-                Menu Cust1 = new Menu("Waffle", "01", "Dessert", 200000, "Original waffle with vanilla ice cream & honey ");
-                Menu Cust2 = new Menu("Pizza", "02", "Main course", 350000, "Signature regular pizza");
-                Menu Cust3 = new Menu("Porridge", "03", "Appetizer", 100000, "Savory porridge with garlic and fresh ginger");
+                Menu[] mn = new Menu[350];
+                Menu.add(new Menu("Waffle", "01", "Dessert", 200000, "Original waffle with vanilla ice cream & honey "));
+                Menu.add(new Menu("Pizza", "02", "Main course", 350000, "Signature regular pizza"));
+                Menu.add(new Menu("Porridge", "03", "Appetizer", 100000, "Savory porridge with garlic and fresh ginger"));
 
-                Payment Customer1 = new Payment("IDR", "200.000", "Cash", "5/6/2023", "xcsznjc0ldr", "Completed", " - ");
-                Payment Customer2 = new Payment("IDR", "250.000", "Bank Transfer", "5/6/2023", "sjnclasc5", "Failed", " - ");
-                Payment Customer3 = new Payment("IDR", "300.000", "E-Wallet", "5/6/2023", "jsbakjsn3s", "In Progress", " - ");
+                Payment[] pymnt = new Payment[350];
+                Payment.add(new Payment("IDR", "200.000", "Cash", "5/6/2023", "xcsznjc0ldr", "Completed", " - "));
+                Payment.add(new Payment("IDR", "250.000", "Bank Transfer", "5/6/2023", "sjnclasc5", "Failed", " - "));
+                Payment.add(new Payment("IDR", "300.000", "E-Wallet", "5/6/2023", "jsbakjsn3s", "In Progress", " - "));
 
+                OrderDetail[] od = new OrderDetail[350];
+                OrderDetail.add(new OrderDetail("pizza","F01", "50.000","1","7.000","57.000"));
+                OrderDetail.add(new OrderDetail("bakso","F04","30.000","2","5.000","65.000"));
+                OrderDetail.add(new OrderDetail("mie goreng","F06","25.000","3","8.000","83.000"));
 
+<<<<<<< HEAD
                 OrderDetails customer1Orderdetail = new OrderDetails("pizza","F01", 50000, 1 , 7000 ,57000);
                 OrderDetails customer2Orderdetail = new OrderDetails("bakso","F04",30000, 2 , 5000  , 65000);
                 OrderDetails customer3Orderdetail = new OrderDetails("mie goreng","F06", 25000 , 3 , 8000 ,83000);
 
                 Order Customer = new Order("Online Orders", "Polonia Medan", "TyneTheodora", "1220028", "11 November 2023", "11:11");
 
+=======
+                Order[] ordr = new Order[350];
+                Order.add(new Order("Online Order", "Polonia Medan", "TyneTheodora", "1220028", "11 November 2023", "11:11"));
+                Order.add(new Order("Online Order", "Polonia Medan", "Kayla Nmr", "1220026", "24 Juni 2023", "20:45"));
+                Order.add(new Order("Online Order", "Polonia Medan", "Evelline", "1220027", "13 Agustus 2023", "12:05"));
+>>>>>>> 825fda32bb8971a401a051250f8da29b48600c4f
             }
-            private static User[] user = new User[10];
-                private static User inputUserData() {
-                    Scanner scanner = new Scanner(System.in);
-                    System.out.println("=== Input User Data ===");
-                    System.out.print("Id: ");
-                    String id = scanner.nextLine();
-                    System.out.print("Username: ");
-                    String username = scanner.nextLine();
-                    System.out.print("Email: ");
-                    String email = scanner.nextLine();
-                    System.out.print("Password: ");
-                    String password = scanner.nextLine();
-                    System.out.print("Phone Number: ");
-                    String phoneNumber= scanner.nextLine();
-                    System.out.print("Date of Birth: ");
-                    String dateOfBirth = scanner.nextLine();
-                    System.out.print("Address: ");
-                    String address = scanner.nextLine();
+        
 
+            static ArrayList<User> user = new ArrayList<User>();
+            public static void inputUserData() {
+                String id, username, email, password, phoneNumber, dateOfBirth, address;
 
-                    User newUser = new User(id, username, email, password, phoneNumber, dateOfBirth, address);
+                System.out.print("Id \t\t: ");
+                id = input.nextLine();
+                System.out.print("Username \t: ");
+                username = input.nextLine();
+                System.out.print("Email \t\t: ");
+                email = input.nextLine();
+                System.out.print("Password \t: ");
+                password = input.nextLine();
+                System.out.print("Phone number \t: ");
+                phoneNumber = input.nextLine();
+                System.out.print("Date of birth \t: ");
+                dateOfBirth = input.nextLine();
+                System.out.print("Address \t: ");
+                address = input.nextLine();
 
-                    for (int i = 0; i < user.length; i++) {
-                        if (user[i] == null) {
-                            user[i] = newUser;
-                            break;
-                        }
-                    }
-                    
-                    System.out.println("User data has been input.");
-                    return newUser;
-                }
+                user.add(new User(id, username, email, password, phoneNumber, dateOfBirth, address));
 
+<<<<<<< HEAD
                  static Menu menu[] = new Menu[20];
                  private static Menu inputMenuData() {
                     Scanner scanner = new Scanner(System.in);
@@ -135,21 +141,31 @@ public class App {
                     scanner.nextLine(); // Discard the newline character
 
                     Menu newMenu = new Menu ( namaItem,IDitem , category, price , description);
+=======
+                System.out.println("Menu data has been input.");
+            }  
 
-                    for (int i = 0; i < menu.length; i++) {
-                        if (menu[i] == null) {
-                            menu[i] = newMenu;
-                            break;
-                        }
-                    }
-                    System.out.println("Menu data has been input.");
-                    return newMenu;
-                }
+            static ArrayList<Menu> menu = new ArrayList<Menu>();
+            public static void inputMenuData() {
+                String namaItem, idItem, category, description;
+                int price;
+>>>>>>> 825fda32bb8971a401a051250f8da29b48600c4f
 
-                static Order Order[] = new Order[20];
-                private static Order inputOrderData() {
-                    Scanner scanner = new Scanner(System.in);
+                System.out.print("Food Name \t: ");
+                namaItem = input.nextLine();
+                System.out.print("Food Id \t: ");
+                idItem = input.nextLine();
+                System.out.print("Category \t: ");
+                category = input.nextLine();
+                System.out.print("Price \t: ");
+                price = input.nextInt();
+                input.nextLine(); // Membersihkan newline character di input buffer
+                System.out.print("Description \t: ");
+                description = input.nextLine();
 
+                menu.add(new Menu(namaItem, idItem, category, price, description));
+
+<<<<<<< HEAD
                     System.out.println("Online Order");
                     System.out.println("Online Orders");
 
@@ -289,7 +305,100 @@ public class App {
                     }
 
                 }
+=======
+                System.out.println("Menu data has been input.");
+>>>>>>> 825fda32bb8971a401a051250f8da29b48600c4f
             }
-        }
+
+            static ArrayList<Order> order = new ArrayList<Order>();
+            public static void inputOrderData() {
+                String namaRestoran, alamatRestoran, namaPelanggan, idPemesanan, tanggalPembelian, jamPembelian;
+                
+                System.out.print("Nama Restoran \t: ");
+                namaRestoran = input.nextLine();
+                System.out.print("Alamat Restoran \t: ");
+                alamatRestoran = input.nextLine();
+                System.out.print("Nama Pelanggan \t: ");
+                namaPelanggan = input.nextLine();
+                System.out.print("ID Pemesanan \t: ");
+                idPemesanan = input.nextLine();
+                System.out.print("Tanggal Pembelian \t: ");
+                tanggalPembelian = input.nextLine();
+                System.out.print("Jam Pembelian \t: ");
+                jamPembelian = input.nextLine();
+
+                order.add(new Order(namaRestoran, alamatRestoran, namaPelanggan, idPemesanan, tanggalPembelian, jamPembelian));
+
+                System.out.println("Menu data has been input.");
+            }
+
+            static ArrayList<OrderDetail> orderDetail = new ArrayList<OrderDetail>();
+            public static void inputOrderDetailData() {
+                String namamenu, IDmenu, harga, kuantitas, tax, totalHarga;
+
+                System.out.print("Nama Menu: ");
+                namamenu = input.nextLine();
+                System.out.print("ID Menu: ");
+                IDmenu = input.nextLine();
+                System.out.print("Harga: ");
+                harga = input.nextLine();
+                System.out.print("Kuantitas: ");
+                kuantitas = input.nextLine();
+                System.out.println("Tax");
+                tax = input.nextLine();
+                System.out.print("Total Harga: ");
+                totalHarga = input.nextLine();
+
+                OrderDetail.add(new OrderDetail(namamenu, IDmenu, harga, kuantitas, tax, totalHarga));
+
+                System.out.println("Order data has been input.");
+            }
+
+            static ArrayList<Payment> payment = new ArrayList<Payment>();
+            public static void inputPaymentData() {
+                String currency, amount, paymentMethod, transactionDate, transactionId, status, additionalDetails;
+
+                System.out.print("Currency: ");
+                currency = input.nextLine();
+                System.out.print("Amount: ");
+                amount = input.nextLine();
+                System.out.print("Payment Method: ");
+                paymentMethod = input.nextLine();
+                System.out.print("TransactionDate: ");
+                transactionDate = input.nextLine();
+                System.out.print("TransactionId: ");
+                transactionId = input.nextLine();
+                System.out.print("Status: ");
+                status = input.nextLine();
+                System.out.print("Additional Details: ");
+                additionalDetails = input.nextLine();
+
+                Payment.add(new Payment(currency, amount, paymentMethod, transactionDate, transactionId, status, additionalDetails));
+
+                System.out.println("Payment data has been input.");
+                }
+
+                public static void displayData() {
+                    for (User user : user) {
+                        System.out.println(user);
+                    }
+
+                    for (Menu menu : menu) {
+                        System.out.println(menu);
+                    }
+
+                    for (Order order : order) {
+                        System.out.println(order);
+                    }
+
+                    for (OrderDetail orderDetail : orderDetail) {
+                        System.out.println(orderDetail);
+                    }
+
+                    for (Payment payment : payment) {
+                        System.out.println(payment);
+                    }
+
     }
+    
 }

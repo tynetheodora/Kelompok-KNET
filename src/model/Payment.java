@@ -44,6 +44,9 @@ public class Payment {
         this. additionalDetails = additionalDetails;
     }
 
+    public Payment(double amount2) {
+    }
+
     @Override
     public String toString() {
         return "|" +
@@ -130,6 +133,9 @@ public class Payment {
 
         System.out.println(Customer2.toString());
 
+    }
+
+    public static void add(Payment payment) {
     }
 
 }

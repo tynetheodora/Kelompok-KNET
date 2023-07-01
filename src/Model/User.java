@@ -105,4 +105,7 @@ public class User {
                 ", address='" + address + '\'' +
                 '}';
     }
+
+    public static void add(User user) {
+    }
 }

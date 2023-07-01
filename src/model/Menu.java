@@ -86,5 +86,8 @@ public class Menu {
         System.out.println(Cust2.toString());
 
     }
+
+    public static void add(Menu menu) {
+    }
 }
 
