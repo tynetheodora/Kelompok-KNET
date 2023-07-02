@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 import model.Order;
 import model.Payment;
 import model.OrderDetail;
@@ -44,7 +43,7 @@ public class App {
                             inputPaymentData();
                             break;
                         case 5:
-                            inputOrderData();
+                            inputOrderDetailData();
                             break;
                         case 6:
                             displayData();
@@ -74,6 +73,7 @@ public class App {
                 Payment Customer2 = new Payment("IDR", "250.000", "Bank Transfer", "5/6/2023", "sjnclasc5", "Failed", " - ");
                 Payment Customer3 = new Payment("IDR", "300.000", "E-Wallet", "5/6/2023", "jsbakjsn3s", "In Progress", " - ");
 
+
                 OrderDetail customer1Orderdetail = new OrderDetail("pizza","F01", "50.000","1","7.000","57.000");
                 OrderDetail customer2Orderdetail = new OrderDetail("bakso","F04","30.000","2","5.000","65.000");
                 OrderDetail customer3Orderdetail = new OrderDetail("mie goreng","F06","25.000","3","8.000","83.000");
@@ -81,222 +81,6 @@ public class App {
                 Order customer1Order = new Order("Online Order", "Polonia Medan", "TyneTheodora", "1220028", "11 November 2023", "11:11");
                 Order customer2Order = new Order("Online Order", "Polonia Medan", "Kayla Nmr", "1220026", "24 Juni 2023", "20:45");
                 Order customer3Order = new Order("Online Order", "Polonia Medan", "Evelline", "1220027", "13 Agustus 2023", "12:05");
-
-                Order Customer = new Order("Online Orders", "Polonia Medan", "TyneTheodora", "1220028", "11 November 2023", "11:11");
-
-
-                Order[] ordr = new Order[350];
-                Order.add(new Order("Online Order", "Polonia Medan", "TyneTheodora", "1220028", "11 November 2023", "11:11"));
-                Order.add(new Order("Online Order", "Polonia Medan", "Kayla Nmr", "1220026", "24 Juni 2023", "20:45"));
-                Order.add(new Order("Online Order", "Polonia Medan", "Evelline", "1220027", "13 Agustus 2023", "12:05"));
-
-            }
-        
-
-            static ArrayList<User> User = new ArrayList<User>();
-            public static void inputUserData() {
-                String id, username, email, password, phoneNumber, dateOfBirth, address;
-                
-                System.out.print("Id \t\t: ");
-                id = input.nextLine();
-                System.out.print("Username \t: ");
-                username = input.nextLine();
-                System.out.print("Email \t\t: ");
-                email = input.nextLine();
-                System.out.print("Password \t: ");
-                password = input.nextLine();
-                System.out.print("Phone number \t: ");
-                phoneNumber = input.nextLine();
-                System.out.print("Date of birth \t: ");
-                dateOfBirth = input.nextLine();
-                System.out.print("Address \t: ");
-                address = input.nextLine();
-
-                user.add(new User(id, username, email, password, phoneNumber, dateOfBirth, address));
-
-                 static Menu menu[] = new Menu[20];
-                 private static Menu inputMenuData() {
-                    Scanner scanner = new Scanner(System.in);
-                    System.out.println("=== Input Menu Data ===");
-                    System.out.print("Nama item: ");
-                    String namaItem = scanner.nextLine();
-                    System.out.print("ID item: ");
-                    String IDitem = scanner.nextLine();
-                    System.out.print("kategori: ");
-                    String category = scanner.nextLine();
-                    System.out.print("Price: ");
-                    Integer price = scanner.nextInt();
-                    System.out.print("deskripsi: ");
-                    String description = scanner.nextLine();
-                    scanner.nextLine(); // Discard the newline character
-
-                    Menu newMenu = new Menu ( namaItem,IDitem , category, price , description);
-
-                System.out.println("Menu data has been input.");
-            }  
-
-            static ArrayList<Menu> menu = new ArrayList<Menu>();
-            public static void inputMenuData() {
-                String namaItem, idItem, category, description;
-                int price;
-
-
-                System.out.print("Food Name \t: ");
-                namaItem = input.nextLine();
-                System.out.print("Food Id \t: ");
-                idItem = input.nextLine();
-                System.out.print("Category \t: ");
-                category = input.nextLine();
-                System.out.print("Price \t: ");
-                price = input.nextInt();
-                input.nextLine(); // Membersihkan newline character di input buffer
-                System.out.print("Description \t: ");
-                description = input.nextLine();
-
-                menu.add(new Menu(namaItem, idItem, category, price, description));
-
-                    System.out.println("Online Order");
-                    System.out.println("Online Orders");
-
-                    String namaRestoran = scanner.nextLine();
-                    System.out.print("Nama Restoran : ");
-                    String alamatRestoran = scanner.nextLine();
-                    System.out.print("Alamat Restoran : ");
-                    String namaPelanggan = scanner.nextLine();
-                    System.out.print("Nama Pelanggan : ");
-                    String idPemesanan = scanner.nextLine();
-                    System.out.print("ID Pemesanan: ");
-                    String tanggalPembelian = scanner.nextLine();
-                    System.out.print("Tanggal Pembelian : ");
-                    String jamPembelian = scanner.nextLine();
-                    scanner.nextLine(); // Discard the newline character
-
-                    Order newOrder = new Order(namaRestoran, alamatRestoran, namaPelanggan, idPemesanan, tanggalPembelian, jamPembelian);
-
-                    System.out.println("=== Input Order Details Data ===");
-                    System.out.print("Nama Menu: ");
-                    String namamenu = scanner.nextLine();
-                    System.out.print("ID Menu: ");
-                    String IDmenu = scanner.nextLine();
-                    System.out.print("Harga: ");
-                    Integer harga = scanner.nextInt();
-                    System.out.print("Kuantitas: ");
-                    Integer kuantitas = scanner.nextInt();
-                    System.out.println("Tax");
-                    Integer tax = scanner.nextInt();
-                    System.out.print("Total Harga: ");
-                    Integer totalHarga = scanner.nextInt();
-                    scanner.nextLine(); // Discard the newline character
-
-                    OrderDetails newOrderDetails = new OrderDetails (namamenu, IDmenu, harga, kuantitas, tax, totalHarga);
-
-
-                    for (int i = 0; i < OrderDetails.length; i++) {
-                        if (OrderDetails[i] == null) {
-                            OrderDetails[i] = newOrderDetails;
-                            break;
-                        }
-                    }
-
-                    System.out.println("Order data has been input.");
-                    return newOrderDetails;
-                }
-
-                static Payment payment[] = new Payment[20];
-                private static Payment inputPaymentData() {
-                    Scanner scanner = new Scanner(System.in);
-                    System.out.println("=== Input Payment Data ===");
-                    System.out.print("Currency: ");
-                    String currency = scanner.nextLine();
-                    System.out.print("Amount: ");
-                    String amount = scanner.nextLine();
-                    System.out.print("Payment Method: ");
-                    String paymentMethod = scanner.nextLine();
-                    System.out.print("TransactionDate: ");
-                    String transactionDate = scanner.nextLine();
-                    System.out.print("TransactionId: ");
-                    String transactionId = scanner.nextLine();
-                    System.out.print("Status: ");
-                    String status = scanner.nextLine();
-                    System.out.print("Additional Details: ");
-                    String additionalDetails = scanner.nextLine();
-
-                    Payment newPayment = new Payment(currency, amount, paymentMethod, transactionDate, transactionId, status, additionalDetails);
-                    
-                    for (int i = 0; i < payment.length; i++) {
-                        if (payment[i] == null) {
-                            payment[i] = newPayment;
-                            break;
-                        }
-                    }
-                    System.out.println("Payment data has been input.");
-                    return newPayment;
-                }
-
-                private static void displayData() {
-                    for (int j = 0; j < user.length; j++) {
-                            if (user[j] != null) {
-                                System.out.println("=== Display Data ===");
-                                System.out.println("User[" + j + "]:");
-                                System.out.println("Id: " + user[j].getId());
-                                System.out.println("Username: " + user[j].getUsername());
-                                System.out.println("Email: " + user[j].getEmail());
-                                System.out.println("Password: " + user[j].getPassword());
-                            }
-                    }
-
-                    for (int j = 0; j < menu.length; j++) {
-                            if (menu[j] != null) {
-                                System.out.println("Menu[" + j + "]:");
-                                System.out.println("Nama item: " + menu[j].getNamaItem());
-                                System.out.println("ID Item: " + menu[j].getIdItem());
-                                System.out.println("kategori: " + menu[j].getCategory());
-                                System.out.println("Price: " + menu[j].getPrice());
-                                System.out.println("Deskripsi: " + menu[j].getDescription());
-                                
-                            }
-                    }
-
-                    for (int j = 0; j < Order.length; j++) {
-                            if (Order[j] != null) {
-                                System.out.println("Order[" + j + "]:");
-                                System.out.println("Nama Restoran : " + order[j].getNamaRestoran());
-                                System.out.println("Alamat Restoran: " + order[j].getAlamatRestoran());
-                                System.out.println("Nama Pengguna: " + order[j].getNamaPengguna());
-                                System.out.println("ID Pemesanan : " + order[j].getIdPemesanan());
-                                System.out.println("Tanggal: " + order[j].getTanggalPembelian());
-                                System.out.println("Jam: " + order[j].getJamPembelian());
-
-
-                    for (Integer i = 0; j < OrderDetails.length; j++) {
-                            if (OrderDetails[j] != null) {
-                                System.out.println("Order Detail[" + j + "]:");
-                                System.out.println("Nama Menu : " + OrderDetails[j].getNamamenu());
-                                System.out.println("ID menu: " + OrderDetails[j].getIDmenu());
-                                System.out.println("Harga: " + OrderDetails[j].getHarga());
-                                System.out.println("kuantitas : " + OrderDetails[j].getKuantitas());
-                                System.out.println("Tax: " + OrderDetails[j].getTax());
-                                System.out.println("Total harga: " + OrderDetails[j].getTotalHarga());
-
-                    for (int j = 0; j < payment.length; j++) {
-                            if (payment[j] != null) {
-                                System.out.println("Payment[" + j + "]:");
-                                System.out.println("Currency: " + payment[j].getCurrency());
-                                System.out.println("Amount: " + payment[j].getAmount());
-                                System.out.println("Payment Method: " + payment[j].getPaymentMethod());
-                                System.out.println("Transaction Date: " + payment[j].getTransactionDate());
-                                System.out.println("Transaction Id: " + payment[j].getTransactionId());
-                                System.out.println("Status: " + payment[j].getStatus());
-                                System.out.println("Additional: " + payment[j].getAdditionalDetails());
-                            }
-
-                        }
-                    }
-
-                }
-
-                System.out.println("Menu data has been input.");
-
             }
 
             private static User[] user = new User[10];
@@ -511,6 +295,5 @@ public class App {
                                 System.out.println("Additional: " + payment[j].getAdditionalDetails());
                             }
                     }
-                    
     }
 }
