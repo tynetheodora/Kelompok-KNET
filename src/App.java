@@ -1,10 +1,8 @@
 import java.util.Scanner;
-
-import javax.print.DocFlavor.STRING;
-
+import java.util.ArrayList;
 import model.Order;
 import model.Payment;
-import model.OrderDetails;
+import model.OrderDetail;
 import model.User;
 import model.Menu;
 
@@ -46,7 +44,7 @@ public class App {
                             inputPaymentData();
                             break;
                         case 5:
-                            inputOrderData()
+                            inputOrderData();
                             break;
                         case 6:
                             displayData();
@@ -76,8 +74,6 @@ public class App {
                 Payment Customer2 = new Payment("IDR", "250.000", "Bank Transfer", "5/6/2023", "sjnclasc5", "Failed", " - ");
                 Payment Customer3 = new Payment("IDR", "300.000", "E-Wallet", "5/6/2023", "jsbakjsn3s", "In Progress", " - ");
 
-
-<<<<<<< HEAD
                 OrderDetail customer1Orderdetail = new OrderDetail("pizza","F01", "50.000","1","7.000","57.000");
                 OrderDetail customer2Orderdetail = new OrderDetail("bakso","F04","30.000","2","5.000","65.000");
                 OrderDetail customer3Orderdetail = new OrderDetail("mie goreng","F06","25.000","3","8.000","83.000");
@@ -85,27 +81,22 @@ public class App {
                 Order customer1Order = new Order("Online Order", "Polonia Medan", "TyneTheodora", "1220028", "11 November 2023", "11:11");
                 Order customer2Order = new Order("Online Order", "Polonia Medan", "Kayla Nmr", "1220026", "24 Juni 2023", "20:45");
                 Order customer3Order = new Order("Online Order", "Polonia Medan", "Evelline", "1220027", "13 Agustus 2023", "12:05");
-=======
-<<<<<<< HEAD
-                OrderDetails customer1Orderdetail = new OrderDetails("pizza","F01", 50000, 1 , 7000 ,57000);
-                OrderDetails customer2Orderdetail = new OrderDetails("bakso","F04",30000, 2 , 5000  , 65000);
-                OrderDetails customer3Orderdetail = new OrderDetails("mie goreng","F06", 25000 , 3 , 8000 ,83000);
 
                 Order Customer = new Order("Online Orders", "Polonia Medan", "TyneTheodora", "1220028", "11 November 2023", "11:11");
 
-=======
+
                 Order[] ordr = new Order[350];
                 Order.add(new Order("Online Order", "Polonia Medan", "TyneTheodora", "1220028", "11 November 2023", "11:11"));
                 Order.add(new Order("Online Order", "Polonia Medan", "Kayla Nmr", "1220026", "24 Juni 2023", "20:45"));
                 Order.add(new Order("Online Order", "Polonia Medan", "Evelline", "1220027", "13 Agustus 2023", "12:05"));
->>>>>>> 825fda32bb8971a401a051250f8da29b48600c4f
+
             }
         
 
-            static ArrayList<User> user = new ArrayList<User>();
+            static ArrayList<User> User = new ArrayList<User>();
             public static void inputUserData() {
                 String id, username, email, password, phoneNumber, dateOfBirth, address;
-
+                
                 System.out.print("Id \t\t: ");
                 id = input.nextLine();
                 System.out.print("Username \t: ");
@@ -123,7 +114,6 @@ public class App {
 
                 user.add(new User(id, username, email, password, phoneNumber, dateOfBirth, address));
 
-<<<<<<< HEAD
                  static Menu menu[] = new Menu[20];
                  private static Menu inputMenuData() {
                     Scanner scanner = new Scanner(System.in);
@@ -141,7 +131,7 @@ public class App {
                     scanner.nextLine(); // Discard the newline character
 
                     Menu newMenu = new Menu ( namaItem,IDitem , category, price , description);
-=======
+
                 System.out.println("Menu data has been input.");
             }  
 
@@ -149,7 +139,7 @@ public class App {
             public static void inputMenuData() {
                 String namaItem, idItem, category, description;
                 int price;
->>>>>>> 825fda32bb8971a401a051250f8da29b48600c4f
+
 
                 System.out.print("Food Name \t: ");
                 namaItem = input.nextLine();
@@ -165,7 +155,6 @@ public class App {
 
                 menu.add(new Menu(namaItem, idItem, category, price, description));
 
-<<<<<<< HEAD
                     System.out.println("Online Order");
                     System.out.println("Online Orders");
 
@@ -271,12 +260,12 @@ public class App {
                     for (int j = 0; j < Order.length; j++) {
                             if (Order[j] != null) {
                                 System.out.println("Order[" + j + "]:");
-                                System.out.println("Nama Restoran : " + Order[j].getNamaRestoran());
-                                System.out.println("Alamat Restoran: " + Order[j].getAlamatRestoran());
-                                System.out.println("Nama Pengguna: " + Order[j].getNamaPengguna());
-                                System.out.println("ID Pemesanan : " + Order[j].getIdPemesanan());
-                                System.out.println("Tanggal: " + Order[j].getTanggalPembelian());
-                                System.out.println("Jam: " + Order[j].getJamPembelian());
+                                System.out.println("Nama Restoran : " + order[j].getNamaRestoran());
+                                System.out.println("Alamat Restoran: " + order[j].getAlamatRestoran());
+                                System.out.println("Nama Pengguna: " + order[j].getNamaPengguna());
+                                System.out.println("ID Pemesanan : " + order[j].getIdPemesanan());
+                                System.out.println("Tanggal: " + order[j].getTanggalPembelian());
+                                System.out.println("Jam: " + order[j].getJamPembelian());
 
 
                     for (Integer i = 0; j < OrderDetails.length; j++) {
@@ -305,10 +294,9 @@ public class App {
                     }
 
                 }
-=======
+
                 System.out.println("Menu data has been input.");
->>>>>>> 825fda32bb8971a401a051250f8da29b48600c4f
->>>>>>> 2b628df9cd00cb3f36a245618599962e77437bee
+
             }
 
             private static User[] user = new User[10];
@@ -523,5 +511,6 @@ public class App {
                                 System.out.println("Additional: " + payment[j].getAdditionalDetails());
                             }
                     }
+                    
     }
 }
