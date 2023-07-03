@@ -9,7 +9,7 @@ public class OrderDetail{
  * - menu
  * - ID menu
  * - price
- * - QTY
+ * - qty
  * - tax
  * - total price
  * 
@@ -17,61 +17,61 @@ public class OrderDetail{
  */
 
     
-    String IDorderDetail;
-    Order IDorder;
-    Menu NamaMenu;
-    Menu IDmenu;
-    int Price;
-    int QTY;
+    String idOrderDetail;
+    Order idOrder;
+    Menu menu;
+    Menu idMenu;
+    int price;
+    int qty;
     int tax;
     int totalPrice;
 
-    public String getIDorderDetail() {
-        return this.IDorderDetail;
+    public String getIdOrderDetail() {
+        return this.idOrderDetail;
     }
 
-    public void setIDorderDetail(String IDorderDetail) {
-        this.IDorderDetail = IDorderDetail;
+    public void setIdOrderDetail(String idOrderDetail) {
+        this.idOrderDetail = idOrderDetail;
     }
 
-    public Order getIDorder() {
-        return this.IDorder;
+    public Order getIdOrder() {
+        return this.idOrder;
     }
 
-    public void setIDorder(Order IDorder) {
-        this.IDorder = IDorder;
+    public void setIdOrder(Order idOrder) {
+        this.idOrder = idOrder;
     }
 
-    public Menu getNamaMenu() {
-        return this.NamaMenu;
+    public Menu getMenu() {
+        return this.menu;
     }
 
-    public void setNamaMenu(Menu NamaMenu) {
-        this.NamaMenu = NamaMenu;
+    public void setNamaMenu(Menu menu) {
+        this.menu = menu;
     }
 
-    public Menu getIDmenu() {
-        return this.IDmenu;
+    public Menu getIdMenu() {
+        return this.idMenu;
     }
 
-    public void setIDmenu(Menu IDmenu) {
-        this.IDmenu = IDmenu;
+    public void setIdMenu(Menu idMenu) {
+        this.idMenu = idMenu;
     }
 
     public int getPrice() {
-        return this.Price;
+        return this.price;
     }
 
-    public void setPrice(int Price) {
-        this.Price = Price;
+    public void setPrice(int price) {
+        this.price = price;
     }
 
-    public int getQTY() {
-        return this.QTY;
+    public int getQty() {
+        return this.qty;
     }
 
-    public void setQTY(int QTY) {
-        this.QTY = QTY;
+    public void setQty(int qty) {
+        this.qty = qty;
     }
 
     public int getTax() {
@@ -91,17 +91,17 @@ public class OrderDetail{
     }
 
 
-     public OrderDetail() {
+    public OrderDetail() {
 
     }
 
-    public OrderDetail(String IDorderDetail, Order IDorder, Menu NamaMenu, Menu IDmenu, Integer Price, Integer QTY , Integer tax , Integer totalPrice) {
-        this.IDorderDetail = IDorderDetail;
-        this.IDorder = IDorder;
-        this.NamaMenu = NamaMenu;
-        this.IDmenu = IDmenu;
-        this.Price = Price;
-        this.QTY = QTY;
+    public OrderDetail(String idOrderDetail, Order idOrder, Menu menu, Menu idMenu, Integer price, Integer qty , Integer tax , Integer totalPrice) {
+        this.idOrderDetail = idOrderDetail;
+        this.idOrder = idOrder;
+        this.menu = menu;
+        this.idMenu = idMenu;
+        this.price = price;
+        this.qty = qty;
         this.tax = tax;
         this.totalPrice = totalPrice;
     }
@@ -111,12 +111,12 @@ public class OrderDetail{
      @Override
     public String toString() {
         return "|" +
-            " " + getIDorderDetail() + "\t|" +
-            " " + getIDorder() + "\t|" +
-            " " + getNamaMenu() + "\t|" +
-            " " + getIDmenu() + "\t|" +
+            " " + getIdOrderDetail() + "\t|" +
+            " " + getIdOrder() + "\t|" +
+            " " + getMenu() + "\t|" +
+            " " + getIdMenu() + "\t|" +
             " " + getPrice() + "\t|" +
-            " " + getQTY() + "\t|" +
+            " " + getQty() + "\t|" +
             " " + getTax() + "\t|" +
             " " + getTotalPrice() + "\t|" +
             "";
