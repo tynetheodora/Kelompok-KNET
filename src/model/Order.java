@@ -1,9 +1,7 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Order {
+
     public static int length;
     /* Attributes */
     String idOrder;
@@ -11,18 +9,30 @@ public class Order {
     String alamatRestoran;
     String userName;
     String orderDate;
-    String orderDetail;
+    OrderDetail orderDetail;
 
     public Order() {
 
     }
 
-    public Order(String namaRestoran, String alamatRestoran, String userName, String idPemesanan, String orderDate, String orderDetail) {
+    public Order(String idOrder, String namaRestoran, String alamatRestoran, String userName, String orderDate, OrderDetail orderDetail) {
+        this.idOrder = idOrder;
         this.namaRestoran = namaRestoran;
         this.alamatRestoran = alamatRestoran;
         this.userName = userName;
         this.orderDate = orderDate;
         this.orderDetail = orderDetail;
+    }
+
+    public Order(String idOrder, String namaRestoran, String alamatRestoran, String userName, String orderDate, String orderDetail) {
+    }
+
+    public String idOrder(){
+        return this.idOrder;
+    }
+
+    public void setIdOrder(){
+        this.idOrder = idOrder;
     }
 
     public String getNamaRestoran() {
@@ -57,17 +67,18 @@ public class Order {
         this.orderDate = orderDate;
     }
 
-    public String getorderDetail() {
+    public OrderDetail getorderDetail() {
         return this.orderDetail;
     }
 
-    public void setorderDetail(String orderDetail) {
+    public void setorderDetail(OrderDetail orderDetail) {
         this.orderDetail = orderDetail;
     }
 
     @Override
     public String toString() {
         return "Order{" +
+                "ID Order='" + idOrder + '\'' +
                 "Nama Restoran='" + namaRestoran + '\'' +
                 ", Alamat Restoran='" + alamatRestoran + '\'' +
                 ", Nama Pengguna='" + userName + '\'' +
@@ -76,20 +87,6 @@ public class Order {
                 '}';
     }
 
-    public static void main(String[] args) {
-        List<Order> orderList = new ArrayList<>();
-
-        Order order1 = new Order("Online Order", "Polonia Medan", "Tyne Theodora", "1220028", "11 November 2023", "11:11");
-        orderList.add(order1);
-
-        Order order2 = new Order("Online Order", "Polonia Medan", "Tyne Theodora", "1220029", "12 November 2023", "12:12");
-        orderList.add(order2);
-    }
-
     public static void add(Order order) {
-    }
-
-    public String getidOrder() {
-        return null;
     }
 }
