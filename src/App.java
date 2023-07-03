@@ -80,9 +80,11 @@ public class App {
 
 
                 OrderDetail[] od = new OrderDetail[350];
-                //OrderDetail.add(new OrderDetail("pizza","F01", "50.000","1","7.000","57.000"));
-                //OrderDetail.add(new OrderDetail("bakso","F04","30.000","2","5.000","65.000"));
-                //OrderDetail.add(new OrderDetail("mie goreng","F06","25.000","3","8.000","83.000"));
+                OrderDetail.add(new OrderDetail("KNY758IJGH", null, null, null, 30000, 1, 3000, 33000));
+                OrderDetail.add(new OrderDetail("DNY48UFJ57", null, null, null, 40000, 1, 3000, 43000));
+                OrderDetail.add(new OrderDetail("ENK86OKG75", null, null, null, 34000, 2, 10000, 69000));
+                
+
 
                 Order[] ordr = new Order[350];
                 Order.add(new Order("Online Order", "Polonia Medan", "TyneTheodora", "1220028", "11 November 2023", "11:11"));
