@@ -8,7 +8,6 @@ public class Menu {
     private String category;
     private Integer price;
     private String description;
-    private ArrayList<OrderDetail> orderDetail = new ArrayList<OrderDetail>(); 
 
     public Menu(){
 
@@ -20,15 +19,6 @@ public class Menu {
         this.category = category;
         this.price = price;
         this.description = description;
-    }
-
-    public Menu(String idMenu, String namaMenu, String category, Integer price, String description, ArrayList<OrderDetail> orderDetail){
-        this.idMenu = idMenu;
-        this.namaMenu = namaMenu;
-        this.category = category;
-        this.price = price;
-        this.description = description;
-        this.orderDetail = orderDetail; 
     }
 
     public void inputOrderDetailData(OrderDetail orderDetail){
@@ -75,14 +65,6 @@ public class Menu {
         this.description = description;
     }
 
-    public ArrayList<OrderDetail> getOrderDetail() {
-        return this.orderDetail;
-    }
-
-    public void setOrderDetail(ArrayList<OrderDetail> orderDetail) {
-        this.orderDetail = orderDetail;
-    }
-
 
 
     @Override
@@ -93,7 +75,6 @@ public class Menu {
             " " + getCategory() + "\t|" +
             " " + getPrice() + "\t|" +
             " " + getDescription() + "\t|" +
-            " " + getOrderDetail() + "\t|" +
             "";
     }
 
