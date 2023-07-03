@@ -69,9 +69,9 @@ public class App {
                 User.add(new User("3", "kayla", "kylnmr@gmail.com", "98765","081234567891","01-02-02","jl.medan"));
 
                 Menu[] mn = new Menu[350];
-                Menu.add(new Menu("Waffle", "01", "Dessert", 200000, "Original waffle with vanilla ice cream & honey "));
-                Menu.add(new Menu("Pizza", "02", "Main course", 350000, "Signature regular pizza"));
-                Menu.add(new Menu("Porridge", "03", "Appetizer", 100000, "Savory porridge with garlic and fresh ginger"));
+                Menu.add(new Menu("null", "null", "null", 200000, "null", orderDetail));
+                Menu.add(new Menu("null", "null", "null", 350000, "null", orderDetail));
+                Menu.add(new Menu("null", "null", "null", 480000, "null", orderDetail));
 
                 Payment[] pymnt = new Payment[350];
                 Payment.add(new Payment("0908777", "200.000", "Cash", "5/6/2023", "null", "9080777"));
@@ -117,13 +117,13 @@ public class App {
 
             static ArrayList<Menu> menu = new ArrayList<Menu>();
             public static void inputMenuData() {
-                String namaItem, idItem, category, description;
+                String idMenu, namaMenu, category, description;
                 int price;
 
-                System.out.print("Food Name \t: ");
-                namaItem = input.nextLine();
-                System.out.print("Food Id \t: ");
-                idItem = input.nextLine();
+                System.out.print("Id Menu \t: ");
+                idMenu = input.nextLine();
+                System.out.print("Nama Menu \t: ");
+                namaMenu = input.nextLine();
                 System.out.print("Category \t: ");
                 category = input.nextLine();
                 System.out.print("Price \t: ");
@@ -132,7 +132,7 @@ public class App {
                 System.out.print("Description \t: ");
                 description = input.nextLine();
 
-                menu.add(new Menu(namaItem, idItem, category, price, description));
+                menu.add(new Menu(idMenu, namaMenu, category, null, description, orderDetail));
 
                 System.out.println("Menu data has been input.");
             }

@@ -1,49 +1,54 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Menu {
-    String namaItem;
-    String idItem;
-    String category;
-    Integer price;
-    String description;
+    private String idMenu;
+    private String namaMenu;
+    private String category;
+    private Integer price;
+    private String description;
+    private ArrayList<OrderDetail> orderDetail = new ArrayList<OrderDetail>(); 
 
     public Menu(){
 
     }
 
-    public Menu(String namaItem, String idItem, String category, Integer price, String description){
-        this.namaItem = namaItem;
-        this.idItem = idItem;
+    public Menu(String idMenu, String namaMenu, String category, Integer price, String description){
+        this.idMenu = idMenu;
+        this.namaMenu = namaMenu;
         this.category = category;
         this.price = price;
         this.description = description;
     }
 
-    @Override
-    public String toString() {
-        return "|" +
-            " " + getNamaItem() + "\t|" +
-            " " + getIdItem() + "\t|" +
-            " " + getCategory() + "\t|" +
-            " " + getPrice() + "\t|" +
-            " " + getDescription() + "\t|" +
-            "";
+    public Menu(String idMenu, String namaMenu, String category, Integer price, String description, ArrayList<OrderDetail> orderDetail){
+        this.idMenu = idMenu;
+        this.namaMenu = namaMenu;
+        this.category = category;
+        this.price = price;
+        this.description = description;
+        this.orderDetail = orderDetail; 
     }
 
-    public String getNamaItem() {
-        return this.namaItem;
+    public void inputOrderDetailData(OrderDetail orderDetail){
+        orderDetail.add(orderDetail);
     }
 
-    public void setNamaItem(String namaItem) {
-        this.namaItem = namaItem;
+    public String getIdMenu() {
+        return this.idMenu;
     }
 
-    public String getIdItem() {
-        return this.idItem;
+    public void setIdMenu(String idMenu) {
+        this.idMenu = idMenu;
     }
 
-    public void setIdItem(String idItem) {
-        this.idItem = idItem;
+    public String getNamaMenu() {
+        return this.namaMenu;
+    }
+
+    public void setNamaMenu(String namaMenu) {
+        this.namaMenu = namaMenu;
     }
 
     public String getCategory() {
@@ -70,24 +75,30 @@ public class Menu {
         this.description = description;
     }
 
-        // contructor
-    public static void main(String[] args) {
-        Menu Cust1 = new Menu();
-        Cust1.setNamaItem("Waffle");
-        Cust1.setIdItem("d01");
-        Cust1.setCategory("Dessert");
-        Cust1.setPrice(200000);        
-        Cust1.setDescription("Original waffle with vanilla ice cream & honey");
+    public ArrayList<OrderDetail> getOrderDetail() {
+        return this.orderDetail;
+    }
 
-        System.out.println(Cust1.toString());
+    public void setOrderDetail(ArrayList<OrderDetail> orderDetail) {
+        this.orderDetail = orderDetail;
+    }
 
-        Menu Cust2 = new Menu("Pizza", "F02", "Main course", 350000, "Signature regular pizza");
 
-        System.out.println(Cust2.toString());
 
+    @Override
+    public String toString() {
+        return "|" +
+            " " + getIdMenu() + "\t|" +
+            " " + getNamaMenu() + "\t|" +
+            " " + getCategory() + "\t|" +
+            " " + getPrice() + "\t|" +
+            " " + getDescription() + "\t|" +
+            " " + getOrderDetail() + "\t|" +
+            "";
     }
 
     public static void add(Menu menu) {
     }
+
 }
 
