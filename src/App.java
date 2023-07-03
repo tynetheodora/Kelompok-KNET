@@ -12,8 +12,7 @@ public class App {
     static ArrayList<Order> order = new ArrayList<Order>();
     static ArrayList<OrderDetail> orderDetail = new ArrayList<OrderDetail>();
     static ArrayList<Payment> payment = new ArrayList<Payment>();
-
-            static Scanner input = new Scanner(System.in);
+    static Scanner input = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
          boolean exit = false;
 
