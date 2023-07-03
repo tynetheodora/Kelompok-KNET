@@ -3,12 +3,14 @@ package model;
  * 
  */
 //evelline 03081220027
- 
-    /*
+
+import java.util.ArrayList;
+
+/*
      * Deskripsi:
      * Atribut
-     * id : ID pengguna
-     * username : untuk menyimpan nama pengguna
+     * name : nama pengguna
+     * username : untuk menyimpan nama panggilan pengguna
      * email : untuk menyimpan alamat email pengguna
      * password : untuk menyimpan kata sandi pengguna
      * phoneNumber : untuk menyimpan nama pengguna
@@ -26,8 +28,11 @@ public class User {
     private String phoneNumber;
     private String dateOfBirth;
     private String address;
+    private ArrayList <Order> order =
+        new ArrayList<Order>(); //hub 1 ke banyak --> assoc
 
-    public User(String name, String username, String email, String password, String phoneNumber, String dateOfBirth, String address) {
+
+    public User(String name, String username, String email, String password, String phoneNumber, String dateOfBirth, String address, ArrayList<Order>order) {
         this.name = name;
         this.username = username;
         this.email = email;
@@ -35,6 +40,7 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.dateOfBirth = dateOfBirth;
         this.address = address;
+        this.order = order;
     }
 
     public String getName() {
@@ -92,6 +98,8 @@ public class User {
     public void setAddress(String address) {
         this.address = address;
     }
+
+   
 
     @Override
     public String toString() {
