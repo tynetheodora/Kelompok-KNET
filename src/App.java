@@ -1,13 +1,19 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 import model.Order;
 import model.Payment;
 import model.OrderDetail;
 import model.User;
 import model.Menu;
-import java.util.ArrayList;
 
 public class App {
-    static Scanner input = new Scanner(System.in);
+    static ArrayList<User> user = new ArrayList<User>();
+    static ArrayList<Menu> menu = new ArrayList<Menu>();
+    static ArrayList<Order> order = new ArrayList<Order>();
+    static ArrayList<OrderDetail> orderDetail = new ArrayList<OrderDetail>();
+    static ArrayList<Payment> payment = new ArrayList<Payment>();
+
+            static Scanner input = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
          boolean exit = false;
 
@@ -64,28 +70,25 @@ public class App {
             public static void init(){
 
                 User[] usr = new User[350];
-                //User.add(new User("1", "eve", "eve@gmail.com", "123456","081234567891","01-02-02","jl.medan"));
-                //User.add(new User("2", "tyne.theo", "tyne.theo@gmail.com", "abcdef","081234567891","01-02-02","jl.medan"));
-                //User.add(new User("3", "kayla", "kylnmr@gmail.com", "98765","081234567891","01-02-02","jl.medan"));
+                User.add(new User("Evelline Christine", "eve", "eve@gmail.com", "123456", "081234567891", "01-02-02", "jl.medan", null));
+                User.add(new User("Tyne Theodora", "tyne.theo", "tyne.theo@gmail.com", "123456", "081234567891", "01-02-02", "citra garden", null));
+                User.add(new User("Kayla Namira", "kayla1", "kylnmr@gmail.com", "123456", "081234567891", "01-02-02", "tasbih", null));
 
                 Menu[] mn = new Menu[350];
-                Menu.add(new Menu(null, null, null, null, null));
-                Menu.add(new Menu(null, null, null, null, null));
-                Menu.add(new Menu(null, null, null, null, null));
+                Menu.add(new Menu("F1", "Pizza", "Main Course", 90000, "Meat Lovers wit Cheesy Bites"));
+                Menu.add(new Menu("F2", "Waffle", "Dessert", 50000, "Classic Waffle with Maple Syrup"));
+                Menu.add(new Menu("F3", "Soup", "Appetizer", 35000, "Mushroom Soup"));
 
                 Payment[] pymnt = new Payment[350];
-                Payment.add(new Payment("0908777", "200.000", "Cash", "5/6/2023", "null", "9080777"));
-                Payment.add(new Payment("0908666", "350.000", "Bank Transfer", "13/6/2023", "null", "9080666"));
-                Payment.add(new Payment("0908555", "480.000", "OVO", "null", "29/6/2023", "9080555"));
-
+                Payment.add(new Payment("0908777", "200.000", "Cash", "5/6/2023", "Completed", "9080777"));
+                Payment.add(new Payment("0908666", "350.000", "Bank Transfer", "13/6/2023", "Failed", "9080666"));
+                Payment.add(new Payment("0908555", "480.000", "OVO", "29/6/2023", "Completed", "9080555"));
 
                 OrderDetail[] od = new OrderDetail[350];
                 OrderDetail.add(new OrderDetail("KNY758IJGH", null, null, null, 30000, 1, 3000, 33000));
                 OrderDetail.add(new OrderDetail("DNY48UFJ57", null, null, null, 40000, 1, 3000, 43000));
                 OrderDetail.add(new OrderDetail("ENK86OKG75", null, null, null, 34000, 2, 10000, 69000));
                 
-
-
                 Order[] ordr = new Order[350];
                 Order.add(new Order("Online Order", "Polonia Medan", "TyneTheodora", "1220028", "11 November 2023", "11:11"));
                 Order.add(new Order("Online Order", "Polonia Medan", "Kayla Nmr", "1220026", "24 Juni 2023", "20:45"));
@@ -93,12 +96,11 @@ public class App {
             }
         
 
-            static ArrayList<User> user = new ArrayList<User>();
             public static void inputUserData() {
-                String id, username, email, password, phoneNumber, dateOfBirth, address;
+                String name, username, email, password, phoneNumber, dateOfBirth, address, idOrder;
 
-                System.out.print("Id \t\t: ");
-                id = input.nextLine();
+                System.out.print("Name \t\t: ");
+                name = input.nextLine();
                 System.out.print("Username \t: ");
                 username = input.nextLine();
                 System.out.print("Email \t\t: ");
@@ -111,13 +113,14 @@ public class App {
                 dateOfBirth = input.nextLine();
                 System.out.print("Address \t: ");
                 address = input.nextLine();
+                System.out.print("Id Order \t: ");
+                idOrder = input.nextLine();
 
-                //user.add(new User(id, username, email, password, phoneNumber, dateOfBirth, address));
+                user.add(new User(name, username, email, password, phoneNumber, dateOfBirth, address, null));
 
                 System.out.println("Menu data has been input.");
             }  
 
-            static ArrayList<Menu> menu = new ArrayList<Menu>();
             public static void inputMenuData() {
                 String idMenu, namaMenu, category, description;
                 int price;
@@ -139,7 +142,6 @@ public class App {
                 System.out.println("Menu data has been input.");
             }
 
-            static ArrayList<Order> order = new ArrayList<Order>();
             public static void inputOrderData() {
                 String namaRestoran, alamatRestoran, namaPelanggan, idPemesanan, tanggalPembelian, jamPembelian;
                 
@@ -161,7 +163,6 @@ public class App {
                 System.out.println("Menu data has been input.");
             }
 
-            static ArrayList<OrderDetail> orderDetail = new ArrayList<OrderDetail>();
             public static void inputOrderDetailData() {
                 String namamenu, IDmenu, harga, kuantitas, tax, totalHarga;
 
@@ -183,7 +184,6 @@ public class App {
                 System.out.println("Order data has been input.");
             }
 
-            static ArrayList<Payment> payment = new ArrayList<Payment>();
             public static void inputPaymentData() {
                 String idPayment, amount, paymentMethod, transactionDate, status, idOrder;
 
