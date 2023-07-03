@@ -21,7 +21,7 @@ public class App {
                 int choice;
 
                 do {
-                    System.out.println("=== Online Food Delivery ===");
+                    System.out.println("==== Wonderlust Cafe ====");
                     System.out.println("1. Input User Data");
                     System.out.println("2. Input Menu Data ");
                     System.out.println("3. Input Order Data");
