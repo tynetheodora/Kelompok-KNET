@@ -21,51 +21,29 @@ package model;
      */
 
 public class Payment {
-    String currency;
-    String amount;
-    String paymentMethod;
-    String transactionDate;
-    String transactionId;
-    String status;
-    String additionalDetails;
+    private String idPayment;
+    private String amount;
+    private String paymentMethod;
+    private String transactionDate;
+    private String status;
+    private String idOrder;
 
-    public Payment(){
-
-    }
-
-    public Payment(String currency, String amount, String paymentMethod, 
-    String transactionDate, String transactionId, 
-    String status, String additionalDetails) {
+    public Payment(String idPayment, String amount, String paymentMethod, 
+    String transactionDate, String status, String idOrder) {
+        this. idPayment = idPayment;
         this.amount = amount;
         this.paymentMethod = paymentMethod;
         this.transactionDate = transactionDate;
-        this.transactionId = transactionId;
         this.status = status;
-        this. additionalDetails = additionalDetails;
+        this. idOrder = idOrder;
+    }
+    
+    public String getIdPayment() {
+        return this.idPayment;
     }
 
-    public Payment(double amount2) {
-    }
-
-    @Override
-    public String toString() {
-        return "|" +
-            " " + getCurrency() + "\t|" +
-            " " + getAmount() + "\t|" +
-            " " + getPaymentMethod() + "\t|" +
-            " " + getTransactionDate() + "\t|" +
-            " " + getTransactionId() + "\t|" +
-            " " + getStatus() + "\t|" +
-            " " + getAdditionalDetails() + "\t|" +
-            "";
-    }
-
-    public String getCurrency() {
-        return this.currency;
-    }
-
-    public void setCurrency(String currency) {
-        this.currency = currency;
+    public void setIdPayment(String idPayment) {
+        this.idPayment = idPayment;
     }
 
     public String getAmount() {
@@ -92,14 +70,6 @@ public class Payment {
         this.transactionDate = transactionDate;
     }
 
-    public String getTransactionId() {
-        return this.transactionId;
-    }
-
-    public void setTransactionId(String transactionId) {
-        this.transactionId = transactionId;
-    }
-
     public String getStatus() {
         return this.status;
     }
@@ -108,32 +78,38 @@ public class Payment {
         this.status = status;
     }
 
-    public String getAdditionalDetails() {
-        return this.additionalDetails;
+    public String getIdOrder() {
+        return this.idOrder;
     }
 
-    public void setAdditionalDetails(String additionalDetails) {
-        this.additionalDetails = additionalDetails;
+    public void setIdOrder(String idOrder) {
+        this.idOrder = idOrder;
     }
 
-    // contructor
-    public static void main(String[] args) {
-        Payment Customer1 = new Payment();
-        Customer1.setCurrency("IDR");
-        Customer1.setAmount("200.000");
-        Customer1.setPaymentMethod("Cash \t");
-        Customer1.setTransactionDate("5/6/2023");        
-        Customer1.setTransactionId("xcsznjc0ldr");
-        Customer1.setStatus("Completed");
-        Customer1.setAdditionalDetails(" - ");
-
-        System.out.println(Customer1.toString());
-
-        Payment Customer2 = new Payment("IDR", "250.000", "Bank Transfer", "5/6/2023", "sjnclasc5", "Failed", " - ");
-
-        System.out.println(Customer2.toString());
+    public Payment(){
 
     }
+
+
+
+    public Payment(double amount2) {
+    }
+
+    @Override
+    public String toString() {
+        return "|" +
+            " " + getIdPayment() + "\t|" +
+            " " + getAmount() + "\t|" +
+            " " + getPaymentMethod() + "\t|" +
+            " " + getTransactionDate() + "\t|" +
+            " " + getStatus() + "\t|" +
+            " " + getIdOrder() + "\t|" +
+            "";
+    }
+
+    
+
+
 
     public static void add(Payment payment) {
     }
