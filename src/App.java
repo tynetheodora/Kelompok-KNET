@@ -74,9 +74,10 @@ public class App {
                 Menu.add(new Menu("Porridge", "03", "Appetizer", 100000, "Savory porridge with garlic and fresh ginger"));
 
                 Payment[] pymnt = new Payment[350];
-                //Payment.add(new Payment("IDR", "200.000", "Cash", "5/6/2023", "xcsznjc0ldr", "Completed", " - "));
-                //Payment.add(new Payment("IDR", "250.000", "Bank Transfer", "5/6/2023", "sjnclasc5", "Failed", " - "));
-                //Payment.add(new Payment("IDR", "300.000", "E-Wallet", "5/6/2023", "jsbakjsn3s", "In Progress", " - "));
+                Payment.add(new Payment("0908777", "200.000", "Cash", "5/6/2023", "null", "9080777"));
+                Payment.add(new Payment("0908666", "350.000", "Bank Transfer", "13/6/2023", "null", "9080666"));
+                Payment.add(new Payment("0908555", "480.000", "OVO", "null", "29/6/2023", "9080555"));
+
 
                 OrderDetail[] od = new OrderDetail[350];
                 //OrderDetail.add(new OrderDetail("pizza","F01", "50.000","1","7.000","57.000"));
@@ -182,24 +183,22 @@ public class App {
 
             static ArrayList<Payment> payment = new ArrayList<Payment>();
             public static void inputPaymentData() {
-                String currency, amount, paymentMethod, transactionDate, transactionId, status, additionalDetails;
+                String idPayment, amount, paymentMethod, transactionDate, status, idOrder;
 
-                System.out.print("Currency: ");
-                currency = input.nextLine();
+                System.out.print("Id Payment: ");
+                idPayment = input.nextLine();
                 System.out.print("Amount: ");
                 amount = input.nextLine();
                 System.out.print("Payment Method: ");
                 paymentMethod = input.nextLine();
                 System.out.print("TransactionDate: ");
                 transactionDate = input.nextLine();
-                System.out.print("TransactionId: ");
-                transactionId = input.nextLine();
                 System.out.print("Status: ");
                 status = input.nextLine();
-                System.out.print("Additional Details: ");
-                additionalDetails = input.nextLine();
+                System.out.print("Id Order: ");
+                idOrder = input.nextLine();
 
-               // Payment.add(new Payment(currency, amount, paymentMethod, transactionDate, transactionId, status, additionalDetails));
+               Payment.add(new Payment(idPayment, amount, paymentMethod, transactionDate, status, idOrder));
 
                 System.out.println("Payment data has been input.");
                 }
