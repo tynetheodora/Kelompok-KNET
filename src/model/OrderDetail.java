@@ -18,23 +18,23 @@ public class OrderDetail{
 
     
     String IDorderDetail;
-    String IDorder;
-    String namaMenu;
-    String IDmenu;
-    String Price;
-    String QTY;
-    String tax;
-    String totalPrice;
+    Order order;
+    Menu menu;
+    Menu IDmenu;
+    int Price;
+    int QTY;
+    int tax;
+    int totalPrice;
 
 
      public OrderDetail() {
 
     }
 
-    public OrderDetail(String IDorderDetail, String IDorder, String namaMenu, String IDmenu, String Price, String QTY , String tax , String totalPrice) {
+    public OrderDetail(String IDorderDetail, Order order, Menu menu, Menu IDmenu, int Price, int QTY , int tax , int totalPrice) {
         this.IDorderDetail = IDorderDetail;
-        this.IDorder = IDorder;
-        this.namaMenu = namaMenu;
+        this.order = order;
+        this.menu = menu;
         this.IDmenu = IDmenu;
         this.Price = Price;
         this.QTY = QTY;
@@ -50,63 +50,59 @@ public class OrderDetail{
         this.IDorderDetail = IDorderDetail;
     }
 
-    public String getIDorder() {
-        return this.IDorder;
+    public Order getorder() {
+        return this.order;
     }
 
-    public void setIDorder(String IDorder) {
-        this.IDorder = IDorder;
+    public void setIDorder(Order order) {
+        this.order = order;
     }
 
-    public String getNamaMenu() {
-        return this.namaMenu;
+    public Menu getNamaMenu() {
+        return this.menu;
     }
 
-    public void setNamaMenu(String namaMenu) {
-        this.namaMenu = namaMenu;
+    public void setNamaMenu(Menu menu) {
+        this.menu = menu;
     }
 
-    public String getIDmenu() {
+    public Menu getIDmenu() {
         return this.IDmenu;
     }
 
-    public void setIDmenu(String IDmenu) {
+    public void setIDmenu(Menu IDmenu) {
         this.IDmenu = IDmenu;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return this.Price;
     }
 
-    public void setHarga(String Price) {
+    public void setHarga(int Price) {
         this.Price = Price;
     }
 
-    public String getQTY() {
+    public int getQTY() {
         return this.QTY;
     }
 
-    public void setKuantitas(String QTY) {
+    public void setKuantitas(int QTY) {
         this.QTY = QTY;
     }
 
-    public String getTax() {
+    public int getTax() {
         return this.tax;
     }
 
-    public void setTax(String tax) {
+    public void setTax(int tax) {
         this.tax = tax;
     }
 
-    public String getTotalPrice() {
+    public int getTotalPrice() {
         return this.totalPrice;
     }
 
-    public void setTotalHarga(String totalPrice) {
+    public void setTotalHarga(int totalPrice) {
         this.totalPrice = totalPrice;
     }
-
-    public void add(OrderDetail orderDetail) {
-    }
 }
-   
