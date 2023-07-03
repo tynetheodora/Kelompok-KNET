@@ -27,7 +27,7 @@ public class Order {
     public Order(String idOrder, String namaRestoran, String alamatRestoran, String userName, String orderDate, String orderDetail) {
     }
 
-    public String idOrder(){
+    public String getIdOrder(){
         return this.idOrder;
     }
 
