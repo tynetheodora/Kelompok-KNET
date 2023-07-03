@@ -27,7 +27,7 @@ public class Order {
         this.orderDetail = orderDetail;
     }
 
-    public Order(String string, String string2, String string3, String string4, String string5, String string6) {
+    public Order(String idOrder, String namaRestoran, String alamatRestoran, String userName, String orderDate, String orderDetail) {
     }
 
     public String idOrder(){
