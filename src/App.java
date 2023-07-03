@@ -64,9 +64,9 @@ public class App {
             public static void init(){
 
                 User[] usr = new User[350];
-                User.add(new User("1", "eve", "eve@gmail.com", "123456","081234567891","01-02-02","jl.medan"));
-                User.add(new User("2", "tyne.theo", "tyne.theo@gmail.com", "abcdef","081234567891","01-02-02","jl.medan"));
-                User.add(new User("3", "kayla", "kylnmr@gmail.com", "98765","081234567891","01-02-02","jl.medan"));
+                //User.add(new User("1", "eve", "eve@gmail.com", "123456","081234567891","01-02-02","jl.medan"));
+                //User.add(new User("2", "tyne.theo", "tyne.theo@gmail.com", "abcdef","081234567891","01-02-02","jl.medan"));
+                //User.add(new User("3", "kayla", "kylnmr@gmail.com", "98765","081234567891","01-02-02","jl.medan"));
 
                 Menu[] mn = new Menu[350];
                 Menu.add(new Menu(null, null, null, null, null));
@@ -112,7 +112,7 @@ public class App {
                 System.out.print("Address \t: ");
                 address = input.nextLine();
 
-                user.add(new User(id, username, email, password, phoneNumber, dateOfBirth, address));
+                //user.add(new User(id, username, email, password, phoneNumber, dateOfBirth, address));
 
                 System.out.println("Menu data has been input.");
             }  
