@@ -28,11 +28,10 @@ public class User {
     private String phoneNumber;
     private String dateOfBirth;
     private String address;
-    private ArrayList <Order> order =
-        new ArrayList<Order>(); //hub 1 ke banyak --> assoc
+    private ArrayList <String> idOrder;
 
-
-    public User(String name, String username, String email, String password, String phoneNumber, String dateOfBirth, String address, ArrayList<Order>order) {
+    public User(String name, String username, String email, String password, 
+        String phoneNumber, String dateOfBirth, String address, ArrayList<String>idOrder) {
         this.name = name;
         this.username = username;
         this.email = email;
@@ -40,11 +39,11 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.dateOfBirth = dateOfBirth;
         this.address = address;
-        this.order = order;
+        this.idOrder = idOrder;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -52,7 +51,7 @@ public class User {
     }
 
     public String getUsername() {
-        return username;
+        return this.username;
     }
 
     public void setUsername(String username) {
@@ -60,7 +59,7 @@ public class User {
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
@@ -68,7 +67,7 @@ public class User {
     }
 
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     public void setPassword(String password) {
@@ -76,7 +75,7 @@ public class User {
     }
 
     public String getPhoneNumber() {
-        return phoneNumber;
+        return this.phoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
@@ -84,7 +83,7 @@ public class User {
     }
 
     public String getDateOfBirth() {
-        return dateOfBirth;
+        return this.dateOfBirth;
     }
 
     public void setDateOfBirth(String dateOfBirth) {
@@ -92,14 +91,20 @@ public class User {
     }
 
     public String getAddress() {
-        return address;
+        return this.address;
     }
 
     public void setAddress(String address) {
         this.address = address;
     }
 
-   
+    public ArrayList<String> getIdOrder() {
+        return this.idOrder;
+    }
+
+    public void setIdOrder(ArrayList<String> idOrder) {
+        this.idOrder = idOrder;
+    }
 
     @Override
     public String toString() {
@@ -111,6 +116,7 @@ public class User {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", dateOfBirth='" + dateOfBirth + '\'' +
                 ", address='" + address + '\'' +
+                ", idOrder='" + idOrder +
                 '}';
     }
 
