@@ -4,54 +4,50 @@ public class OrderDetail{
     /*
  * didalam icon order , memiliki atribut:
  * common attribut
- * 
+ * - ID order detail
+ * - ID Order
  * - nama menu
  * - ID menu
- * - harga
- * - kuantitas
+ * - price
+ * - QTY
  * - tax
- * - total harga
+ * - total price
  * 
  * 
  */
 
     
-    String namamenu;
+    String IDorderDetail;
+    String IDorder;
+    String namaMenu;
     String IDmenu;
     String harga;
     String kuantitas;
     String tax;
     String totalHarga;
 
-    public OrderDetail (){
-
+    public String getIDorderDetail() {
+        return this.IDorderDetail;
     }
 
-    public OrderDetail ( String namamenu, String IDmenu, String harga, String kuantitas, String tax,String totalHarga){
-        this.namamenu = namamenu;
-        this.IDmenu = IDmenu;
-        this.harga = harga;
-        this.kuantitas = kuantitas;
-        this.tax = tax;
-        this.totalHarga = totalHarga;
-    
-    }
-     
-    public String getTax() {
-        return this.tax;
+    public void setIDorderDetail(String IDorderDetail) {
+        this.IDorderDetail = IDorderDetail;
     }
 
-    public void setTax(String tax) {
-        this.tax = tax;
+    public String getIDorder() {
+        return this.IDorder;
     }
 
-    
-    public String getNamamenu() {
-        return this.namamenu;
+    public void setIDorder(String IDorder) {
+        this.IDorder = IDorder;
     }
 
-    public void setNamamenu(String namamenu) {
-        this.namamenu = namamenu;
+    public String getNamaMenu() {
+        return this.namaMenu;
+    }
+
+    public void setNamaMenu(String namaMenu) {
+        this.namaMenu = namaMenu;
     }
 
     public String getIDmenu() {
@@ -78,6 +74,14 @@ public class OrderDetail{
         this.kuantitas = kuantitas;
     }
 
+    public String getTax() {
+        return this.tax;
+    }
+
+    public void setTax(String tax) {
+        this.tax = tax;
+    }
+
     public String getTotalHarga() {
         return this.totalHarga;
     }
@@ -85,8 +89,5 @@ public class OrderDetail{
     public void setTotalHarga(String totalHarga) {
         this.totalHarga = totalHarga;
     }
-
-    public static void add(OrderDetail orderDetail) {
-    }
-
 }
+   

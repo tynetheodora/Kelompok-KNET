@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.jar.Attributes.Name;
+
 import model.Order;
 import model.Payment;
 import model.OrderDetail;
@@ -61,9 +63,9 @@ public class App {
 
             public static void init(){
 
-                User User1 = new User("1", "eve", "eve@gmail.com", "123456","081234567891","01-02-02","jl.medan");
-                User User2 = new User("2", "tyne.theo", "tyne.theo@gmail.com", "abcdef","081234567891","01-02-02","jl.medan");
-                User User3 = new User("3", "kayla", "kylnmr@gmail.com", "98765","081234567891","01-02-02","jl.medan");
+                User User1 = new User("evelline christine", "eve", "eve@gmail.com", "123456","081234567891","01-02-02","jl.medan");
+                User User2 = new User("tyne theodora", "tyne.theo", "tyne.theo@gmail.com", "abcdef","081234567891","01-02-02","jl.medan");
+                User User3 = new User("kayla namira", "kayla", "kylnmr@gmail.com", "98765","081234567891","01-02-02","jl.medan");
 
                 Menu Cust1 = new Menu("Waffle", "01", "Dessert", 200000, "Original waffle with vanilla ice cream & honey ");
                 Menu Cust2 = new Menu("Pizza", "02", "Main course", 350000, "Signature regular pizza");
@@ -74,9 +76,9 @@ public class App {
                 Payment Customer3 = new Payment("IDR", "300.000", "E-Wallet", "5/6/2023", "jsbakjsn3s", "In Progress", " - ");
 
 
-                OrderDetail customer1Orderdetail = new OrderDetail("pizza","F01", "50.000","1","7.000","57.000");
-                OrderDetail customer2Orderdetail = new OrderDetail("bakso","F04","30.000","2","5.000","65.000");
-                OrderDetail customer3Orderdetail = new OrderDetail("mie goreng","F06","25.000","3","8.000","83.000");
+                OrderDetail customer1Orderdetail = new OrderDetail("KN071J89I0","F011NK23LK", "Martabak Telur","Food 01","25.000","2","5.000","55.000");
+                OrderDetail customer2Orderdetail = new OrderDetail("OF731J06P9","JKO678LG34", "Pizza Vegetarian","Food 07","65.000","1","7.000","32.000");
+                OrderDetail customer3Orderdetail = new OrderDetail("KF845P04T3","OH739PKL27", "Spaghetti Carbonara","Food 13","55.000","1","5.500","60.500");
 
                 Order customer1Order = new Order("Online Order", "Polonia Medan", "TyneTheodora", "1220028", "11 November 2023", "11:11");
                 Order customer2Order = new Order("Online Order", "Polonia Medan", "Kayla Nmr", "1220026", "24 Juni 2023", "20:45");
@@ -87,8 +89,8 @@ public class App {
                 private static User inputUserData() {
                     Scanner scanner = new Scanner(System.in);
                     System.out.println("=== Input User Data ===");
-                    System.out.print("Id: ");
-                    String id = scanner.nextLine();
+                    System.out.print("name: ");
+                    String name = scanner.nextLine();
                     System.out.print("Username: ");
                     String username = scanner.nextLine();
                     System.out.print("Email: ");
@@ -103,7 +105,7 @@ public class App {
                     String address = scanner.nextLine();
 
 
-                    User newUser = new User(id, username, email, password, phoneNumber, dateOfBirth, address);
+                    User newUser = new User(name, username, email, password, phoneNumber, dateOfBirth, address);
 
                     for (int i = 0; i < user.length; i++) {
                         if (user[i] == null) {
@@ -173,26 +175,30 @@ public class App {
                     System.out.println("Menu data has been input.");
                     return newOrder;
                 }
-
+            
             static OrderDetail orderDetail[] = new OrderDetail[20];
                 private static OrderDetail inputOrderDetailData() {
                     Scanner scanner = new Scanner(System.in);
                     System.out.println("=== Input Order Detail Data ===");
+                    System.out.print("ID Order Detail: ");
+                    String IDorderDetail = scanner.nextLine();
+                    System.out.print("ID Order: ");
+                    String IDorder = scanner.nextLine();
                     System.out.print("Nama Menu: ");
-                    String namamenu = scanner.nextLine();
+                    String namaMenu = scanner.nextLine();
                     System.out.print("ID Menu: ");
                     String IDmenu = scanner.nextLine();
-                    System.out.print("Harga: ");
-                    String harga = scanner.nextLine();
+                    System.out.print("Price: ");
+                    String Price = scanner.nextLine();
                     System.out.print("Kuantitas: ");
-                    String kuantitas = scanner.nextLine();
+                    String QTY = scanner.nextLine();
                     System.out.println("Tax");
                     String tax = scanner.nextLine();
-                    System.out.print("Total Harga: ");
-                    String totalHarga = scanner.nextLine();
+                    System.out.print("Total Price: ");
+                    String totalPrice = scanner.nextLine();
                     scanner.nextLine(); // Discard the newline character
 
-                    OrderDetail newOrderDetail = new OrderDetail(namamenu, IDmenu, harga, kuantitas, tax, totalHarga);
+                    OrderDetail newOrderDetail = new OrderDetail(IDorderDetail,IDorder ,namaMenu , IDmenu, Price, QTY, tax, totalPrice);
 
                     for (int i = 0; i < orderDetail.length; i++) {
                         if (orderDetail[i] == null) {
@@ -241,10 +247,13 @@ public class App {
                             if (user[j] != null) {
                                 System.out.println("=== Display Data ===");
                                 System.out.println("User[" + j + "]:");
-                                System.out.println("Id: " + user[j].getId());
+                                System.out.println("Name: " + user[j].getName());
                                 System.out.println("Username: " + user[j].getUsername());
                                 System.out.println("Email: " + user[j].getEmail());
                                 System.out.println("Password: " + user[j].getPassword());
+                                System.out.println("Phone Number: " + user[j].getPhoneNumber());
+                                System.out.println("Date of Birth: " + user[j].getDateOfBirth());
+                                System.out.println("Address : " + user[j].getAddress());
                             }
                     }
 
@@ -274,12 +283,14 @@ public class App {
                     for (int i = 0; i < orderDetail.length; i++) {
                             if (orderDetail[i] != null) {
                                 System.out.println("Order Detail[" + i + "]:");
-                                System.out.println("Nama Menu : " + orderDetail[i].getNamamenu());
+                                 System.out.println("ID Order Detail : " + orderDetail[i].getIDorderDetail());
+                                System.out.println("ID order: " + orderDetail[i].getIDorder());
+                                System.out.println("Nama Menu : " + orderDetail[i].getNamaMenu());
                                 System.out.println("ID menu: " + orderDetail[i].getIDmenu());
-                                System.out.println("Harga: " + orderDetail[i].getHarga());
-                                System.out.println("kuantitas : " + orderDetail[i].getKuantitas());
+                                System.out.println("Price: " + orderDetail[i].getPrice());
+                                System.out.println("Qty : " + orderDetail[i].getQTY());
                                 System.out.println("Tax: " + orderDetail[i].getTax());
-                                System.out.println("Total harga: " + orderDetail[i].getTotalHarga());
+                                System.out.println("Total price: " + orderDetail[i].getTotalPrice());
                             }
                     }
 
