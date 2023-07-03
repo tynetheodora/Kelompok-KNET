@@ -69,9 +69,9 @@ public class App {
             public static void init(){
 
                 User[] usr = new User[350];
-                User.add(new User("Evelline Christine", "eve", "eve@gmail.com", "123456", "081234567891", "01-02-02", "jl.medan", null));
-                User.add(new User("Tyne Theodora", "tyne.theo", "tyne.theo@gmail.com", "123456", "081234567891", "01-02-02", "citra garden", null));
-                User.add(new User("Kayla Namira", "kayla1", "kylnmr@gmail.com", "123456", "081234567891", "01-02-02", "tasbih", null));
+                User.add(new User("Evelline Christine", "eve.chris", "eve@gmail.com", "123456", "08123456789", "5/2/2002", "jl.medan", order));
+                User.add(new User("Tyne Theodora", "tyne.theo", "tyne.theo@gmail.com", "123456", "08123456789", "20/10/2004", "Citra Garden", order));
+                User.add(new User("Kayla Namira", "kayla.nmr", "kaylanmr@gmail.com", "123456", "08123456789", "13/6/2000", "Tasbi", order));
 
                 Menu[] mn = new Menu[350];
                 Menu.add(new Menu("F1", "Pizza", "Main Course", 90000, "Meat Lovers with Cheesy Bites"));
@@ -89,14 +89,14 @@ public class App {
                 OrderDetail.add(new OrderDetail("ENK86OKG75", null, null, null, 34000, 2, 10000, 69000));
                 
                 Order[] ordr = new Order[350];
-                Order.add(new Order("Online Order", "Polonia Medan", "TyneTheodora", "1220028", "11 November 2023", "11:11"));
-                Order.add(new Order("Online Order", "Polonia Medan", "Kayla Nmr", "1220026", "24 Juni 2023", "20:45"));
-                Order.add(new Order("Online Order", "Polonia Medan", "Evelline", "1220027", "13 Agustus 2023", "12:05"));
+                Order.add(new Order("03081221", "Wonderlust Cafe", "Medan Polonia", "kayla.nmr", "11/11/2023", orderDetail));
+                Order.add(new Order("03081222", "Wonderlust Cafe", "Medan Polonia", "tyne.theo", "5/6/2023", orderDetail));
+                Order.add(new Order("03081223", "Wonderlust Cafe", "Medan Polonia", "eve.chris", "23/11/2023", orderDetail));
             }
         
 
             public static void inputUserData() {
-                String name, username, email, password, phoneNumber, dateOfBirth, address, idOrder;
+                String name, username, email, password, phoneNumber, dateOfBirth, address;
 
                 System.out.print("Name \t\t: ");
                 name = input.nextLine();
@@ -112,10 +112,8 @@ public class App {
                 dateOfBirth = input.nextLine();
                 System.out.print("Address \t: ");
                 address = input.nextLine();
-                System.out.print("Id Order \t: ");
-                idOrder = input.nextLine();
 
-                user.add(new User(name, username, email, password, phoneNumber, dateOfBirth, address, null));
+                user.add(new User(name, username, email, password, phoneNumber, dateOfBirth, address, order));
 
                 System.out.println("Menu data has been input.");
             }  
@@ -142,43 +140,45 @@ public class App {
             }
 
             public static void inputOrderData() {
-                String namaRestoran, alamatRestoran, namaPelanggan, idPemesanan, tanggalPembelian, jamPembelian;
-                
+                String idOrder, namaRestoran, alamatRestoran, userName, orderDate;
+     
+                System.out.print("Id Order \t: ");
+                idOrder = input.nextLine();      
                 System.out.print("Nama Restoran \t: ");
                 namaRestoran = input.nextLine();
                 System.out.print("Alamat Restoran \t: ");
                 alamatRestoran = input.nextLine();
                 System.out.print("Nama Pelanggan \t: ");
-                namaPelanggan = input.nextLine();
-                System.out.print("ID Pemesanan \t: ");
-                idPemesanan = input.nextLine();
-                System.out.print("Tanggal Pembelian \t: ");
-                tanggalPembelian = input.nextLine();
-                System.out.print("Jam Pembelian \t: ");
-                jamPembelian = input.nextLine();
+                userName = input.nextLine();
+                System.out.print("Order Date \t: ");
+                orderDate = input.nextLine();
 
-                order.add(new Order(namaRestoran, alamatRestoran, namaPelanggan, idPemesanan, tanggalPembelian, jamPembelian));
+                order.add(new Order(idOrder, namaRestoran, alamatRestoran, userName, orderDate, orderDetail));
 
                 System.out.println("Menu data has been input.");
             }
 
             public static void inputOrderDetailData() {
-                String namamenu, IDmenu, harga, kuantitas, tax, totalHarga;
+                String idOrderDetail, idOrder, menu, idMenu, price, qty, tax, totalPrice;
 
-                System.out.print("Nama Menu: ");
-                namamenu = input.nextLine();
-                System.out.print("ID Menu: ");
-                IDmenu = input.nextLine();
-                System.out.print("Harga: ");
-                harga = input.nextLine();
-                System.out.print("Kuantitas: ");
-                kuantitas = input.nextLine();
+                System.out.print("Id Order Detail : ");
+                idOrderDetail = input.nextLine();
+                System.out.print("Id Order: ");
+                idOrder = input.nextLine();
+                System.out.print("Menu: ");
+                menu = input.nextLine();
+                System.out.print("Id Menu: ");
+                idMenu = input.nextLine();
+                System.out.println("Price");
+                price = input.nextLine();
+                System.out.print("QTY: ");
+                qty = input.nextLine();
                 System.out.println("Tax");
                 tax = input.nextLine();
-                System.out.print("Total Harga: ");
-                totalHarga = input.nextLine();
+                System.out.print("Total Price: ");
+                totalPrice = input.nextLine();
 
-                //OrderDetail.add(new OrderDetail(namamenu, IDmenu, harga, kuantitas, tax, totalHarga));
+                OrderDetail.add(new OrderDetail(idOrderDetail, null, null, null, null, null, null, null));
 
                 System.out.println("Order data has been input.");
             }
