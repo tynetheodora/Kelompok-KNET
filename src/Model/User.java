@@ -28,10 +28,10 @@ public class User {
     private String phoneNumber;
     private String dateOfBirth;
     private String address;
-    private ArrayList <String> idOrder;
+    private ArrayList <Order> idOrder;
 
     public User(String name, String username, String email, String password, 
-        String phoneNumber, String dateOfBirth, String address, ArrayList<String>idOrder) {
+        String phoneNumber, String dateOfBirth, String address, ArrayList<Order>idOrder) {
         this.name = name;
         this.username = username;
         this.email = email;
@@ -98,11 +98,11 @@ public class User {
         this.address = address;
     }
 
-    public ArrayList<String> getIdOrder() {
+    public ArrayList<Order> getIdOrder() {
         return this.idOrder;
     }
 
-    public void setIdOrder(ArrayList<String> idOrder) {
+    public void setIdOrder(ArrayList<Order> idOrder) {
         this.idOrder = idOrder;
     }
 
