@@ -69,9 +69,9 @@ public class App {
                 User.add(new User("3", "kayla", "kylnmr@gmail.com", "98765","081234567891","01-02-02","jl.medan"));
 
                 Menu[] mn = new Menu[350];
-                Menu.add(new Menu("null", "null", "null", 200000, "null", orderDetail));
-                Menu.add(new Menu("null", "null", "null", 350000, "null", orderDetail));
-                Menu.add(new Menu("null", "null", "null", 480000, "null", orderDetail));
+                Menu.add(new Menu(null, null, null, null, null));
+                Menu.add(new Menu(null, null, null, null, null));
+                Menu.add(new Menu(null, null, null, null, null));
 
                 Payment[] pymnt = new Payment[350];
                 Payment.add(new Payment("0908777", "200.000", "Cash", "5/6/2023", "null", "9080777"));
@@ -132,7 +132,7 @@ public class App {
                 System.out.print("Description \t: ");
                 description = input.nextLine();
 
-                menu.add(new Menu(idMenu, namaMenu, category, null, description, orderDetail));
+                menu.add(new Menu(idMenu, namaMenu, category, null, description));
 
                 System.out.println("Menu data has been input.");
             }
