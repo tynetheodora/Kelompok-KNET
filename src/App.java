@@ -60,7 +60,7 @@ public class App {
                             break;
                     }
                     
-                    System.out.println(); // Print an empty line for readability
+                    System.out.println(); 
                 } while (!exit);
                 
                 scanner.close();
@@ -74,7 +74,7 @@ public class App {
                 User.add(new User("Kayla Namira", "kayla1", "kylnmr@gmail.com", "123456", "081234567891", "01-02-02", "tasbih", null));
 
                 Menu[] mn = new Menu[350];
-                Menu.add(new Menu("F1", "Pizza", "Main Course", 90000, "Meat Lovers wit Cheesy Bites"));
+                Menu.add(new Menu("F1", "Pizza", "Main Course", 90000, "Meat Lovers with Cheesy Bites"));
                 Menu.add(new Menu("F2", "Waffle", "Dessert", 50000, "Classic Waffle with Maple Syrup"));
                 Menu.add(new Menu("F3", "Soup", "Appetizer", 35000, "Mushroom Soup"));
 
@@ -132,7 +132,7 @@ public class App {
                 category = input.nextLine();
                 System.out.print("Price \t: ");
                 price = input.nextInt();
-                input.nextLine(); // Membersihkan newline character di input buffer
+                input.nextLine(); 
                 System.out.print("Description \t: ");
                 description = input.nextLine();
 
