@@ -3,7 +3,7 @@ package model;
 
 public class Menu {
     private String idMenu;
-    private String namaMenu;
+    private String Menu;
     private String category;
     private Integer price;
     private String description;
@@ -12,16 +12,12 @@ public class Menu {
 
     }
 
-    public Menu(String idMenu, String namaMenu, String category, Integer price, String description){
+    public Menu(String idMenu, String Menu, String category, Integer price, String description){
         this.idMenu = idMenu;
-        this.namaMenu = namaMenu;
+        this.Menu = Menu;
         this.category = category;
         this.price = price;
         this.description = description;
-    }
-
-    public void inputOrderDetailData(OrderDetail orderDetail){
-        orderDetail.add(orderDetail);
     }
 
     public String getIdMenu() {
@@ -32,12 +28,12 @@ public class Menu {
         this.idMenu = idMenu;
     }
 
-    public String getNamaMenu() {
-        return this.namaMenu;
+    public String getMenu() {
+        return this.Menu;
     }
 
-    public void setNamaMenu(String namaMenu) {
-        this.namaMenu = namaMenu;
+    public void setMenu(String Menu) {
+        this.Menu = Menu;
     }
 
     public String getCategory() {
@@ -70,7 +66,7 @@ public class Menu {
     public String toString() {
         return "|" +
             " " + getIdMenu() + "\t|" +
-            " " + getNamaMenu() + "\t|" +
+            " " + getMenu() + "\t|" +
             " " + getCategory() + "\t|" +
             " " + getPrice() + "\t|" +
             " " + getDescription() + "\t|" +
