@@ -6,24 +6,23 @@ import java.util.List;
 public class Order {
     public static int length;
     /* Attributes */
+    String idOrder;
     String namaRestoran;
     String alamatRestoran;
-    String namaPengguna;
-    String idPemesanan;
-    String tanggalPembelian;
-    String jamPembelian;
+    String userName;
+    String orderDate;
+    String orderDetail;
 
     public Order() {
 
     }
 
-    public Order(String namaRestoran, String alamatRestoran, String namaPengguna, String idPemesanan, String tanggalPembelian, String jamPembelian) {
+    public Order(String namaRestoran, String alamatRestoran, String userName, String idPemesanan, String orderDate, String orderDetail) {
         this.namaRestoran = namaRestoran;
         this.alamatRestoran = alamatRestoran;
-        this.namaPengguna = namaPengguna;
-        this.idPemesanan = idPemesanan;
-        this.tanggalPembelian = tanggalPembelian;
-        this.jamPembelian = jamPembelian;
+        this.userName = userName;
+        this.orderDate = orderDate;
+        this.orderDetail = orderDetail;
     }
 
     public String getNamaRestoran() {
@@ -42,36 +41,28 @@ public class Order {
         this.alamatRestoran = alamatRestoran;
     }
 
-    public String getNamaPengguna() {
-        return this.namaPengguna;
+    public String getuserName() {
+        return this.userName;
     }
 
-    public void setNamaPengguna(String namaPengguna) {
-        this.namaPengguna = namaPengguna;
+    public void setuserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getIdPemesanan() {
-        return this.idPemesanan;
+    public String getorderDate() {
+        return this.orderDate;
     }
 
-    public void setIdPemesanan(String idPemesanan) {
-        this.idPemesanan = idPemesanan;
+    public void setorderDate(String orderDate) {
+        this.orderDate = orderDate;
     }
 
-    public String getTanggalPembelian() {
-        return this.tanggalPembelian;
+    public String getorderDetail() {
+        return this.orderDetail;
     }
 
-    public void setTanggalPembelian(String tanggalPembelian) {
-        this.tanggalPembelian = tanggalPembelian;
-    }
-
-    public String getJamPembelian() {
-        return this.jamPembelian;
-    }
-
-    public void setJamPembelian(String jamPembelian) {
-        this.jamPembelian = jamPembelian;
+    public void setorderDetail(String orderDetail) {
+        this.orderDetail = orderDetail;
     }
 
     @Override
@@ -79,10 +70,9 @@ public class Order {
         return "Order{" +
                 "Nama Restoran='" + namaRestoran + '\'' +
                 ", Alamat Restoran='" + alamatRestoran + '\'' +
-                ", Nama Pengguna='" + namaPengguna + '\'' +
-                ", ID Pemesanan='" + idPemesanan + '\'' +
-                ", Tanggal='" + tanggalPembelian + '\'' +
-                ", Jam='" + jamPembelian + '\'' +
+                ", Nama Pengguna='" + userName + '\'' +
+                ", Tanggal='" + orderDate + '\'' +
+                ", Order Detail='" + orderDetail + '\'' +
                 '}';
     }
 
@@ -97,5 +87,9 @@ public class Order {
     }
 
     public static void add(Order order) {
+    }
+
+    public String getidOrder() {
+        return null;
     }
 }
