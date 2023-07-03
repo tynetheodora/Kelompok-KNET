@@ -1,42 +1,40 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Order {
 
-    public static int length;
-    /* Attributes */
-    String idOrder;
-    String namaRestoran;
-    String alamatRestoran;
-    String userName;
-    String orderDate;
-    OrderDetail orderDetail;
+    private String idOrder;
+    private String namaRestoran;
+    private String alamatRestoran;
+    private String userName;
+    private String orderDate;
+    private List<OrderDetail> orderDetails;
 
     public Order() {
-
+        orderDetails = new ArrayList<>();
     }
 
-    public Order(String idOrder, String namaRestoran, String alamatRestoran, String userName, String orderDate, OrderDetail orderDetail) {
+    public Order(String idOrder, String namaRestoran, String alamatRestoran, String userName, String orderDate, List<OrderDetail> orderDetails) {
         this.idOrder = idOrder;
         this.namaRestoran = namaRestoran;
         this.alamatRestoran = alamatRestoran;
         this.userName = userName;
         this.orderDate = orderDate;
-        this.orderDetail = orderDetail;
+        this.orderDetails = orderDetails;
     }
 
-    public Order(String idOrder, String namaRestoran, String alamatRestoran, String userName, String orderDate, String orderDetail) {
+    public String getIdOrder() {
+        return idOrder;
     }
 
-    public String getIdOrder(){
-        return this.idOrder;
-    }
-
-    public void setIdOrder(){
+    public void setIdOrder(String idOrder) {
         this.idOrder = idOrder;
     }
 
     public String getNamaRestoran() {
-        return this.namaRestoran;
+        return namaRestoran;
     }
 
     public void setNamaRestoran(String namaRestoran) {
@@ -44,46 +42,50 @@ public class Order {
     }
 
     public String getAlamatRestoran() {
-        return this.alamatRestoran;
+        return alamatRestoran;
     }
 
     public void setAlamatRestoran(String alamatRestoran) {
         this.alamatRestoran = alamatRestoran;
     }
 
-    public String getuserName() {
-        return this.userName;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setuserName(String userName) {
+    public void setUserName(String userName) {
         this.userName = userName;
     }
 
-    public String getorderDate() {
-        return this.orderDate;
+    public String getOrderDate() {
+        return orderDate;
     }
 
-    public void setorderDate(String orderDate) {
+    public void setOrderDate(String orderDate) {
         this.orderDate = orderDate;
     }
 
-    public OrderDetail getorderDetail() {
-        return this.orderDetail;
+    public List<OrderDetail> getOrderDetails() {
+        return orderDetails;
     }
 
-    public void setorderDetail(OrderDetail orderDetail) {
-        this.orderDetail = orderDetail;
+    public void setOrderDetails(List<OrderDetail> orderDetails) {
+        this.orderDetails = orderDetails;
+    }
+
+    public void addOrderDetail(OrderDetail orderDetail) {
+        orderDetails.add(orderDetail);
     }
 
     @Override
     public String toString() {
         return "Order{" +
-                "ID Order='" + idOrder + '\'' +
-                "Nama Restoran='" + namaRestoran + '\'' +
-                ", Alamat Restoran='" + alamatRestoran + '\'' +
-                ", Nama Pengguna='" + userName + '\'' +
-                ", Tanggal='" + orderDate + '\'' +
-                ", Order Detail='" + orderDetail + '\'' +
+                "idOrder='" + idOrder + '\'' +
+                ", namaRestoran='" + namaRestoran + '\'' +
+                ", alamatRestoran='" + alamatRestoran + '\'' +
+                ", userName='" + userName + '\'' +
+                ", orderDate='" + orderDate + '\'' +
+                ", orderDetails=" + orderDetails +
                 '}';
     }
 
