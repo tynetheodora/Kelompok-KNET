@@ -98,17 +98,14 @@ public class Payment {
     @Override
     public String toString() {
         return "|" +
-            " " + getIdPayment() + "\t|" +
-            " " + getAmount() + "\t|" +
-            " " + getPaymentMethod() + "\t|" +
-            " " + getTransactionDate() + "\t|" +
-            " " + getStatus() + "\t|" +
-            " " + getIdOrder() + "\t|" +
+            "Id Payment = " + getIdPayment() + "\t|" +
+            "Amount = " + getAmount() + "\t|" +
+            "Payment Method = " + getPaymentMethod() + "\t|" +
+            "Transaction Date = " + getTransactionDate() + "\t|" +
+            "Status = " + getStatus() + "\t|" +
+            "Id Order = " + getIdOrder() + "\t|" +
             "";
     }
-
-    
-
 
 
     public static void add(Payment payment) {
