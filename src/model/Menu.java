@@ -74,14 +74,14 @@ public class Menu {
     public static void main(String[] args) {
         Menu Cust1 = new Menu();
         Cust1.setNamaItem("Waffle");
-        Cust1.setIdItem("01");
+        Cust1.setIdItem("d01");
         Cust1.setCategory("Dessert");
         Cust1.setPrice(200000);        
         Cust1.setDescription("Original waffle with vanilla ice cream & honey");
 
         System.out.println(Cust1.toString());
 
-        Menu Cust2 = new Menu("Pizza", "02", "Main course", 350000, "Signature regular pizza");
+        Menu Cust2 = new Menu("Pizza", "F02", "Main course", 350000, "Signature regular pizza");
 
         System.out.println(Cust2.toString());
 
