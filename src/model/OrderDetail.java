@@ -105,5 +105,8 @@ public class OrderDetail{
     public void setTotalHarga(String totalPrice) {
         this.totalPrice = totalPrice;
     }
+
+    public void add(OrderDetail orderDetail) {
+    }
 }
    
