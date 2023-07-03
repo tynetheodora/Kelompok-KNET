@@ -21,10 +21,26 @@ public class OrderDetail{
     String IDorder;
     String namaMenu;
     String IDmenu;
-    String harga;
-    String kuantitas;
+    String Price;
+    String QTY;
     String tax;
-    String totalHarga;
+    String totalPrice;
+
+
+     public OrderDetail() {
+
+    }
+
+    public OrderDetail(String IDorderDetail, String IDorder, String namaMenu, String IDmenu, String Price, String QTY , String tax , String totalPrice) {
+        this.IDorderDetail = IDorderDetail;
+        this.IDorder = IDorder;
+        this.namaMenu = namaMenu;
+        this.IDmenu = IDmenu;
+        this.Price = Price;
+        this.QTY = QTY;
+        this.tax = tax;
+        this.totalPrice = totalPrice;
+    }
 
     public String getIDorderDetail() {
         return this.IDorderDetail;
@@ -58,20 +74,20 @@ public class OrderDetail{
         this.IDmenu = IDmenu;
     }
 
-    public String getHarga() {
-        return this.harga;
+    public String getPrice() {
+        return this.Price;
     }
 
-    public void setHarga(String harga) {
-        this.harga = harga;
+    public void setHarga(String Price) {
+        this.Price = Price;
     }
 
-    public String getKuantitas() {
-        return this.kuantitas;
+    public String getQTY() {
+        return this.QTY;
     }
 
-    public void setKuantitas(String kuantitas) {
-        this.kuantitas = kuantitas;
+    public void setKuantitas(String QTY) {
+        this.QTY = QTY;
     }
 
     public String getTax() {
@@ -82,12 +98,12 @@ public class OrderDetail{
         this.tax = tax;
     }
 
-    public String getTotalHarga() {
-        return this.totalHarga;
+    public String getTotalPrice() {
+        return this.totalPrice;
     }
 
-    public void setTotalHarga(String totalHarga) {
-        this.totalHarga = totalHarga;
+    public void setTotalHarga(String totalPrice) {
+        this.totalPrice = totalPrice;
     }
 }
    
