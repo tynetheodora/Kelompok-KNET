@@ -6,7 +6,7 @@ public class OrderDetail{
  * common attribut
  * - ID order detail
  * - ID Order
- * - nama menu
+ * - menu
  * - ID menu
  * - price
  * - QTY
@@ -18,23 +18,23 @@ public class OrderDetail{
 
     
     String IDorderDetail;
-    String IDorder;
-    String namaMenu;
-    String IDmenu;
-    String Price;
-    String QTY;
-    String tax;
-    String totalPrice;
+    Order IDorder;
+    Menu NamaMenu;
+    Menu IDmenu;
+    int Price;
+    int QTY;
+    int tax;
+    int totalPrice;
 
 
      public OrderDetail() {
 
     }
 
-    public OrderDetail(String IDorderDetail, String IDorder, String namaMenu, String IDmenu, String Price, String QTY , String tax , String totalPrice) {
+    public OrderDetail(String IDorderDetail, Order IDorder, Menu NamaMenu, Menu IDmenu, Integer Price, Integer QTY , Integer tax , Integer totalPrice) {
         this.IDorderDetail = IDorderDetail;
         this.IDorder = IDorder;
-        this.namaMenu = namaMenu;
+        this.NamaMenu = NamaMenu;
         this.IDmenu = IDmenu;
         this.Price = Price;
         this.QTY = QTY;
@@ -50,63 +50,81 @@ public class OrderDetail{
         this.IDorderDetail = IDorderDetail;
     }
 
-    public String getIDorder() {
+    public Order getIDorder() {
         return this.IDorder;
     }
 
-    public void setIDorder(String IDorder) {
+    public void setIDorder(Order IDorder) {
         this.IDorder = IDorder;
     }
 
-    public String getNamaMenu() {
-        return this.namaMenu;
+    public Menu NamaMenu() {
+        return this.NamaMenu;
     }
 
-    public void setNamaMenu(String namaMenu) {
-        this.namaMenu = namaMenu;
+    public void setmenu(Menu menu) {
+        this.NamaMenu = menu;
     }
 
-    public String getIDmenu() {
+    public Menu getIDmenu() {
         return this.IDmenu;
     }
 
-    public void setIDmenu(String IDmenu) {
+    public void setIDmenu(Menu IDmenu) {
         this.IDmenu = IDmenu;
     }
 
-    public String getPrice() {
+    public Integer getPrice() {
         return this.Price;
     }
 
-    public void setHarga(String Price) {
+    public void setPrice(Integer Price) {
         this.Price = Price;
     }
 
-    public String getQTY() {
+    public Integer getQTY() {
         return this.QTY;
     }
 
-    public void setKuantitas(String QTY) {
+    public void setKuantitas(Integer QTY) {
         this.QTY = QTY;
     }
 
-    public String getTax() {
+    public Integer getTax() {
         return this.tax;
     }
 
-    public void setTax(String tax) {
+    public void setTax(Integer tax) {
         this.tax = tax;
     }
 
-    public String getTotalPrice() {
+    public Integer getTotalPrice() {
         return this.totalPrice;
     }
 
-    public void setTotalHarga(String totalPrice) {
+    public void setTotalHarga(Integer totalPrice) {
         this.totalPrice = totalPrice;
     }
 
-    public void add(OrderDetail orderDetail) {
+    
+     @Override
+    public String toString() {
+        return "|" +
+            " " + getIDorderDetail() + "\t|" +
+            " " + getIDorder() + "\t|" +
+            " " + getNamaMenu() + "\t|" +
+            " " + getIDmenu() + "\t|" +
+            " " + getPrice() + "\t|" +
+            " " + getQTY() + "\t|" +
+            " " + getTax() + "\t|" +
+            " " + getTotalPrice() + "\t|" +
+            "";
     }
+
+
+     public static void add(OrderDetail OrderDetail) {
+    }
+
 }
+
    
