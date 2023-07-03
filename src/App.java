@@ -81,6 +81,7 @@ public class App {
                 Order customer1Order = new Order("Online Order", "Polonia Medan", "TyneTheodora", "1220028", "11 November 2023", "11:11");
                 Order customer2Order = new Order("Online Order", "Polonia Medan", "Kayla Nmr", "1220026", "24 Juni 2023", "20:45");
                 Order customer3Order = new Order("Online Order", "Polonia Medan", "Evelline", "1220027", "13 Agustus 2023", "12:05");
+                
             }
 
             private static User[] user = new User[10];
@@ -148,21 +149,21 @@ public class App {
                 private static Order inputOrderData() {
                     Scanner scanner = new Scanner(System.in);
                     System.out.println("=== Input Order Data ===");
+                    String idOrder = scanner.nextLine();
+                    System.out.println("ID Order");
                     String namaRestoran = scanner.nextLine();
                     System.out.print("Nama Restoran : ");
                     String alamatRestoran = scanner.nextLine();
                     System.out.print("Alamat Restoran : ");
-                    String namaPelanggan = scanner.nextLine();
+                    String userName = scanner.nextLine();
                     System.out.print("Nama Pelanggan : ");
-                    String idPemesanan = scanner.nextLine();
-                    System.out.print("ID Pemesanan: ");
-                    String tanggalPembelian = scanner.nextLine();
+                    String orderDate = scanner.nextLine();
                     System.out.print("Tanggal Pembelian : ");
-                    String jamPembelian = scanner.nextLine();
-                    System.out.print("Jam Pembelian : ");
+                    String orderDetail = scanner.nextLine();
+                    System.out.print("Order Detail : ");
                     scanner.nextLine(); // Discard the newline character
 
-                    Order newOrder = new Order(namaRestoran, alamatRestoran, namaPelanggan, idPemesanan, tanggalPembelian, jamPembelian);
+                    Order newOrder = new Order(idOrder, namaRestoran, alamatRestoran, userName, orderDate, orderDetail);
 
                     for (int i = 0; i < order.length; i++) {
                         if (order[i] == null) {
@@ -262,12 +263,12 @@ public class App {
                     for (int j = 0; j < order.length; j++) {
                             if (order[j] != null) {
                                 System.out.println("Order[" + j + "]:");
+                                System.out.println("idOrder : " + order[j].getidOrder());
                                 System.out.println("Nama Restoran : " + order[j].getNamaRestoran());
                                 System.out.println("Alamat Restoran: " + order[j].getAlamatRestoran());
-                                System.out.println("Nama Pengguna: " + order[j].getNamaPengguna());
-                                System.out.println("ID Pemesanan : " + order[j].getIdPemesanan());
-                                System.out.println("Tanggal: " + order[j].getTanggalPembelian());
-                                System.out.println("Jam: " + order[j].getJamPembelian());
+                                System.out.println("Nama Pengguna: " + order[j].getuserName());
+                                System.out.println("Tanggal: " + order[j].getorderDate());
+                                System.out.println("Order Detail: " + order[j].getorderDetail());
                             }
                     }
 
