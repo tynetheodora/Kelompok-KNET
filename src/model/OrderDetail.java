@@ -26,22 +26,6 @@ public class OrderDetail{
     int tax;
     int totalPrice;
 
-
-     public OrderDetail() {
-
-    }
-
-    public OrderDetail(String IDorderDetail, Order IDorder, Menu NamaMenu, Menu IDmenu, Integer Price, Integer QTY , Integer tax , Integer totalPrice) {
-        this.IDorderDetail = IDorderDetail;
-        this.IDorder = IDorder;
-        this.NamaMenu = NamaMenu;
-        this.IDmenu = IDmenu;
-        this.Price = Price;
-        this.QTY = QTY;
-        this.tax = tax;
-        this.totalPrice = totalPrice;
-    }
-
     public String getIDorderDetail() {
         return this.IDorderDetail;
     }
@@ -58,12 +42,12 @@ public class OrderDetail{
         this.IDorder = IDorder;
     }
 
-    public Menu NamaMenu() {
+    public Menu getNamaMenu() {
         return this.NamaMenu;
     }
 
-    public void setmenu(Menu menu) {
-        this.NamaMenu = menu;
+    public void setNamaMenu(Menu NamaMenu) {
+        this.NamaMenu = NamaMenu;
     }
 
     public Menu getIDmenu() {
@@ -74,37 +58,54 @@ public class OrderDetail{
         this.IDmenu = IDmenu;
     }
 
-    public Integer getPrice() {
+    public int getPrice() {
         return this.Price;
     }
 
-    public void setPrice(Integer Price) {
+    public void setPrice(int Price) {
         this.Price = Price;
     }
 
-    public Integer getQTY() {
+    public int getQTY() {
         return this.QTY;
     }
 
-    public void setKuantitas(Integer QTY) {
+    public void setQTY(int QTY) {
         this.QTY = QTY;
     }
 
-    public Integer getTax() {
+    public int getTax() {
         return this.tax;
     }
 
-    public void setTax(Integer tax) {
+    public void setTax(int tax) {
         this.tax = tax;
     }
 
-    public Integer getTotalPrice() {
+    public int getTotalPrice() {
         return this.totalPrice;
     }
 
-    public void setTotalHarga(Integer totalPrice) {
+    public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
     }
+
+
+     public OrderDetail() {
+
+    }
+
+    public OrderDetail(String IDorderDetail, Order IDorder, Menu NamaMenu, Menu IDmenu, Integer Price, Integer QTY , Integer tax , Integer totalPrice) {
+        this.IDorderDetail = IDorderDetail;
+        this.IDorder = IDorder;
+        this.NamaMenu = NamaMenu;
+        this.IDmenu = IDmenu;
+        this.Price = Price;
+        this.QTY = QTY;
+        this.tax = tax;
+        this.totalPrice = totalPrice;
+    }
+
 
     
      @Override
@@ -126,5 +127,3 @@ public class OrderDetail{
     }
 
 }
-
-   
