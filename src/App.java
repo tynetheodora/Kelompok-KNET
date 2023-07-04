@@ -146,7 +146,7 @@ public class App {
                 idOrder = input.nextLine();      
                 System.out.print("Nama Restoran \t: ");
                 namaRestoran = input.nextLine();
-                System.out.print("Alamat Restoran \t: ");
+                System.out.print("Alamat Restoran : ");
                 alamatRestoran = input.nextLine();
                 System.out.print("Nama Pelanggan \t: ");
                 userName = input.nextLine();
