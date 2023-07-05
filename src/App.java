@@ -84,9 +84,10 @@ public class App {
                 Payment.add(new Payment("0908555", "480.000", "OVO", "29/6/2023", "Completed", "9080555"));
 
                 OrderDetail[] od = new OrderDetail[350];
-                OrderDetail.add(new OrderDetail("KNY758IJGH", null, null, null, 30000, 1, 3000, 33000));
-                OrderDetail.add(new OrderDetail("DNY48UFJ57", null, null, null, 40000, 1, 3000, 43000));
-                OrderDetail.add(new OrderDetail("ENK86OKG75", null, null, null, 34000, 2, 10000, 69000));
+                //String idOrderDetail , Order idOrder , Menu menu, Menu idMenu,int price , int qty , int tax,int totalPrice 
+                OrderDetail.add(new OrderDetail("KNY758IJGH", order.get(0), menu.get(0) , 1));
+                OrderDetail.add(new OrderDetail("DNY48UFJ57", order.get(1), menu.get(2), 1));
+                OrderDetail.add(new OrderDetail("POG648HFYT", order.get(3), menu.get(3),1 ));
                 
                 Order[] ordr = new Order[350];
                 Order.add(new Order("03081221", "Wonderlust Cafe", "Medan Polonia", "kayla.nmr", "11/11/2023", orderDetail));
@@ -94,6 +95,24 @@ public class App {
                 Order.add(new Order("03081223", "Wonderlust Cafe", "Medan Polonia", "eve.chris", "23/11/2023", orderDetail));
             }
         
+            public static Order cariOrder (String orderId){
+                //cari order berdasarkan orderid
+                for (Order order2 : order) {
+                    if(order2.getIdOrder().equals(orderId)){
+                        return order2;
+                    }
+                }
+                return null;
+            }
+
+            public static Menu cariMenu (String idMenu){
+                for (Menu menu2 : menu) {
+                    if(menu2.getMenu().equals(idMenu)){
+                        return menu2;
+                    }
+                }
+                return null;
+            }
 
             public static void inputUserData() {
                 String name, username, email, password, phoneNumber, dateOfBirth, address;
@@ -159,26 +178,21 @@ public class App {
             }
 
             public static void inputOrderDetailData() {
-                String idOrderDetail, idOrder, menu, idMenu, price, qty, tax, totalPrice;
+                String idOrderDetail, idOrder, menu;
+                int qty , totalPrice;
 
                 System.out.print("Id Order Detail : ");
                 idOrderDetail = input.nextLine();
                 System.out.print("Id Order: ");
                 idOrder = input.nextLine();
-                System.out.print("Menu: ");
+                System.out.print("ID Menu: ");
                 menu = input.nextLine();
-                System.out.print("Id Menu: ");
-                idMenu = input.nextLine();
-                System.out.println("Price");
-                price = input.nextLine();
                 System.out.print("QTY: ");
-                qty = input.nextLine();
-                System.out.println("Tax");
-                tax = input.nextLine();
+                qty = input.nextInt();
                 System.out.print("Total Price: ");
-                totalPrice = input.nextLine();
+                totalPrice = input.nextInt();
 
-                OrderDetail.add(new OrderDetail(idOrderDetail, null, null, null, null, null, null, null));
+                OrderDetail.add(new OrderDetail(idOrderDetail, cariOrder(idOrder), cariMenu(menu), qty));
 
                 System.out.println("Order data has been input.");
             }
