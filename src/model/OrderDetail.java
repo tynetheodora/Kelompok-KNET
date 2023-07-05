@@ -1,5 +1,5 @@
 package model;
-public class OrderDetail{
+
 
     /*
  * didalam icon order , memiliki atribut:
@@ -16,15 +16,27 @@ public class OrderDetail{
  * 
  */
 
+
+public class OrderDetail{
+    private String idOrderDetail;
+    private Order idOrder;
+    private Menu menu;
+    private int qty;
+   
+
+
+public OrderDetail() {
+
+}
+
+public OrderDetail ( String idOrderDetail , Order idOrder , Menu menu,  int qty  ) {
+    this.idOrderDetail = idOrderDetail;
+    this.idOrder = idOrder;
+    this.menu = menu;
+    this.qty = qty;
     
-    String idOrderDetail;
-    Order idOrder;
-    Menu menu;
-    Menu idMenu;
-    int price;
-    int qty;
-    int tax;
-    int totalPrice;
+
+}
 
     public String getIdOrderDetail() {
         return this.idOrderDetail;
@@ -46,25 +58,12 @@ public class OrderDetail{
         return this.menu;
     }
 
-    public void setNamaMenu(Menu menu) {
+    public void setMenu(Menu menu) {
         this.menu = menu;
     }
 
-    public Menu getIdMenu() {
-        return this.idMenu;
-    }
 
-    public void setIdMenu(Menu idMenu) {
-        this.idMenu = idMenu;
-    }
 
-    public int getPrice() {
-        return this.price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
 
     public int getQty() {
         return this.qty;
@@ -74,37 +73,7 @@ public class OrderDetail{
         this.qty = qty;
     }
 
-    public int getTax() {
-        return this.tax;
-    }
 
-    public void setTax(int tax) {
-        this.tax = tax;
-    }
-
-    public int getTotalPrice() {
-        return this.totalPrice;
-    }
-
-    public void setTotalPrice(int totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
-
-    public OrderDetail() {
-
-    }
-
-    public OrderDetail(String idOrderDetail, Order idOrder, Menu menu, Menu idMenu, Integer price, Integer qty , Integer tax , Integer totalPrice) {
-        this.idOrderDetail = idOrderDetail;
-        this.idOrder = idOrder;
-        this.menu = menu;
-        this.idMenu = idMenu;
-        this.price = price;
-        this.qty = qty;
-        this.tax = tax;
-        this.totalPrice = totalPrice;
-    }
 
 
     
@@ -114,11 +83,8 @@ public class OrderDetail{
             " " + getIdOrderDetail() + "\t|" +
             " " + getIdOrder() + "\t|" +
             " " + getMenu() + "\t|" +
-            " " + getIdMenu() + "\t|" +
-            " " + getPrice() + "\t|" +
             " " + getQty() + "\t|" +
-            " " + getTax() + "\t|" +
-            " " + getTotalPrice() + "\t|" +
+           
             "";
     }
 
