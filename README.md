@@ -1,18 +1,17 @@
-## Getting Started
+## Sistem Pemesanan Makanan Online
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Sistem ini akan membantu pengguna ....
 
-## Folder Structure
+## Fitur 
 
-The workspace contains two folders by default, where:
+Fitur yang terdapat pada sistem ini :
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- Fitur User
+- Fitur ...
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Susunan Team 
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- Kayla (03081220026) Ketua
+- Tyne 
+- Evelline
+- Novita 
