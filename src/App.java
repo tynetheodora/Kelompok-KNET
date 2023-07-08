@@ -70,7 +70,7 @@ public class App {
 
                 User[] usr = new User[350];
                 User.add(new User("Evelline Christine", "eve.chris", "eve@gmail.com", "522002", "08826428882", "10/7/2002", "jl.medan", order));
-                User.add(new User("Tyne Theodora", "tyne.theo", "tyne.theo@gmail.com", "201004", "0811638252", "20/10/2004", "Citra Garden", order));
+                User.add(new User("Tyne Theodora", "tyne.theo", "tyne.theo@gmail.com", "201004", "08116388252", "20/10/2004", "Citra Garden", order));
                 User.add(new User("Kayla Namira", "kayla.nmr", "kaylanmr@gmail.com", "1362000", "08133362696", "13/6/2000", "Tasbi", order));
 
                 Menu[] mn = new Menu[350];
