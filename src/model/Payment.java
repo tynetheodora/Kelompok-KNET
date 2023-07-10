@@ -1,25 +1,5 @@
 package model;
 
-/* Nama : Kayla Namira
- * NIM : 03081220026
- */
-
-        /*
-     * Deskripsi
-     * Atribut
-     * amount: jumlah orderan
-     * currency: IDR
-     * paymentMethod : transfer bank, cash
-     * transactionDate : waktu transaksi pembayaran
-     * transactionId : ID transaksi pembayaran
-     * status: status payment berhasil, proses, gagal
-     * additionalDetails : informasi tambahan(detail alamat, dll)
-     * 
-     * task
-     * memproses transaksi pembayaran
-     * 
-     */
-
 public class Payment {
     private String idPayment;
     private String amount;
@@ -86,26 +66,29 @@ public class Payment {
         this.idOrder = idOrder;
     }
 
-    public Payment(){
+    public Payment(double amount2){
 
     }
 
-
-
-    public Payment(double amount2) {
+    public Payment(String idPayment2, String amount2, String paymentMethod2, String transactionDate2, String status2,
+            Order order) {
     }
 
-    @Override
-    public String toString() {
-        return "|" +
-            "Id Payment = " + getIdPayment() + "\t|" +
-            "Amount = " + getAmount() + "\t|" +
-            "Payment Method = " + getPaymentMethod() + "\t|" +
-            "Transaction Date = " + getTransactionDate() + "\t|" +
-            "Status = " + getStatus() + "\t|" +
-            "Id Order = " + getIdOrder() + "\t|" +
-            "";
-    }
+@Override
+public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("╔════════════════════════════════════════════════════╗\n");
+    sb.append("║               Payment Information                  ║\n");
+    sb.append("╟──────────────────────────────────────────────────────╢\n");
+    sb.append("║ Id Payment:       ").append(getIdPayment()).append("║\n");
+    sb.append("║ Amount:           ").append(getAmount()).append("║\n");
+    sb.append("║ Payment Method:   ").append(getPaymentMethod()).append("║\n");
+    sb.append("║ Transaction Date: ").append(getTransactionDate()).append("║\n");
+    sb.append("║ Status:           ").append(getStatus()).append("║\n");
+    sb.append("║ Id Order:         ").append(getIdOrder()).append("║\n");
+    sb.append("╚════════════════════════════════════════════════════╝\n");
+    return sb.toString();
+}
 
 
     public static void add(Payment payment) {
