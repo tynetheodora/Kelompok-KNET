@@ -28,10 +28,10 @@ public class User {
     private String phoneNumber;
     private String dateOfBirth;
     private String address;
-    private ArrayList <Order> idOrder;
+    private ArrayList <Order> order;
 
     public User(String name, String username, String email, String password, 
-        String phoneNumber, String dateOfBirth, String address, ArrayList<Order>idOrder) {
+        String phoneNumber, String dateOfBirth, String address, ArrayList<Order>order) {
         this.name = name;
         this.username = username;
         this.email = email;
@@ -39,7 +39,7 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.dateOfBirth = dateOfBirth;
         this.address = address;
-        this.idOrder = idOrder;
+        this.order = order;
     }
 
     public String getName() {
@@ -99,26 +99,31 @@ public class User {
     }
 
     public ArrayList<Order> getIdOrder() {
-        return this.idOrder;
+        return this.order;
     }
 
-    public void setIdOrder(ArrayList<Order> idOrder) {
-        this.idOrder = idOrder;
+    public void setIdOrder(ArrayList<Order> order) {
+        this.order = order;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", username='" + username + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", dateOfBirth='" + dateOfBirth + '\'' +
-                ", address='" + address + '\'' +
-                ", idOrder='" + idOrder +
-                '}';
-    }
+@Override
+public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("╔═════════════════════════════════════════╗\n");
+    sb.append("║            User Information             ║\n");
+    sb.append("╟─────────────────────────────────────────╢\n");
+    sb.append("║ Name:         ").append(name).append("║\n");
+    sb.append("║ Username:     ").append(username).append("║\n");
+    sb.append("║ Email:        ").append(email).append("║\n");
+    sb.append("║ Password:     ").append(password).append("║\n");
+    sb.append("║ Phone number: ").append(phoneNumber).append("║\n");
+    sb.append("║ Birth:        ").append(dateOfBirth).append("║\n");
+    sb.append("║ Address:      ").append(address).append("║\n");
+    sb.append("║ Order:        ").append(order).append("║\n");
+    sb.append("╚═════════════════════════════════════════╝\n");
+    return sb.toString();
+}
+
 
     public static void add(User user) {
     }
