@@ -77,11 +77,11 @@ public class Payment {
 @Override
 public String toString() {
     return "|" +
-            "Id Payment:\t\t" + getIdPayment() + " | " +
-            "Amount:\t\t" + getAmount() + " | " +
-            "Payment Method:\t" + getPaymentMethod() + " | " +
-            "Date:\t\t" + getTransactionDate() + " | " +
-            "Status:\t\t" + getStatus() + " | " +
+            "Id Payment:" + getIdPayment() + " | " +
+            "Amount:" + getAmount() + " | " +
+            "Payment Method:" + getPaymentMethod() + " | " +
+            "Date:" + getTransactionDate() + " | " +
+            "Status:" + getStatus() + " | " +
             "" + getIdOrder() + " | " +
             "";
 }
