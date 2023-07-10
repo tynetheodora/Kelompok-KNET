@@ -80,16 +80,12 @@ public OrderDetail ( String idOrderDetail , Order idOrder , Menu menu,  int qty 
      @Override
 public String toString() {
     return "|" +
-            "Id Order Detail:\t" + getIdOrderDetail() + " | " +
-            "Id Order:\t" + getIdOrder() + " | " +
-            "Menu:\t\t" + getMenu() + " | " +
-            "Qty:\t\t" + getQty() + " | " +
+            "Id Order Detail:" + getIdOrderDetail() + " | " +
+            "Id Order:" + getIdOrder() + " | " +
+            "Menu:" + getMenu() + " | " +
+            "Qty:" + getQty() + " | " +
             "";
 }
-
-
-
-
 
      public static void add(OrderDetail OrderDetail) {
     }
