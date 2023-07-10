@@ -37,7 +37,7 @@ public class App {
                     System.out.println("║ 6. Display Data                                    ║");
                     System.out.println("║ 0. Exit                                            ║");
                     System.out.println(" ────────────────────────────────────────────────────");
-                    System.out.println("Please choose a menu:                               ");
+                    System.out.println("Please choose a menu:                                 ");
 
                     choice = scanner.nextInt();
                     scanner.nextLine(); // consume the newline character
@@ -54,35 +54,35 @@ public class App {
                         inputUserData();
                         System.out.println("╔══════════════════════════════════════════════╗");
                         System.out.println("║        User Data has been successfully       ║");
-                        System.out.println("║                 inputted!                    ║");
+                        System.out.println("║                    input!                    ║");
                         System.out.println("╚══════════════════════════════════════════════╝");
                         break;
                     case 2:
                         inputMenuData();
                         System.out.println("╔══════════════════════════════════════════════╗");
                         System.out.println("║        Menu Data has been successfully       ║");
-                        System.out.println("║                 inputted!                    ║");
+                        System.out.println("║                    input!                    ║");
                         System.out.println("╚══════════════════════════════════════════════╝");
                         break;
                     case 3:
                         inputOrderData();
                         System.out.println("╔══════════════════════════════════════════════╗");
                         System.out.println("║        Order Data has been successfully      ║");
-                        System.out.println("║                 inputted!                    ║");
+                        System.out.println("║                    input!                    ║");
                         System.out.println("╚══════════════════════════════════════════════╝");
                         break;
                     case 4:
                         inputPaymentData();
                         System.out.println("╔══════════════════════════════════════════════╗");
                         System.out.println("║      Payment Data has been successfully      ║");
-                        System.out.println("║                 inputted!                    ║");
+                        System.out.println("║                    input!                    ║");
                         System.out.println("╚══════════════════════════════════════════════╝");
                         break;
                     case 5:
                         inputOrderDetailData();
                         System.out.println("╔══════════════════════════════════════════════╗");
                         System.out.println("║    Order Detail Data has been successfully   ║");
-                        System.out.println("║                 inputted!                    ║");
+                        System.out.println("║                    input!                    ║");
                         System.out.println("╚══════════════════════════════════════════════╝");
                         break;
                     case 6:
