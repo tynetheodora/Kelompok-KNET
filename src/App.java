@@ -330,29 +330,33 @@ public class App {
             }
 
 
-                public static void displayData() {
-                    for (User user : user) {
-                        System.out.println(user);
-                    }
-                    
-                    for (Menu menu : menu) {
-                        System.out.println(menu);
-                    }
-
-                    for (Order order : order) {
-                        System.out.println(order);
-                    }
-
-                    for (OrderDetail orderDetail : orderDetail) {
-                        System.out.println(orderDetail);
-                    }
-
-                    for (Payment payment : payment) {
-                        System.out.println(payment);
-
-                    }
-
+            public static void displayData() {
+                System.out.println("==== Users ====");
+                for (User user : user) {
+                    System.out.println(user);
                 }
+                
+                System.out.println("==== Menu ====");
+                for (Menu menu : menu) {
+                    System.out.println(menu);
+                }
+            
+                System.out.println("==== Order ====");
+                for (Order order : order) {
+                    System.out.println(order);
+                }
+            
+                System.out.println("==== Order Detail ====");
+                for (OrderDetail orderDetail : orderDetail) {
+                    System.out.println(orderDetail);
+                }
+            
+                System.out.println("==== Payment ====");
+                for (Payment payment : payment) {
+                    System.out.println(payment);
+                }
+            }
+            
 
 
     
