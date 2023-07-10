@@ -62,21 +62,16 @@ public class Menu {
 
 
 
-@Override
+ @Override
 public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("╔═════════════════════════════════════════╗\n");
-    sb.append("║               Menu Information           ║\n");
-    sb.append("╟─────────────────────────────────────────╢\n");
-    sb.append("║ Id Menu:    ").append(getIdMenu()).append("║\n");
-    sb.append("║ Menu:       ").append(getMenu()).append("║\n");
-    sb.append("║ Category:   ").append(getCategory()).append("║\n");
-    sb.append("║ Price:      ").append(getPrice()).append("║\n");
-    sb.append("║ Description:").append(getDescription()).append("║\n");
-    sb.append("╚═════════════════════════════════════════╝\n");
-    return sb.toString();
+    return "|" +
+            "Id Menu:\t" + getIdMenu() + " | " +
+            "Menu:\t" + getMenu() + " | " +
+            "Category:\t" + getCategory() + " | " +
+            "Price:\t" + getPrice() + " | " +
+            "Desc:\t" + getDescription() + " | " +
+            "";
 }
-
 
     public static void add(Menu menu) {
     }
