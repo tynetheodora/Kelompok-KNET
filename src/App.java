@@ -115,9 +115,9 @@ public class App {
             public static void init(){
 
                 User[] usr = new User[350];
-                User.add(new User("Evelline Christine", "eve.chris", "eve@gmail.com", "123456", "08123456789", "5/2/2002", "jl.medan", order));
-                User.add(new User("Tyne Theodora", "tyne.theo", "tyne.theo@gmail.com", "123456", "08123456789", "20/10/2004", "Citra Garden", order));
-                User.add(new User("Kayla Namira", "kayla.nmr", "kaylanmr@gmail.com", "123456", "08123456789", "13/6/2000", "Tasbi", order));
+                User.add(new User("Evelline Christine", "eve.chris", "eve@gmail.com", "522002", "08826428882", "10/7/2002", "jl.medan", order));
+                User.add(new User("Tyne Theodora", "tyne.theo", "tyne.theo@gmail.com", "201004", "08116388252", "20/10/2004", "Citra Garden", order));
+                User.add(new User("Kayla Namira", "kayla.nmr", "kaylanmr@gmail.com", "1362000", "08133362696", "13/6/2000", "Tasbi", order));
 
                 Menu[] mn = new Menu[350];
                 Menu.add(new Menu("F1", "Pizza", "Main Course", 90000, "Meat Lovers with Cheesy Bites"));
@@ -129,6 +129,7 @@ public class App {
                 Payment.add(new Payment("0908666", "350.000", "Bank Transfer", "13/6/2023", "Failed", order.get(2)));
                 Payment.add(new Payment("0908555", "480.000", "OVO", "29/6/2023", "Completed", order.get(3)));
 
+
                 OrderDetail[] od = new OrderDetail[350];
                 //String idOrderDetail , Order idOrder , Menu menu, Menu idMenu,int price , int qty , int tax,int totalPrice 
                 OrderDetail.add(new OrderDetail("KNY758IJGH", order.get(0), menu.get(0) , 1));
@@ -136,9 +137,9 @@ public class App {
                 OrderDetail.add(new OrderDetail("POG648HFYT", order.get(3), menu.get(3),1 ));
                 
                 Order[] ordr = new Order[350];
-                Order.add(new Order("03081221", "Wonderlust Cafe", "Medan Polonia", "kayla.nmr", "11/11/2023", orderDetail));
+                Order.add(new Order("03081221", "Wonderlust Cafe", "Medan Polonia", "eve.chris", "11/11/2023", orderDetail));
                 Order.add(new Order("03081222", "Wonderlust Cafe", "Medan Polonia", "tyne.theo", "5/6/2023", orderDetail));
-                Order.add(new Order("03081223", "Wonderlust Cafe", "Medan Polonia", "eve.chris", "23/11/2023", orderDetail));
+                Order.add(new Order("03081223", "Wonderlust Cafe", "Medan Polonia", "kayla.nmr", "23/11/2023", orderDetail));
             }
         
             //public static Order cariOrder (String orderId){
