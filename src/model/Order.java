@@ -81,12 +81,12 @@ public class Order {
     @Override
 public String toString() {
     return "|" +
-            "Id Order:\t\t" + getIdOrder() + " | " +
-            "Nama Resto:\t" + getNamaRestoran() + " | " +
-            "Alamat Resto:\t" + getAlamatRestoran() + " | " +
-            "Cust:\t\t" + getUserName() + " | " +
-            "Date:\t\t" + getOrderDate() + " | " +
-            "Order Details:\t" + getOrderDetails() + " | " +
+            "Id Order:" + getIdOrder() + " | " +
+            "Nama Resto:" + getNamaRestoran() + " | " +
+            "Alamat Resto:" + getAlamatRestoran() + " | " +
+            "Cust:" + getUserName() + " | " +
+            "Date:" + getOrderDate() + " | " +
+            "Order Details:" + getOrderDetails() + " | " +
             "";
 }
 
