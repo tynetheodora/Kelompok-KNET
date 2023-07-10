@@ -108,21 +108,19 @@ public class User {
 
 @Override
 public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("╔═════════════════════════════════════════╗\n");
-    sb.append("║            User Information             ║\n");
-    sb.append("╟─────────────────────────────────────────╢\n");
-    sb.append("║ Name:         ").append(name).append("║\n");
-    sb.append("║ Username:     ").append(username).append("║\n");
-    sb.append("║ Email:        ").append(email).append("║\n");
-    sb.append("║ Password:     ").append(password).append("║\n");
-    sb.append("║ Phone number: ").append(phoneNumber).append("║\n");
-    sb.append("║ Birth:        ").append(dateOfBirth).append("║\n");
-    sb.append("║ Address:      ").append(address).append("║\n");
-    sb.append("║ Order:        ").append(order).append("║\n");
-    sb.append("╚═════════════════════════════════════════╝\n");
-    return sb.toString();
+    return "|" +
+            "Name:\t\t" + name + " | " +
+            "Username:\t" + username + " | " +
+            "Email:\t\t" + email + " | " +
+            "Password:\t" + password + " | " +
+            "Phone number:\t" + phoneNumber + " | " +
+            "Birth:\t\t" + dateOfBirth + " | " +
+            "Address:\t" + address + " | " +
+            "" + order + " | " +
+            " ";
 }
+
+
 
 
     public static void add(User user) {
