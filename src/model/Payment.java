@@ -70,25 +70,23 @@ public class Payment {
 
     }
 
-    public Payment(String idPayment2, String amount2, String paymentMethod2, String transactionDate2, String status2,
+    public Payment(String idPayment, String amount, String paymentMethod, String transactionDate, String status,
             Order order) {
     }
 
 @Override
 public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("╔════════════════════════════════════════════════════╗\n");
-    sb.append("║               Payment Information                  ║\n");
-    sb.append("╟──────────────────────────────────────────────────────╢\n");
-    sb.append("║ Id Payment:       ").append(getIdPayment()).append("║\n");
-    sb.append("║ Amount:           ").append(getAmount()).append("║\n");
-    sb.append("║ Payment Method:   ").append(getPaymentMethod()).append("║\n");
-    sb.append("║ Transaction Date: ").append(getTransactionDate()).append("║\n");
-    sb.append("║ Status:           ").append(getStatus()).append("║\n");
-    sb.append("║ Id Order:         ").append(getIdOrder()).append("║\n");
-    sb.append("╚════════════════════════════════════════════════════╝\n");
-    return sb.toString();
+    return "|" +
+            "Id Payment:\t\t" + getIdPayment() + " | " +
+            "Amount:\t\t" + getAmount() + " | " +
+            "Payment Method:\t" + getPaymentMethod() + " | " +
+            "Date:\t\t" + getTransactionDate() + " | " +
+            "Status:\t\t" + getStatus() + " | " +
+            "" + getIdOrder() + " | " +
+            "";
 }
+
+
 
 
     public static void add(Payment payment) {
