@@ -65,11 +65,11 @@ public class Menu {
  @Override
 public String toString() {
     return "|" +
-            "Id Menu:\t" + getIdMenu() + " | " +
-            "Menu:\t" + getMenu() + " | " +
-            "Category:\t" + getCategory() + " | " +
-            "Price:\t" + getPrice() + " | " +
-            "Desc:\t" + getDescription() + " | " +
+            "Id Menu:" + getIdMenu() + " | " +
+            "Menu:" + getMenu() + " | " +
+            "Category:" + getCategory() + " | " +
+            "Price:" + getPrice() + " | " +
+            "Desc:" + getDescription() + " | " +
             "";
 }
 
