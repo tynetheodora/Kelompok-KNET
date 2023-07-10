@@ -77,16 +77,20 @@ public OrderDetail ( String idOrderDetail , Order idOrder , Menu menu,  int qty 
 
 
     
-     @Override
-    public String toString() {
-        return "|" +
-            " " + getIdOrderDetail() + "\t|" +
-            " " + getIdOrder() + "\t|" +
-            " " + getMenu() + "\t|" +
-            " " + getQty() + "\t|" +
-           
-            "";
-    }
+@Override
+public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("╔════════════════════════════════════════════════════╗\n");
+    sb.append("║               Order Detail Information              ║\n");
+    sb.append("╟──────────────────────────────────────────────────────╢\n");
+    sb.append("║ Id Order Detail: ").append(getIdOrderDetail()).append("║\n");
+    sb.append("║ Id Order:        ").append(getIdOrder()).append("║\n");
+    sb.append("║ Menu:            ").append(getMenu()).append("║\n");
+    sb.append("║ Quantity:        ").append(getQty()).append("║\n");
+    sb.append("╚════════════════════════════════════════════════════╝\n");
+    return sb.toString();
+}
+
 
 
      public static void add(OrderDetail OrderDetail) {
