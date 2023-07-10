@@ -77,18 +77,31 @@ public class Order {
         orderDetails.add(orderDetail);
     }
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "idOrder='" + idOrder + '\'' +
-                ", namaRestoran='" + namaRestoran + '\'' +
-                ", alamatRestoran='" + alamatRestoran + '\'' +
-                ", userName='" + userName + '\'' +
-                ", orderDate='" + orderDate + '\'' +
-                ", orderDetails=" + orderDetails +
-                '}';
-    }
+@Override
+public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("╔═════════════════════════════════════════╗\n");
+    sb.append("║            Order Information             ║\n");
+    sb.append("╟─────────────────────────────────────────╢\n");
+    sb.append("║ Id Order:      ").append(getIdOrder()).append("║\n");
+    sb.append("║ Nama Resto:    ").append(getNamaRestoran()).append("║\n");
+    sb.append("║ Alamat Resto:  ").append(getAlamatRestoran()).append("║\n");
+    sb.append("║ Cust:          ").append(getUserName()).append("║\n");
+    sb.append("║ Date:          ").append(getOrderDate()).append("║\n");
+    sb.append("║ Order Details: ").append(getOrderDetails()).append("║\n");
+    sb.append("╚═════════════════════════════════════════╝\n");
+    return sb.toString();
+}
+
 
     public static void add(Order order) {
+    }
+
+    public String getId() {
+        return null;
+    }
+
+    public String getOrderId() {
+        return null;
     }
 }
