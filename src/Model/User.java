@@ -109,13 +109,13 @@ public class User {
 @Override
 public String toString() {
     return "|" +
-            "Name:\t\t" + name + " | " +
-            "Username:\t" + username + " | " +
-            "Email:\t\t" + email + " | " +
-            "Password:\t" + password + " | " +
-            "Phone number:\t" + phoneNumber + " | " +
-            "Birth:\t\t" + dateOfBirth + " | " +
-            "Address:\t" + address + " | " +
+            "Name:" + name + " | " +
+            "Username:" + username + " | " +
+            "Email:" + email + " | " +
+            "Password:" + password + " | " +
+            "Phone number:" + phoneNumber + " | " +
+            "Birth:" + dateOfBirth + " | " +
+            "Address:" + address + " | " +
             "" + order + " | " +
             " ";
 }
