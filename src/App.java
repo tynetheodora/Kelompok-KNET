@@ -1,10 +1,14 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
+
 import model.Order;
 import model.Payment;
 import model.OrderDetail;
 import model.User;
 import model.Menu;
+import java.util.NoSuchElementException;
+
 
 public class App {
     static ArrayList<User> user = new ArrayList<User>();
@@ -20,47 +24,89 @@ public class App {
         Scanner scanner = new Scanner(System.in);
                 int choice;
 
-                do {
-                    System.out.println("==== Wonderlust Cafe ====");
-                    System.out.println("1. Input User Data");
-                    System.out.println("2. Input Menu Data ");
-                    System.out.println("3. Input Order Data");
-                    System.out.println("4. Input Payment Data");
-                    System.out.println("5. Input Order Detail Data");
-                    System.out.println("6. Display Data");
-                    System.out.println("0. Exit");
-                    System.out.println("Please choose a menu : ");
+                do {                    
+                    try{
+                    System.out.println("╔════════════════════════════════════════════════════╗");
+                    System.out.println("║                Welcome to Wonderlust Cafe          ║");
+                    System.out.println("╟────────────────────────────────────────────────────╢");
+                    System.out.println("║ 1. Input User Data                                 ║");
+                    System.out.println("║ 2. Input Menu Data                                 ║");
+                    System.out.println("║ 3. Input Order Data                                ║");
+                    System.out.println("║ 4. Input Payment Data                              ║");
+                    System.out.println("║ 5. Input Order Detail Data                         ║");
+                    System.out.println("║ 6. Display Data                                    ║");
+                    System.out.println("║ 0. Exit                                            ║");
+                    System.out.println(" ────────────────────────────────────────────────────");
+                    System.out.println("Please choose a menu:                               ");
 
                     choice = scanner.nextInt();
+                    scanner.nextLine(); // consume the newline character
 
-                    switch (choice) {
-                        case 0:
-                            exit = true;
-                            break;
-                        case 1:
-                            inputUserData();
-                            break;
-                        case 2:
-                            inputMenuData();
-                            break;
-                        case 3:
-                            inputOrderData();
-                            break;           
-                        case 4:
-                            inputPaymentData();
-                            break;
-                        case 5:
-                            inputOrderDetailData();
-                            break;
-                        case 6:
-                            displayData();
-                            break;
-                        default:
-                            System.out.println("Invalid choice. Please try again.");
-                            break;
-                    }
+                switch (choice) {
+                    case 0:
+                        exit = true;
+                        System.out.println("╔══════════════════════════════════════════════╗");
+                        System.out.println("║             Thank you for visiting           ║");
+                        System.out.println("║                Wonderlust Cafe!              ║");
+                        System.out.println("╚══════════════════════════════════════════════╝");
+                        break;
+                    case 1:
+                        inputUserData();
+                        System.out.println("╔══════════════════════════════════════════════╗");
+                        System.out.println("║        User Data has been successfully       ║");
+                        System.out.println("║                 inputted!                    ║");
+                        System.out.println("╚══════════════════════════════════════════════╝");
+                        break;
+                    case 2:
+                        inputMenuData();
+                        System.out.println("╔══════════════════════════════════════════════╗");
+                        System.out.println("║        Menu Data has been successfully       ║");
+                        System.out.println("║                 inputted!                    ║");
+                        System.out.println("╚══════════════════════════════════════════════╝");
+                        break;
+                    case 3:
+                        inputOrderData();
+                        System.out.println("╔══════════════════════════════════════════════╗");
+                        System.out.println("║        Order Data has been successfully      ║");
+                        System.out.println("║                 inputted!                    ║");
+                        System.out.println("╚══════════════════════════════════════════════╝");
+                        break;
+                    case 4:
+                        inputPaymentData();
+                        System.out.println("╔══════════════════════════════════════════════╗");
+                        System.out.println("║      Payment Data has been successfully      ║");
+                        System.out.println("║                 inputted!                    ║");
+                        System.out.println("╚══════════════════════════════════════════════╝");
+                        break;
+                    case 5:
+                        inputOrderDetailData();
+                        System.out.println("╔══════════════════════════════════════════════╗");
+                        System.out.println("║    Order Detail Data has been successfully   ║");
+                        System.out.println("║                 inputted!                    ║");
+                        System.out.println("╚══════════════════════════════════════════════╝");
+                        break;
+                    case 6:
+                        displayData();
+                        System.out.println("╔══════════════════════════════════════════════╗");
+                        System.out.println("║      Data has been successfully displayed!   ║");
+                        System.out.println("╚══════════════════════════════════════════════╝");
+                        break;
+                    default:
+                        System.out.println("╔══════════════════════════════════════════════╗");
+                        System.out.println("║        Invalid choice. Please try again.     ║");
+                        System.out.println("╚══════════════════════════════════════════════╝");
+                        break; // Restart the loop
+                }
+
                     
                     System.out.println(); 
+
+                } catch (NoSuchElementException e) {
+                    System.out.println("Invalid input. Please try again.");
+                    scanner.nextLine(); // consume the invalid input
+                    continue; // Restart the loop
+                }
+                
                 } while (!exit);
                 
                 scanner.close();
@@ -79,9 +125,9 @@ public class App {
                 Menu.add(new Menu("F3", "Soup", "Appetizer", 35000, "Mushroom Soup"));
 
                 Payment[] pymnt = new Payment[350];
-                Payment.add(new Payment("0908777", "200.000", "Cash", "5/6/2023", "Completed", "9080777"));
-                Payment.add(new Payment("0908666", "350.000", "Bank Transfer", "13/6/2023", "Failed", "9080666"));
-                Payment.add(new Payment("0908555", "480.000", "OVO", "29/6/2023", "Completed", "9080555"));
+                Payment.add(new Payment("0908777", "200.000", "Cash", "5/6/2023", "Completed", order.get(0)));
+                Payment.add(new Payment("0908666", "350.000", "Bank Transfer", "13/6/2023", "Failed", order.get(2)));
+                Payment.add(new Payment("0908555", "480.000", "OVO", "29/6/2023", "Completed", order.get(3)));
 
                 OrderDetail[] od = new OrderDetail[350];
                 //String idOrderDetail , Order idOrder , Menu menu, Menu idMenu,int price , int qty , int tax,int totalPrice 
@@ -95,15 +141,15 @@ public class App {
                 Order.add(new Order("03081223", "Wonderlust Cafe", "Medan Polonia", "eve.chris", "23/11/2023", orderDetail));
             }
         
-            public static Order cariOrder (String orderId){
+            //public static Order cariOrder (String orderId){
                 //cari order berdasarkan orderid
-                for (Order order2 : order) {
-                    if(order2.getIdOrder().equals(orderId)){
-                        return order2;
-                    }
-                }
-                return null;
-            }
+              //  for (Order order2 : order) {
+                //    if(order2.getIdOrder().equals(orderId)){
+                  //      return order2;
+                    //}
+                //}
+               // return null;
+            //}
 
             public static Menu cariMenu (String idMenu){
                 for (Menu menu2 : menu) {
@@ -114,6 +160,39 @@ public class App {
                 return null;
             }
 
+            //private static Order findOrderById(String idOrder) {
+              //  return null;
+            //}
+            
+            //cari order berdasarkan orderid
+            public static Order cariOrder (String idOrder){
+                for (Order order2 : order) {
+                    if(order2.getIdOrder().equals(idOrder)){
+                        return order2;
+                    }
+                }
+                return null;
+            }
+            
+            public static Order findOrderById(String idOrder) {
+                for (Order order : order) {
+                    if (order.getIdOrder().equals(idOrder)) {
+                        return order;
+                    }
+                }
+                return null;
+            }
+
+            public static Menu findMenuById(String idMenu) {
+                for (Menu menu : menu) {
+                    if (menu.getIdMenu().equals(idMenu)) {
+                        return menu;
+                    }
+                }
+                return null;
+            }
+                
+            
             public static void inputUserData() {
                 String name, username, email, password, phoneNumber, dateOfBirth, address;
 
@@ -147,9 +226,19 @@ public class App {
                 namaMenu = input.nextLine();
                 System.out.print("Category \t: ");
                 category = input.nextLine();
-                System.out.print("Price \t: ");
-                price = input.nextInt();
-                input.nextLine(); 
+                
+                while (true) {
+                    try {
+                        System.out.print("Price \t\t: ");
+                        price = input.nextInt();
+                        input.nextLine(); // consume the newline character
+                        break;
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid input. Please enter a valid price.");
+                        input.nextLine(); // consume the invalid input
+                    }
+                }
+                
                 System.out.print("Description \t: ");
                 description = input.nextLine();
 
@@ -171,6 +260,7 @@ public class App {
                 userName = input.nextLine();
                 System.out.print("Order Date \t: ");
                 orderDate = input.nextLine();
+                
 
                 order.add(new Order(idOrder, namaRestoran, alamatRestoran, userName, orderDate, orderDetail));
 
@@ -178,51 +268,77 @@ public class App {
             }
 
             public static void inputOrderDetailData() {
-                String idOrderDetail, idOrder, menu;
-                int qty , totalPrice;
+                    String idOrderDetail, idOrder, menu;
+                    int qty, totalPrice;
 
-                System.out.print("Id Order Detail : ");
-                idOrderDetail = input.nextLine();
-                System.out.print("Id Order: ");
-                idOrder = input.nextLine();
-                System.out.print("ID Menu: ");
-                menu = input.nextLine();
-                System.out.print("QTY: ");
-                qty = input.nextInt();
-                System.out.print("Total Price: ");
-                totalPrice = input.nextInt();
+                    System.out.print("Id Order Detail : ");
+                    idOrderDetail = input.nextLine();
+                    System.out.print("Id Order \t: ");
+                    idOrder = input.nextLine();
+                    System.out.print("ID Menu \t: ");
+                    menu = input.nextLine();
 
-                OrderDetail.add(new OrderDetail(idOrderDetail, cariOrder(idOrder), cariMenu(menu), qty));
+                    while (true) {
+                        try {
+                            System.out.print("QTY \t\t: ");
+                            qty = input.nextInt();
+                            input.nextLine(); // consume the newline character
+                            break;
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid input. Please enter a valid quantity.");
+                            input.nextLine(); // consume the invalid input
+                        }
+                    }
 
-                System.out.println("Order data has been input.");
-            }
+                    while (true) {
+                        try {
+                            System.out.print("Total Price \t: ");
+                            totalPrice = input.nextInt();
+                            input.nextLine(); // consume the newline character
+                            break;
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid input. Please enter a valid total price.");
+                            input.nextLine(); // consume the invalid input
+                        }
+                    }
+
+                    OrderDetail.add(new OrderDetail(idOrderDetail, cariOrder(idOrder), cariMenu(menu), qty));
+
+                    System.out.println("Order detail data has been input.");
+                }
 
             public static void inputPaymentData() {
                 String idPayment, amount, paymentMethod, transactionDate, status, idOrder;
 
-                System.out.print("Id Payment: ");
+                System.out.print("Id Payment \t: ");
                 idPayment = input.nextLine();
-                System.out.print("Amount: ");
+                System.out.print("Amount \t\t: ");
                 amount = input.nextLine();
-                System.out.print("Payment Method: ");
+                System.out.print("Payment Method \t: ");
                 paymentMethod = input.nextLine();
-                System.out.print("TransactionDate: ");
+                System.out.print("Transaction Date: ");
                 transactionDate = input.nextLine();
-                System.out.print("Status: ");
+                System.out.print("Status \t\t: ");
                 status = input.nextLine();
-                System.out.print("Id Order: ");
+                System.out.print("Id Order \t: ");
                 idOrder = input.nextLine();
 
-               Payment.add(new Payment(idPayment, amount, paymentMethod, transactionDate, status, idOrder));
+                Order order = findOrderById(idOrder);
 
+                if (order != null) {
+                    payment.add(new Payment(idPayment, amount, paymentMethod, transactionDate, status, order));
                 System.out.println("Payment data has been input.");
+                } else {
+                    System.out.println("Order not found. Please check the provided ID.");
                 }
+            }
+
 
                 public static void displayData() {
                     for (User user : user) {
                         System.out.println(user);
                     }
-
+                    
                     for (Menu menu : menu) {
                         System.out.println(menu);
                     }
@@ -237,8 +353,11 @@ public class App {
 
                     for (Payment payment : payment) {
                         System.out.println(payment);
+
                     }
 
-    }
+                }
+
+
     
 }
