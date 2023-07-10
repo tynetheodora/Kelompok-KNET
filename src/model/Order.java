@@ -77,21 +77,20 @@ public class Order {
         orderDetails.add(orderDetail);
     }
 
-@Override
+
+    @Override
 public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("╔═════════════════════════════════════════╗\n");
-    sb.append("║            Order Information             ║\n");
-    sb.append("╟─────────────────────────────────────────╢\n");
-    sb.append("║ Id Order:      ").append(getIdOrder()).append("║\n");
-    sb.append("║ Nama Resto:    ").append(getNamaRestoran()).append("║\n");
-    sb.append("║ Alamat Resto:  ").append(getAlamatRestoran()).append("║\n");
-    sb.append("║ Cust:          ").append(getUserName()).append("║\n");
-    sb.append("║ Date:          ").append(getOrderDate()).append("║\n");
-    sb.append("║ Order Details: ").append(getOrderDetails()).append("║\n");
-    sb.append("╚═════════════════════════════════════════╝\n");
-    return sb.toString();
+    return "|" +
+            "Id Order:\t\t" + getIdOrder() + " | " +
+            "Nama Resto:\t" + getNamaRestoran() + " | " +
+            "Alamat Resto:\t" + getAlamatRestoran() + " | " +
+            "Cust:\t\t" + getUserName() + " | " +
+            "Date:\t\t" + getOrderDate() + " | " +
+            "Order Details:\t" + getOrderDetails() + " | " +
+            "";
 }
+
+
 
 
     public static void add(Order order) {
