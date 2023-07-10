@@ -214,7 +214,6 @@ public class App {
 
                 user.add(new User(name, username, email, password, phoneNumber, dateOfBirth, address, order));
 
-                System.out.println("Menu data has been input.");
             }  
 
             public static void inputMenuData() {
@@ -245,7 +244,6 @@ public class App {
 
                 menu.add(new Menu(idMenu, namaMenu, category, null, description));
 
-                System.out.println("Menu data has been input.");
             }
 
             public static void inputOrderData() {
@@ -265,7 +263,6 @@ public class App {
 
                 order.add(new Order(idOrder, namaRestoran, alamatRestoran, userName, orderDate, orderDetail));
 
-                System.out.println("Menu data has been input.");
             }
 
             public static void inputOrderDetailData() {
@@ -305,7 +302,6 @@ public class App {
 
                     OrderDetail.add(new OrderDetail(idOrderDetail, cariOrder(idOrder), cariMenu(menu), qty));
 
-                    System.out.println("Order detail data has been input.");
                 }
 
             public static void inputPaymentData() {
@@ -328,7 +324,6 @@ public class App {
 
                 if (order != null) {
                     payment.add(new Payment(idPayment, amount, paymentMethod, transactionDate, status, order));
-                System.out.println("Payment data has been input.");
                 } else {
                     System.out.println("Order not found. Please check the provided ID.");
                 }
